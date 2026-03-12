@@ -151,16 +151,6 @@ export function Contact() {
 
                 <div className="flex items-start gap-4 p-4 rounded-lg">
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900 mb-1">Phone</div>
-                    <div className="text-gray-600 text-sm">Schedule a call</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-4 rounded-lg">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>

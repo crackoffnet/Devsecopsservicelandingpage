@@ -87,7 +87,7 @@ export function Footer() {
                 <span>LinkedIn</span>
               </a>
               <a
-                href="mailto:contact@gax-global.com"
+                href="mailto:info@gax-global.com"
                 className="flex items-center gap-2 hover:text-blue-400 transition-colors"
               >
                 <Mail className="w-5 h-5" />
