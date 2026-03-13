@@ -5,6 +5,7 @@ import { Process } from './components/Process';
 import { Outcomes } from './components/Outcomes';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { ChatAssistant } from './components/ChatAssistant';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <ChatAssistant />
     </div>
   );
 }

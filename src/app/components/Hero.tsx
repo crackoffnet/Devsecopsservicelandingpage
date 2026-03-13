@@ -1,4 +1,5 @@
 import { ArrowRight, Shield, Cloud, Lock } from 'lucide-react';
+import heroBackground from 'figma:asset/e160a7cdde8371ab60d8f84434d59b5a471324e7.png';
 
 export function Hero() {
   const scrollToContact = () => {
@@ -13,11 +14,11 @@ export function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1763128516808-785e80c1dd68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjeWJlcnNlY3VyaXR5JTIwbmV0d29yayUyMGRhdGElMjBjZW50ZXJ8ZW58MXx8fHwxNzczMjg3NTU2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-          alt="Cybersecurity Infrastructure"
+          src={heroBackground}
+          alt="DevSecOps Professional"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/90 to-blue-900/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-blue-900/90 to-blue-900/80"></div>
       </div>
 
       {/* Content */}

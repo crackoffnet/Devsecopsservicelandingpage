@@ -91,7 +91,7 @@ export function Footer() {
                 className="flex items-center gap-2 hover:text-blue-400 transition-colors"
               >
                 <Mail className="w-5 h-5" />
-                <span>Email</span>
+                <span>info@gax-global.com</span>
               </a>
             </div>
           </div>

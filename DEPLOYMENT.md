@@ -1,5 +1,15 @@
 # 🚀 Deployment Guide for Cloudflare Pages
 
+## ✅ Recent Updates (Latest)
+
+### New Features Added:
+- ✅ Professional hero background image
+- ✅ Updated contact email to info@gax-global.com
+- ✅ Removed phone number from contact info
+- ✅ New **Project Request Form** with detailed fields (project type, budget, timeline)
+- ✅ **AI Chat Assistant** - Interactive bot to answer questions and collect leads
+- ✅ Email integration for form submissions
+
 ## ✅ Files Now Included
 
 I've added the missing files needed for deployment:
