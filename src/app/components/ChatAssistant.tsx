@@ -1,5 +1,7 @@
 import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
+import { toast } from 'sonner';
 
 interface Message {
   id: string;
@@ -139,11 +141,21 @@ Budget: ${trimmedMessage}
 Source: Chat Assistant
         `.trim();
         
-        setTimeout(() => {
-          window.location.href = `mailto:info@gax-global.com?subject=Chat Lead: ${collectedInfo.name}&body=${encodeURIComponent(emailBody)}`;
-        }, 1000);
+        emailjs.send('service_gax_global', 'template_chat_lead', {
+          name: collectedInfo.name,
+          email: collectedInfo.email,
+          company: collectedInfo.company,
+          project_type: collectedInfo.projectType,
+          budget: trimmedMessage,
+          source: 'Chat Assistant'
+        }, 'user_gax_global')
+        .then(() => {
+          toast.success('Your request has been sent successfully!');
+        }, (error) => {
+          toast.error('Failed to send your request. Please try again.');
+        });
 
-        return `Perfect! I've collected all the info:\n\n✓ Name: ${collectedInfo.name}\n✓ Email: ${collectedInfo.email}\n✓ Company: ${collectedInfo.company}\n✓ Project: ${collectedInfo.projectType}\n✓ Budget: ${trimmedMessage}\n\nOur team will review this and reach out within 24 hours. Opening your email client now to confirm the request!`;
+        return `Perfect! I've collected all the info:\n\n✓ Name: ${collectedInfo.name}\n✓ Email: ${collectedInfo.email}\n✓ Company: ${collectedInfo.company}\n✓ Project: ${collectedInfo.projectType}\n✓ Budget: ${trimmedMessage}\n\nOur team will review this and reach out within 24 hours.`;
 
       default:
         return getBotResponse(userMessage);

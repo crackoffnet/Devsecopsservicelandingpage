@@ -1,5 +1,7 @@
-import { Mail, Linkedin, MapPin, CheckCircle } from 'lucide-react';
+import { Mail, Linkedin, MapPin, CheckCircle, Loader2 } from 'lucide-react';
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { toast } from 'sonner';
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -11,30 +13,59 @@ export function Contact() {
     timeline: '',
     description: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Create email body
-    const emailBody = `
-New Project Request from GAX-GLOBAL Website
+    setIsSubmitting(true);
 
-Name: ${formData.name}
-Email: ${formData.email}
-Company: ${formData.company}
-Project Type: ${formData.projectType}
-Budget Range: ${formData.budget}
-Timeline: ${formData.timeline}
+    try {
+      // EmailJS configuration
+      const serviceID = 'YOUR_SERVICE_ID'; // Replace with your EmailJS Service ID
+      const templateID = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS Template ID
+      const publicKey = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS Public Key
 
-Project Description:
-${formData.description}
-    `.trim();
+      // Send email in background using EmailJS
+      await emailjs.send(
+        serviceID,
+        templateID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          company: formData.company || 'Not specified',
+          project_type: formData.projectType,
+          budget: formData.budget || 'Not specified',
+          timeline: formData.timeline || 'Not specified',
+          message: formData.description,
+          to_email: 'info@gax-global.com'
+        },
+        publicKey
+      );
 
-    // Send via mailto (opens user's email client)
-    window.location.href = `mailto:info@gax-global.com?subject=Project Request from ${formData.name}&body=${encodeURIComponent(emailBody)}`;
-    
-    // Show success message
-    alert('Opening your email client to send the request. Thank you for your interest!');
+      // Success message
+      toast.success('Request sent successfully! We\'ll contact you within 24 hours.', {
+        duration: 5000,
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        projectType: '',
+        budget: '',
+        timeline: '',
+        description: ''
+      });
+
+    } catch (error) {
+      console.error('Email send error:', error);
+      toast.error('Failed to send request. Please try again or email us directly at info@gax-global.com', {
+        duration: 5000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -78,7 +109,8 @@ ${formData.description}
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
                     placeholder="John Doe"
                   />
                 </div>
@@ -94,7 +126,8 @@ ${formData.description}
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
                     placeholder="john@company.com"
                   />
                 </div>
@@ -112,7 +145,8 @@ ${formData.description}
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
                     placeholder="Your Company"
                   />
                 </div>
@@ -127,7 +161,8 @@ ${formData.description}
                     required
                     value={formData.projectType}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
                   >
                     <option value="">Select a service...</option>
                     <option value="CI/CD Pipeline">CI/CD Pipeline Setup</option>
@@ -152,7 +187,8 @@ ${formData.description}
                     name="budget"
                     value={formData.budget}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
                   >
                     <option value="">Select budget...</option>
                     <option value="Under $10k">Under $10k</option>
@@ -172,7 +208,8 @@ ${formData.description}
                     name="timeline"
                     value={formData.timeline}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
                   >
                     <option value="">Select timeline...</option>
                     <option value="Urgent (within 1 month)">Urgent (within 1 month)</option>
@@ -195,18 +232,29 @@ ${formData.description}
                   required
                   value={formData.description}
                   onChange={handleChange}
+                  disabled={isSubmitting}
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
                   placeholder="Briefly describe your project needs, current challenges, and what you're hoping to achieve..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg hover:from-blue-700 hover:to-cyan-700 transition-all shadow-lg transform hover:scale-[1.02]"
+                disabled={isSubmitting}
+                className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg hover:from-blue-700 hover:to-cyan-700 transition-all shadow-lg transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
-                <Mail className="w-5 h-5" />
-                <span className="font-semibold">Submit Project Request</span>
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    <span className="font-semibold">Sending...</span>
+                  </>
+                ) : (
+                  <>
+                    <Mail className="w-5 h-5" />
+                    <span className="font-semibold">Submit Project Request</span>
+                  </>
+                )}
               </button>
 
               <p className="text-sm text-gray-500 text-center">

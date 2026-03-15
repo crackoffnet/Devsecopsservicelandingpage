@@ -1,251 +1,104 @@
-# GAX-GLOBAL - DevSecOps Services Landing Page
+# GAX-GLOBAL DevSecOps Landing Page 🚀
 
-Production-ready static website for GAX-GLOBAL DevSecOps services, built with React, TypeScript, and Tailwind CSS.
+Production-ready landing page for GAX-GLOBAL DevSecOps consulting services.
+
+## ✨ Features
+
+- **Professional Design** - Hero, services, process, outcomes, contact sections
+- **Background Email Sending** - No Outlook popup! Uses EmailJS
+- **AI Chat Assistant** - 24/7 automated lead collection
+- **Google Ads Integration** - Monetization ready
+- **Mobile Responsive** - Perfect on all devices
+- **Fast & Secure** - Cloudflare Pages hosting
 
 ## 🚀 Quick Start
 
-### Prerequisites
-
-- Node.js 18+ or higher
-- pnpm (recommended) or npm
-
-### Local Development
-
-1. **Install dependencies:**
-
-   ```bash
-   pnpm install
-   # or
-   npm install
-   ```
-
-2. **Start development server:**
-
-   ```bash
-   pnpm dev
-   # or
-   npm run dev
-   ```
-
-3. **Open in browser:**
-   Navigate to `http://localhost:5173`
-
-### Build for Production
+### 1. Deploy to Cloudflare Pages
 
 ```bash
-pnpm build
-# or
-npm run build
+git add .
+git commit -m "Deploy GAX-GLOBAL website"
+git push origin main
 ```
 
-This creates an optimized production build in the `dist/` directory.
+Wait 3-5 minutes → Your site is live! ✅
 
-## 📦 Deploy to Cloudflare Pages
+### 2. Set Up Email Sending (5 min)
 
-### Option 1: Deploy via GitHub (Recommended)
+See **`EMAIL-SETUP-GUIDE.md`** for step-by-step instructions.
 
-1. **Push to GitHub:**
+1. Create free EmailJS account
+2. Connect Gmail (info@gax-global.com)
+3. Create email templates
+4. Update code with your IDs
+5. Deploy
 
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit - GAX-GLOBAL website"
-   git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/gax-global.git
-   git push -u origin main
-   ```
+### 3. Test Everything
 
-2. **Connect to Cloudflare Pages:**
-   - Log in to [Cloudflare Dashboard](https://dash.cloudflare.com/)
-   - Go to **Workers & Pages** → **Create application** → **Pages** → **Connect to Git**
-   - Select your GitHub repository (`gax-global`)
-   - Configure the build settings:
+- Visit your site
+- Try the contact form
+- Click "Need Help?" chatbot
+- Test on mobile
 
-3. **Build Configuration:**
+## 📚 Documentation
 
-   ```
-   Framework preset: None (or Vite)
-   Build command: npm run build
-   Build output directory: dist
-   Root directory: /
-   ```
+| File | What It Does |
+|------|--------------|
+| **`FINAL-SETUP-SUMMARY.md`** | Complete overview of everything |
+| **`EMAIL-SETUP-GUIDE.md`** | Background email sending setup |
+| **`HOW-TO-USE-CHATBOT.md`** | AI chatbot guide |
+| **`GOOGLE-ADS-SETUP.md`** | AdSense monetization |
+| **`BEFORE-VS-AFTER.md`** | See what changed & why |
+| **`README-DEPLOYMENT.md`** | Quick deployment guide |
+| **`CHANGELOG.md`** | Full change history |
 
-4. **Environment Variables:**
+## 🎯 What You Get
 
-   ```
-   NODE_VERSION=18
-   ```
+### Contact Form
+- Collects: name, email, company, project type, budget, timeline, description
+- Sends email in background (no Outlook popup)
+- Shows success notification
+- Validates all inputs
 
-5. **Click "Save and Deploy"**
+### AI Chatbot
+- Answers common questions instantly
+- Collects lead information
+- Sends to info@gax-global.com
+- Works 24/7 automatically
 
-Your site will be live at: `https://gax-global.pages.dev` (or your custom domain)
+### Google Ads
+- 3 strategic placements
+- Professional placeholders (until activated)
+- Ready for AdSense
 
-### Option 2: Deploy via Wrangler CLI
+## 🔧 Tech Stack
 
-1. **Install Wrangler:**
+- **React 18.3.1** - UI framework
+- **Vite 6.3.5** - Build tool
+- **Tailwind CSS 4.x** - Styling
+- **EmailJS** - Email service
+- **Cloudflare Pages** - Hosting
 
-   ```bash
-   npm install -g wrangler
-   ```
+## 📧 Contact
 
-2. **Login to Cloudflare:**
-
-   ```bash
-   wrangler login
-   ```
-
-3. **Build the project:**
-
-   ```bash
-   pnpm build
-   ```
-
-4. **Deploy to Cloudflare Pages:**
-   ```bash
-   wrangler pages deploy dist --project-name=gax-global
-   ```
-
-### Option 3: Direct Upload
-
-1. **Build the project:**
-
-   ```bash
-   pnpm build
-   ```
-
-2. **Go to Cloudflare Dashboard:**
-   - Navigate to **Workers & Pages** → **Create application** → **Pages** → **Upload assets**
-   - Upload the entire `dist/` folder
-   - Your site will be deployed instantly
-
-## 🔧 Cloudflare Pages Configuration
-
-### Custom Domain Setup
-
-1. In Cloudflare Pages dashboard, go to your project
-2. Click **Custom domains** → **Set up a custom domain**
-3. Add your domain (e.g., `gax-global.com`)
-4. Update your DNS records as instructed
-
-### Build Settings (pages.json)
-
-If you need advanced configuration, create a `.pages.json` file in the root:
-
-```json
-{
-  "deployment": {
-    "build_command": "npm run build",
-    "destination_dir": "dist"
-  }
-}
-```
-
-### Headers and Redirects
-
-Create a `public/_headers` file for security headers:
-
-```
-/*
-  X-Frame-Options: DENY
-  X-Content-Type-Options: nosniff
-  X-XSS-Protection: 1; mode=block
-  Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: geolocation=(), microphone=(), camera=()
-```
-
-Create a `public/_redirects` file for SPA routing:
-
-```
-/*    /index.html   200
-```
-
-## 📁 Project Structure
-
-```
-gax-global/
-├── src/
-│   ├── app/
-│   │   ├── components/
-│   │   │   ├── Header.tsx
-│   │   │   ├── Hero.tsx
-│   │   │   ├── Services.tsx
-│   │   │   ├── Process.tsx
-│   │   │   ├── Outcomes.tsx
-│   │   │   ├── Contact.tsx
-│   │   │   └── Footer.tsx
-│   │   └── App.tsx
-│   └── styles/
-├── dist/                 # Production build (generated)
-├── package.json
-└── vite.config.ts
-```
-
-## 🔒 Security Features
-
-- ✅ No sensitive data or API keys
-- ✅ Client-side form validation
-- ✅ Secure external links (noopener noreferrer)
-- ✅ Content Security Policy ready
-- ✅ HTTPS enforced by Cloudflare
-
-## 🌐 Production URLs
-
-- **Cloudflare Pages:** `https://gax-global.pages.dev`
-- **Custom Domain:** Configure in Cloudflare dashboard
+- **Email:** info@gax-global.com
 - **LinkedIn:** [linkedin.com/company/gax-global](https://linkedin.com/company/gax-global)
-
-## 📝 Customization
-
-### Update Contact Information
-
-Edit `/src/app/components/Contact.tsx` and `/src/app/components/Footer.tsx` to update:
-
-- Email addresses
-- Phone numbers
-- Social media links
-
-### Modify Services
-
-Edit `/src/app/components/Services.tsx` to add, remove, or modify service offerings.
-
-### Change Colors/Branding
-
-Update Tailwind classes throughout components. Main brand colors:
-
-- Primary: `blue-600` / `#2563eb`
-- Accent: `cyan-500` / `#06b6d4`
-
-## 🐛 Troubleshooting
-
-### Build fails on Cloudflare
-
-- Ensure Node version is set to 18 or higher in environment variables
-- Check that `pnpm-lock.yaml` is committed to git
-- Verify build command is exactly: `npm run build`
-
-### Blank page after deployment
-
-- Check browser console for errors
-- Ensure `dist` is set as the output directory
-- Verify all assets are included in the build
-
-### Form submissions not working
-
-- Integrate with a backend service (e.g., Cloudflare Workers, Formspree, Netlify Forms)
-- Update form action in `/src/app/components/Contact.tsx`
-
-## 📈 Performance
-
-- ⚡ Static site generation for fast loading
-- 🎨 Tailwind CSS for minimal CSS bundle
-- 🖼️ Optimized images from Unsplash CDN
-- 📦 Code splitting via Vite
-- 🚀 Cloudflare global CDN
+- **Website:** Your Cloudflare Pages URL
 
 ## 📄 License
 
-© 2025 GAX-GLOBAL. All rights reserved.
+Proprietary - GAX-GLOBAL © 2026
 
-## 🤝 Support
+---
 
-For issues or questions, contact: contact@gax-global.com
+## 🆘 Need Help?
+
+**Read these first:**
+1. `FINAL-SETUP-SUMMARY.md` - Complete overview
+2. `EMAIL-SETUP-GUIDE.md` - Most important setup
+
+**Still stuck?** Check browser console (F12) for errors or email info@gax-global.com
+
+---
+
+**Your DevSecOps landing page is ready to start collecting leads!** 🎉
