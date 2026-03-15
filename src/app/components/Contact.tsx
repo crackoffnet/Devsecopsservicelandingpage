@@ -25,27 +25,57 @@ export function Contact() {
       const templateID = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS Template ID
       const publicKey = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS Public Key
 
-      // Send email in background using EmailJS
-      await emailjs.send(
-        serviceID,
-        templateID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          company: formData.company || 'Not specified',
-          project_type: formData.projectType,
-          budget: formData.budget || 'Not specified',
-          timeline: formData.timeline || 'Not specified',
-          message: formData.description,
-          to_email: 'info@gax-global.com'
-        },
-        publicKey
-      );
+      // Check if EmailJS is configured
+      if (serviceID !== 'YOUR_SERVICE_ID' && templateID !== 'YOUR_TEMPLATE_ID' && publicKey !== 'YOUR_PUBLIC_KEY') {
+        // EmailJS is configured - send email in background
+        await emailjs.send(
+          serviceID,
+          templateID,
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+            company: formData.company || 'Not specified',
+            project_type: formData.projectType,
+            budget: formData.budget || 'Not specified',
+            timeline: formData.timeline || 'Not specified',
+            message: formData.description,
+            to_email: 'info@gax-global.com'
+          },
+          publicKey
+        );
 
-      // Success message
-      toast.success('Request sent successfully! We\'ll contact you within 24 hours.', {
-        duration: 5000,
-      });
+        // Success message
+        toast.success('Request sent successfully! We\'ll contact you within 24 hours.', {
+          duration: 5000,
+        });
+      } else {
+        // EmailJS not configured - use email client as fallback
+        const subject = encodeURIComponent(`New Project Request from ${formData.name}`);
+        const body = encodeURIComponent(`
+New Project Request from GAX-GLOBAL Website
+
+FROM:
+Name: ${formData.name}
+Email: ${formData.email}
+Company: ${formData.company || 'Not specified'}
+
+PROJECT DETAILS:
+Type: ${formData.projectType}
+Budget: ${formData.budget || 'Not specified'}
+Timeline: ${formData.timeline || 'Not specified'}
+
+DESCRIPTION:
+${formData.description}
+
+---
+Please reply to: ${formData.email}
+        `.trim());
+        
+        window.open(`mailto:info@gax-global.com?subject=${subject}&body=${body}`, '_blank');
+        toast.success('Opening email client with your request...', {
+          duration: 5000,
+        });
+      }
 
       // Reset form
       setFormData({

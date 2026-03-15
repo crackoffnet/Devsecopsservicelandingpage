@@ -125,8 +125,8 @@ export function ChatAssistant() {
         return "What's your approximate budget?\n\n1. Under $10k\n2. $10k-$50k\n3. $50k-$100k\n4. $100k+\n5. Not sure yet";
 
       case 5: // Collecting budget & finishing
-        setCollectedInfo(prev => ({ ...prev, budget: trimmedMessage }));
-        setConversationStep(0);
+        setCollectedInfo({ ...collectedInfo, budget: trimmedMessage });
+        setConversationStep(0); // Reset conversation
         
         // Send email with collected info
         const emailBody = `
@@ -141,19 +141,35 @@ Budget: ${trimmedMessage}
 Source: Chat Assistant
         `.trim();
         
-        emailjs.send('service_gax_global', 'template_chat_lead', {
-          name: collectedInfo.name,
-          email: collectedInfo.email,
-          company: collectedInfo.company,
-          project_type: collectedInfo.projectType,
-          budget: trimmedMessage,
-          source: 'Chat Assistant'
-        }, 'user_gax_global')
-        .then(() => {
-          toast.success('Your request has been sent successfully!');
-        }, (error) => {
-          toast.error('Failed to send your request. Please try again.');
-        });
+        // Check if EmailJS is configured
+        const serviceID = 'YOUR_SERVICE_ID'; // Replace with your EmailJS Service ID
+        const templateID = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS Template ID
+        const publicKey = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS Public Key
+        
+        // Only send email if credentials are configured
+        if (serviceID !== 'YOUR_SERVICE_ID' && templateID !== 'YOUR_TEMPLATE_ID' && publicKey !== 'YOUR_PUBLIC_KEY') {
+          // EmailJS is configured - send email
+          emailjs.send(serviceID, templateID, {
+            name: collectedInfo.name,
+            email: collectedInfo.email,
+            company: collectedInfo.company,
+            project_type: collectedInfo.projectType,
+            budget: trimmedMessage,
+            source: 'Chat Assistant'
+          }, publicKey)
+          .then(() => {
+            toast.success('Your request has been sent successfully!');
+          }, (error) => {
+            console.error('EmailJS error:', error);
+            toast.error('Failed to send your request. Please try again.');
+          });
+        } else {
+          // EmailJS not configured - open email client as fallback
+          const subject = encodeURIComponent(`New Chat Lead: ${collectedInfo.name}`);
+          const body = encodeURIComponent(emailBody);
+          window.open(`mailto:info@gax-global.com?subject=${subject}&body=${body}`, '_blank');
+          toast.success('Opening email client with your information...');
+        }
 
         return `Perfect! I've collected all the info:\n\n✓ Name: ${collectedInfo.name}\n✓ Email: ${collectedInfo.email}\n✓ Company: ${collectedInfo.company}\n✓ Project: ${collectedInfo.projectType}\n✓ Budget: ${trimmedMessage}\n\nOur team will review this and reach out within 24 hours.`;
 
