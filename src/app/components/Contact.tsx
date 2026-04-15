@@ -45,7 +45,7 @@ export function Contact() {
         );
 
         // Success message
-        toast.success('Request sent successfully! We\'ll contact you within 24 hours.', {
+        toast.success('Request sent successfully! We will contact you within 24 hours.', {
           duration: 5000,
         });
       } else {
@@ -70,7 +70,7 @@ ${formData.description}
 ---
 Please reply to: ${formData.email}
         `.trim());
-        
+
         window.open(`mailto:info@gax-global.com?subject=${subject}&body=${body}`, '_blank');
         toast.success('Opening email client with your request...', {
           duration: 5000,
@@ -114,10 +114,10 @@ Please reply to: ${formData.email}
             <span className="text-sm text-blue-700">Start Your Project</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Tell Us About Your Needs
+            Tell Us About Your DevSecOps or AI Initiative
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Fill out this quick form to help us understand your project requirements
+            Share your goals and constraints so we can craft a secure, practical delivery plan
           </p>
         </div>
 
@@ -195,12 +195,13 @@ Please reply to: ${formData.email}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
                   >
                     <option value="">Select a service...</option>
-                    <option value="CI/CD Pipeline">CI/CD Pipeline Setup</option>
-                    <option value="Cloud Migration">Cloud Migration</option>
-                    <option value="Security Hardening">Security Hardening</option>
-                    <option value="Infrastructure Automation">Infrastructure Automation</option>
-                    <option value="Cost Optimization">Cost Optimization</option>
-                    <option value="Full DevSecOps">Full DevSecOps Implementation</option>
+                    <option value="DevSecOps CI/CD">DevSecOps CI/CD Engineering</option>
+                    <option value="Cloud Security">Cloud Security Hardening</option>
+                    <option value="AI Platform">AI Platform Engineering</option>
+                    <option value="MLOps">MLOps / Model Delivery</option>
+                    <option value="AIOps">AIOps and SRE Automation</option>
+                    <option value="Cost Optimization">Cloud and AI Cost Optimization</option>
+                    <option value="Full Modernization">Full Platform Modernization</option>
                     <option value="Other">Other / Consultation</option>
                   </select>
                 </div>
@@ -265,7 +266,7 @@ Please reply to: ${formData.email}
                   disabled={isSubmitting}
                   rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
-                  placeholder="Briefly describe your project needs, current challenges, and what you're hoping to achieve..."
+                  placeholder="Describe your current stack, security/compliance requirements, AI goals, and expected timeline..."
                 />
               </div>
 
@@ -288,7 +289,7 @@ Please reply to: ${formData.email}
               </button>
 
               <p className="text-sm text-gray-500 text-center">
-                We'll review your request and get back to you within 24 hours
+                We review each request and reply with next steps within 24 hours
               </p>
             </form>
           </div>
@@ -302,25 +303,25 @@ Please reply to: ${formData.email}
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                   <div className="text-sm text-gray-600">
-                    We review your request within 24 hours
+                    We review your requirements and constraints
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                   <div className="text-sm text-gray-600">
-                    Schedule a free consultation call
+                    30-minute architecture and risk alignment call
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                   <div className="text-sm text-gray-600">
-                    Receive a tailored proposal & timeline
+                    Receive a phased delivery plan and estimate
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                   <div className="text-sm text-gray-600">
-                    Start transforming your infrastructure
+                    Launch execution with secure implementation milestones
                   </div>
                 </div>
               </div>
@@ -350,15 +351,15 @@ Please reply to: ${formData.email}
                   <Linkedin className="w-5 h-5 flex-shrink-0" />
                   <div>
                     <div className="text-sm font-medium">Connect on LinkedIn</div>
-                    <div className="text-xs text-blue-100">@gax-global</div>
+                    <div className="text-xs text-blue-100">linkedin.com/company/gax-global</div>
                   </div>
                 </a>
 
                 <div className="flex items-center gap-3 p-3">
                   <MapPin className="w-5 h-5 flex-shrink-0" />
                   <div>
-                    <div className="text-sm font-medium">Global Coverage</div>
-                    <div className="text-xs text-blue-100">Serving clients worldwide</div>
+                    <div className="text-sm font-medium">LinkedIn Location</div>
+                    <div className="text-xs text-blue-100">United States (Remote-First)</div>
                   </div>
                 </div>
               </div>

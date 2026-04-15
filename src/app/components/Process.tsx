@@ -3,39 +3,39 @@ import { Search, FileText, Cog, Rocket, BarChart, HeadphonesIcon } from 'lucide-
 const processSteps = [
   {
     icon: Search,
-    title: 'Discovery & Assessment',
-    description: 'We analyze your current infrastructure, identify pain points, and understand your business objectives.',
-    details: ['Infrastructure audit', 'Security assessment', 'Gap analysis', 'Requirements gathering']
+    title: 'Discovery and AI Readiness Assessment',
+    description: 'We map your current DevSecOps maturity and identify the right AI opportunities without increasing risk.',
+    details: ['Architecture and pipeline audit', 'Security and compliance baseline', 'AI use-case prioritization', 'Delivery KPI definition']
   },
   {
     icon: FileText,
-    title: 'Strategy & Planning',
-    description: 'Create a comprehensive roadmap tailored to your needs with clear milestones and deliverables.',
-    details: ['Architecture design', 'Technology selection', 'Migration planning', 'Risk assessment']
+    title: 'Roadmap and Secure Design',
+    description: 'Define a phased implementation plan for cloud, security, automation, and AI capabilities.',
+    details: ['Target-state architecture', 'Threat model and controls mapping', 'Platform and tooling decisions', 'Execution milestones']
   },
   {
     icon: Cog,
-    title: 'Implementation',
-    description: 'Execute the plan with precision, implementing automation, security, and infrastructure improvements.',
-    details: ['Infrastructure setup', 'Automation deployment', 'Security hardening', 'Integration testing']
+    title: 'Implementation and Integration',
+    description: 'Build and integrate pipelines, infrastructure, observability, and AI services into your existing stack.',
+    details: ['IaC and policy-as-code', 'CI/CD and MLOps setup', 'Identity and secret controls', 'Integration and quality testing']
   },
   {
     icon: Rocket,
-    title: 'Deployment & Migration',
-    description: 'Seamlessly deploy and migrate workloads with minimal disruption to your operations.',
-    details: ['Staged rollout', 'Data migration', 'Validation testing', 'Go-live support']
+    title: 'Deployment and Migration',
+    description: 'Roll out changes safely using staged releases, validation gates, and rollback strategies.',
+    details: ['Progressive release strategy', 'Controlled workload migration', 'Operational acceptance testing', 'Go-live enablement']
   },
   {
     icon: BarChart,
-    title: 'Optimization',
-    description: 'Continuously monitor, analyze, and optimize for performance, security, and cost efficiency.',
-    details: ['Performance tuning', 'Cost optimization', 'Security updates', 'Capacity planning']
+    title: 'Optimization and AIOps',
+    description: 'Continuously improve reliability, security, and spend with observability-driven automation.',
+    details: ['SLO and error budget tuning', 'AIOps remediation workflows', 'Cloud and AI cost optimization', 'Security posture improvement']
   },
   {
     icon: HeadphonesIcon,
-    title: 'Support & Evolution',
-    description: 'Provide ongoing support and evolve your infrastructure as your business grows.',
-    details: ['24/7 monitoring', 'Incident response', 'Feature updates', 'Strategic consulting']
+    title: 'Managed Support and Evolution',
+    description: 'Provide ongoing support while evolving your platform as products, traffic, and AI usage scale.',
+    details: ['24/7 monitoring and response', 'Platform reliability governance', 'Continuous hardening updates', 'Quarterly strategy reviews']
   }
 ];
 
@@ -46,13 +46,13 @@ export function Process() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 rounded-full mb-4">
-            <span className="text-sm text-blue-700">Our Methodology</span>
+            <span className="text-sm text-blue-700">Our Delivery Method</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Proven Delivery Process
+            Proven DevSecOps + AI Execution Framework
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A structured approach that ensures successful outcomes from discovery to ongoing support
+            A structured model to deliver secure, scalable platforms from assessment through long-term operations
           </p>
         </div>
 

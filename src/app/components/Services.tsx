@@ -1,90 +1,90 @@
-import { 
-  GitBranch, 
-  Cloud, 
-  Shield, 
-  Zap, 
-  Database, 
+import {
+  GitBranch,
+  Cloud,
+  Shield,
+  Zap,
+  Database,
   Lock,
   Settings,
   TrendingDown,
   Workflow,
   Server,
   RefreshCw,
-  ShieldCheck
+  BrainCircuit
 } from 'lucide-react';
 
 const services = [
   {
     icon: GitBranch,
-    title: 'CI/CD Automation',
-    description: 'Streamline your development pipeline with robust continuous integration and deployment workflows.',
-    features: ['Jenkins, GitLab CI, GitHub Actions', 'Automated testing & validation', 'Zero-downtime deployments']
+    title: 'Secure CI/CD Engineering',
+    description: 'Build guarded delivery pipelines with policy checks, quality gates, and automated release controls.',
+    features: ['GitHub Actions, GitLab CI, Jenkins', 'SAST/DAST/SCA in pipeline', 'Progressive and zero-downtime deploys']
   },
   {
-    icon: Cloud,
-    title: 'Cloud Infrastructure',
-    description: 'Design, build, and manage scalable cloud infrastructure on AWS, Azure, GCP, and hybrid environments.',
-    features: ['Multi-cloud architecture', 'Infrastructure as Code', 'High availability setup']
+    icon: BrainCircuit,
+    title: 'AI Platform Engineering',
+    description: 'Design production-grade AI platforms for model serving, vector search, and prompt orchestration.',
+    features: ['LLM and RAG architecture', 'Model gateway and observability', 'Inference cost/performance tuning']
   },
   {
     icon: Shield,
-    title: 'Security Hardening',
-    description: 'Implement comprehensive security measures across your entire infrastructure and application stack.',
-    features: ['Vulnerability scanning', 'Compliance automation', 'Zero-trust architecture']
+    title: 'Cloud Security Hardening',
+    description: 'Reduce risk with continuous cloud security controls across network, workload, and identity layers.',
+    features: ['CSPM and vulnerability scanning', 'Policy-as-code guardrails', 'Zero-trust and least privilege']
   },
   {
     icon: Zap,
-    title: 'DevOps Automation',
-    description: 'Eliminate manual processes with intelligent automation across your development lifecycle.',
-    features: ['Configuration management', 'Automated provisioning', 'Self-healing systems']
+    title: 'AIOps Automation',
+    description: 'Automate incident detection and remediation using telemetry, anomaly detection, and runbook execution.',
+    features: ['Event correlation pipelines', 'Auto-remediation workflows', 'SLO-driven alert reduction']
   },
   {
     icon: Database,
-    title: 'Data & Storage',
-    description: 'Optimize database performance, implement backup strategies, and ensure data resilience.',
-    features: ['Database optimization', 'Disaster recovery', 'Data encryption']
+    title: 'Data Platform Reliability',
+    description: 'Strengthen data infrastructure used by applications and AI workloads with resilience-first practices.',
+    features: ['Backup and disaster recovery', 'Encryption and key rotation', 'Performance and capacity planning']
   },
   {
     icon: RefreshCw,
-    title: 'Cloud Migrations',
-    description: 'Seamlessly migrate your workloads from on-premise to cloud or between cloud providers.',
-    features: ['Migration strategy', 'Minimal downtime', 'Post-migration optimization']
+    title: 'Cloud and Kubernetes Migration',
+    description: 'Migrate workloads safely from legacy or on-prem systems to cloud-native environments.',
+    features: ['Migration runway planning', 'Cutover with minimal downtime', 'Post-migration reliability tuning']
   },
   {
     icon: TrendingDown,
-    title: 'Cost Optimization',
-    description: 'Reduce cloud spending while maintaining performance through intelligent resource management.',
-    features: ['Resource right-sizing', 'Reserved instances', 'Cost monitoring dashboards']
+    title: 'FinOps and AI Cost Control',
+    description: 'Control cloud and AI spend with visibility, right-sizing, and intelligent consumption policies.',
+    features: ['Cloud resource rightsizing', 'GPU and inference spend tracking', 'Unit economics dashboards']
   },
   {
     icon: Server,
-    title: 'On-Premise & Hybrid',
-    description: 'Bridge on-premise and cloud environments for a flexible, secure hybrid infrastructure.',
-    features: ['Hybrid connectivity', 'On-prem automation', 'Unified monitoring']
+    title: 'Hybrid Infrastructure Operations',
+    description: 'Operate secure hybrid environments across cloud, edge, and datacenter footprints.',
+    features: ['Unified observability', 'Secure network connectivity', 'Operational runbook standardization']
   },
   {
     icon: Workflow,
-    title: 'Container Orchestration',
-    description: 'Deploy and manage containerized applications with Kubernetes, Docker, and modern orchestration.',
-    features: ['Kubernetes deployment', 'Container security', 'Auto-scaling configuration']
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Compliance & Governance',
-    description: 'Ensure your infrastructure meets industry standards and regulatory requirements.',
-    features: ['SOC2, ISO, HIPAA compliance', 'Audit automation', 'Policy enforcement']
-  },
-  {
-    icon: Settings,
-    title: 'Infrastructure Monitoring',
-    description: 'Gain full visibility into your infrastructure with real-time monitoring and alerting.',
-    features: ['Prometheus, Grafana, ELK', 'Custom dashboards', 'Intelligent alerting']
+    title: 'MLOps and Model CI/CD',
+    description: 'Industrialize model delivery with reproducible training, testing, and deployment pipelines.',
+    features: ['Model registry and lineage', 'Automated model validation', 'Controlled rollout and rollback']
   },
   {
     icon: Lock,
-    title: 'Identity & Access',
-    description: 'Implement secure identity management and role-based access control across your systems.',
-    features: ['SSO integration', 'RBAC implementation', 'Secret management']
+    title: 'LLM Security and Governance',
+    description: 'Protect AI systems with controls for prompt injection, data leakage, and unsafe model behavior.',
+    features: ['Prompt and output filtering', 'Secrets and PII protection', 'AI policy and compliance controls']
+  },
+  {
+    icon: Settings,
+    title: 'Observability and Reliability',
+    description: 'Gain operational clarity across infrastructure, apps, and AI workloads in one monitoring plane.',
+    features: ['Prometheus, Grafana, ELK/OpenSearch', 'Golden signal dashboards', 'SRE-oriented incident playbooks']
+  },
+  {
+    icon: Cloud,
+    title: 'Infrastructure as Code',
+    description: 'Standardize environment provisioning with reusable, secure, and version-controlled IaC patterns.',
+    features: ['Terraform and OpenTofu modules', 'Environment drift detection', 'Automated compliance baselines']
   }
 ];
 
@@ -95,13 +95,13 @@ export function Services() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 rounded-full mb-4">
-            <span className="text-sm text-blue-700">Comprehensive Solutions</span>
+            <span className="text-sm text-blue-700">DevSecOps + AI Services</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            End-to-End DevSecOps Services
+            End-to-End DevSecOps and AI Delivery
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From automation to security, cloud to on-premise—we cover every aspect of modern DevSecOps
+            From secure pipelines to AI platform operations, we cover the full engineering lifecycle for modern teams
           </p>
         </div>
 

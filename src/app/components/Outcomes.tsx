@@ -3,51 +3,51 @@ import { TrendingDown, Clock, Shield, Zap, CheckCircle2, Target } from 'lucide-r
 const outcomes = [
   {
     icon: TrendingDown,
-    metric: '60%',
-    title: 'Cost Reduction',
-    description: 'Average cloud and infrastructure cost savings through optimization and automation'
+    metric: '35%',
+    title: 'Cloud + AI Cost Reduction',
+    description: 'Lower infrastructure and model inference costs through FinOps controls and workload optimization'
   },
   {
     icon: Clock,
-    metric: '75%',
-    title: 'Faster Deployments',
-    description: 'Reduction in deployment time with automated CI/CD pipelines and infrastructure as code'
+    metric: '70%',
+    title: 'Faster Release Cycles',
+    description: 'Accelerated application and model delivery through secure CI/CD and MLOps automation'
   },
   {
     icon: Shield,
     metric: '99.9%',
-    title: 'Security Compliance',
-    description: 'Maintain continuous compliance with industry standards and security best practices'
+    title: 'Security and Compliance Coverage',
+    description: 'Continuous compliance and policy enforcement across cloud, platform, and AI services'
   },
   {
     icon: Zap,
     metric: '10x',
-    title: 'Productivity Boost',
-    description: 'Developer productivity increase through automation and streamlined workflows'
+    title: 'Operational Productivity',
+    description: 'Higher team efficiency using AIOps workflows, standardized pipelines, and automated remediation'
   },
   {
     icon: CheckCircle2,
-    metric: '95%',
-    title: 'Incident Reduction',
-    description: 'Fewer production incidents through proactive monitoring and self-healing systems'
+    metric: '90%',
+    title: 'Incident Noise Reduction',
+    description: 'Fewer repetitive alerts and production issues through observability, correlation, and tuning'
   },
   {
     icon: Target,
-    metric: '100%',
-    title: 'Uptime SLA',
-    description: 'Meet and exceed availability targets with resilient, highly available infrastructure'
+    metric: '99.95%',
+    title: 'Platform Reliability',
+    description: 'Resilient architecture and SRE practices that protect uptime for critical services and APIs'
   }
 ];
 
 const benefits = [
-  'Reduced operational overhead and manual intervention',
-  'Enhanced security posture with continuous monitoring',
-  'Scalable infrastructure that grows with your business',
-  'Faster time-to-market for new features and products',
-  'Improved disaster recovery and business continuity',
-  'Better resource utilization and cost predictability',
-  'Compliance-ready infrastructure and audit trails',
-  'Unified visibility across your entire tech stack'
+  'Secure SDLC and AI lifecycle governance from day one',
+  'Faster feature and model rollout with lower operational risk',
+  'Clear observability across applications, infrastructure, and AI services',
+  'Reduced mean time to detect and remediate production issues',
+  'Better cloud and GPU utilization with cost guardrails',
+  'Compliance-ready controls and auditable engineering workflows',
+  'Reliable hybrid architecture for high-growth workloads',
+  'Scalable platform foundations aligned to business outcomes'
 ];
 
 export function Outcomes() {
@@ -60,10 +60,10 @@ export function Outcomes() {
             <span className="text-sm text-blue-200">Results That Matter</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Measurable Business Outcomes
+            Measurable DevSecOps and AI Outcomes
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Our clients achieve transformative results through our end-to-end DevSecOps solutions
+            Clients improve delivery speed, security posture, and reliability with our integrated engineering model
           </p>
         </div>
 

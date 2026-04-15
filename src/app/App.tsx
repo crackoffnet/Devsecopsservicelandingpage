@@ -3,6 +3,7 @@ import { Hero } from './components/Hero';
 import { Services } from './components/Services';
 import { Process } from './components/Process';
 import { Outcomes } from './components/Outcomes';
+import { QuickContact } from './components/QuickContact';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ChatAssistant } from './components/ChatAssistant';
@@ -20,6 +21,7 @@ export default function App() {
 
         <Process />
         <Outcomes />
+        <QuickContact />
 
         <Contact />
       </main>

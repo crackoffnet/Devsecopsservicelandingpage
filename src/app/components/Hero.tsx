@@ -1,4 +1,4 @@
-import { ArrowRight, Shield, Cloud, Lock } from 'lucide-react';
+import { ArrowRight, Shield, Cloud, Lock, BrainCircuit } from 'lucide-react';
 
 export function Hero() {
   const scrollToContact = () => {
@@ -26,18 +26,19 @@ export function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full mb-6">
             <Shield className="w-4 h-4 text-blue-400" />
-            <span className="text-sm text-blue-200">End-to-End DevSecOps Excellence</span>
+            <span className="text-sm text-blue-200">DevSecOps + AI Engineering Excellence</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Secure, Automate, and Scale Your Infrastructure
+            Secure, Automate, and Scale DevSecOps and AI Platforms
           </h1>
 
           {/* Subheading */}
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-            Complete DevSecOps solutions from development to deployment. We handle automation, CI/CD, 
-            cloud migrations, security hardening, and cost optimization—so you can focus on innovation.
+            End-to-end services for DevSecOps, AI platform engineering, and cloud security. We implement
+            CI/CD, IaC, AIOps, LLM governance, and reliability controls so your teams can ship faster
+            with confidence.
           </p>
 
           {/* Feature Pills */}
@@ -53,6 +54,10 @@ export function Hero() {
             <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
               <ArrowRight className="w-4 h-4 text-cyan-400" />
               <span className="text-sm text-white">Full Automation</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
+              <BrainCircuit className="w-4 h-4 text-cyan-400" />
+              <span className="text-sm text-white">AI-Ready Operations</span>
             </div>
           </div>
 
@@ -81,19 +86,19 @@ export function Hero() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 max-w-4xl">
           <div className="text-center">
             <div className="text-3xl font-bold text-white mb-1">100%</div>
-            <div className="text-sm text-gray-400">Automation Focus</div>
+            <div className="text-sm text-gray-400">Infrastructure as Code</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-white mb-1">24/7</div>
             <div className="text-sm text-gray-400">Security Monitoring</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-1">60%</div>
-            <div className="text-sm text-gray-400">Avg. Cost Savings</div>
+            <div className="text-3xl font-bold text-white mb-1">50%+</div>
+            <div className="text-sm text-gray-400">Faster AI Delivery</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold text-white mb-1">99.9%</div>
-            <div className="text-sm text-gray-400">Uptime Guarantee</div>
+            <div className="text-sm text-gray-400">Platform Reliability</div>
           </div>
         </div>
       </div>

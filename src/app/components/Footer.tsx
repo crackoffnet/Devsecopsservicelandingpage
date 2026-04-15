@@ -1,4 +1,4 @@
-import { Linkedin, Mail, Shield } from 'lucide-react';
+import { Linkedin, Mail, Shield, MapPin } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,12 +13,12 @@ export function Footer() {
               GAX-GLOBAL
             </h3>
             <p className="text-gray-400 mb-4 max-w-md">
-              End-to-end DevSecOps solutions that empower businesses to build, deploy, and scale 
-              secure infrastructure with confidence.
+              DevSecOps and AI engineering services that help teams build secure systems,
+              ship faster, and operate resilient platforms at scale.
             </p>
             <div className="flex items-center gap-2 text-sm text-gray-400">
               <Shield className="w-4 h-4 text-blue-400" />
-              <span>Production-ready, secure, and scalable</span>
+              <span>Secure by design, automation-first, AI-ready</span>
             </div>
           </div>
 
@@ -93,6 +93,10 @@ export function Footer() {
                 <Mail className="w-5 h-5" />
                 <span>info@gax-global.com</span>
               </a>
+              <div className="flex items-center gap-2 text-gray-400">
+                <MapPin className="w-5 h-5" />
+                <span>LinkedIn Location: United States</span>
+              </div>
             </div>
           </div>
         </div>
