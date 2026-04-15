@@ -2,7 +2,6 @@ import { Mail, Loader2 } from 'lucide-react';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { toast } from 'sonner';
-import { CAL_BOOKING_URL } from '../config/booking';
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -118,11 +117,11 @@ Please reply to: ${formData.email}
             Tell Us About Your DevSecOps or AI Infrastructure Goals
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Share your current cloud, CI/CD, security, Kubernetes, or AI platform challenges and we will map practical next steps
+            Submit a project request with your cloud, CI/CD, security, Kubernetes, or AI platform challenges and we will map practical next steps.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8">
           {/* Project Request Form - Takes 2 columns */}
           <div id="project-request-form" className="lg:col-span-2 bg-white rounded-2xl p-8 shadow-xl border border-gray-200">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Project Request Form</h3>
@@ -292,36 +291,6 @@ Please reply to: ${formData.email}
             </form>
           </div>
 
-          {/* Contact Options Sidebar */}
-          <div className="space-y-6">
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-              <h4 className="font-bold text-gray-900 mb-3">Choose how to start</h4>
-              <p className="text-sm text-gray-600 mb-4">
-                Choose one of two options: book a consultation now, or submit a project request with more detail.
-              </p>
-              <a
-                href={CAL_BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Book a 30-minute consultation on Cal.com"
-                data-cta="book-30min-consultation-contact"
-                className="block w-full text-center px-4 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium"
-              >
-                Book a 30-minute consultation
-              </a>
-              <a
-                href="#project-request-form"
-                aria-label="Submit a project request using the project request form"
-                data-cta="submit-project-request-contact"
-                className="block w-full text-center px-4 py-3 mt-3 rounded-lg border border-blue-300 text-blue-700 hover:bg-blue-50 transition-colors font-medium"
-              >
-                Submit a project request
-              </a>
-              <p className="text-xs text-gray-500 mt-4">
-                For longer inquiries, use the Project Request Form and include your architecture, CI/CD, security, or AI platform goals.
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -21,20 +21,12 @@ export function FinalCta() {
               Book a 30-minute consultation
             </a>
             <a
-              href={CAL_BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Schedule a 30-minute discussion with GAX Global"
-              data-cta="review-architecture-final-cta"
+              href="/#project-request-form"
+              aria-label="Submit a project request"
+              data-cta="submit-project-request-final-cta"
               className="px-8 py-4 rounded-lg border border-white/30 hover:bg-white/10 transition-colors font-medium"
             >
-              Schedule a 30-minute discussion
-            </a>
-            <a
-              href="mailto:info@gax-global.com"
-              className="px-8 py-4 rounded-lg border border-white/30 hover:bg-white/10 transition-colors font-medium"
-            >
-              Contact us
+              Submit a project request
             </a>
           </div>
         </div>

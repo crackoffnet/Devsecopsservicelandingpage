@@ -100,18 +100,32 @@ export function Services() {
               <p className="mt-4 text-sm text-gray-800 font-medium">
                 Outcome: <span className="font-normal text-gray-700">{service.outcome}</span>
               </p>
-              <a
-                href={CAL_BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Schedule a 30-minute discussion with GAX Global"
-                data-cta="review-your-architecture-services"
-                className="inline-block mt-4 text-sm font-semibold text-blue-700 hover:text-blue-800"
-              >
-                Schedule a 30-minute discussion
-              </a>
             </div>
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <p className="text-gray-600 mb-4">Need help deciding the right starting point?</p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href={CAL_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Book a 30-minute consultation on Cal.com"
+              data-cta="book-consultation-services-mid"
+              className="px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium"
+            >
+              Book a 30-minute consultation
+            </a>
+            <a
+              href="/#project-request-form"
+              aria-label="Submit a project request"
+              data-cta="submit-project-request-services-mid"
+              className="px-6 py-3 rounded-lg border border-blue-300 text-blue-700 hover:bg-blue-50 transition-colors font-medium"
+            >
+              Submit a project request
+            </a>
+          </div>
         </div>
       </div>
     </section>

@@ -2,13 +2,6 @@ import { ArrowRight, Shield } from 'lucide-react';
 import { CAL_BOOKING_URL } from '../config/booking';
 
 export function Hero() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-16">
       {/* Background Image with Overlay */}
@@ -53,12 +46,14 @@ export function Hero() {
               <span>Book a free 30-minute infrastructure review</span>
               <ArrowRight className="w-5 h-5" />
             </a>
-            <button
-              onClick={() => scrollToSection('services')}
+            <a
+              href="/#project-request-form"
+              aria-label="Submit a project request"
+              data-cta="submit-project-request-hero"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg hover:bg-white/20 transition-all border border-white/30"
             >
-              See services
-            </button>
+              Submit a project request
+            </a>
           </div>
 
           <p className="text-sm text-blue-100/90 max-w-2xl">
