@@ -11,7 +11,9 @@ const services = [
       'security and hardening review',
       'Kubernetes and platform risk review',
       'prioritized findings and action plan',
-    ]
+    ],
+    outcome:
+      'A practical assessment with prioritized findings, key risks, and recommended next steps.',
   },
   {
     icon: Workflow,
@@ -23,7 +25,9 @@ const services = [
       'release workflow hardening',
       'deployment automation',
       'rollback and delivery safeguards',
-    ]
+    ],
+    outcome:
+      'A more secure, stable, and repeatable delivery workflow with clear implementation guidance or completed improvements.',
   },
   {
     icon: ShieldCheck,
@@ -35,7 +39,9 @@ const services = [
       'policy and configuration review',
       'workload and platform security improvements',
       'production readiness recommendations',
-    ]
+    ],
+    outcome:
+      'A hardened environment with practical recommendations and/or implemented improvements for lower operational risk.',
   },
   {
     icon: BrainCircuit,
@@ -47,7 +53,9 @@ const services = [
       'secure AI deployment workflows',
       'observability and operational readiness for AI services',
       'governance and environment design for AI systems',
-    ]
+    ],
+    outcome:
+      'A clearer, safer, and more scalable foundation for AI workloads and AI-enabled product delivery.',
   }
 ];
 
@@ -88,6 +96,12 @@ export function Services() {
                   </li>
                 ))}
               </ul>
+              <p className="mt-4 text-sm text-gray-800 font-medium">
+                Outcome: <span className="font-normal text-gray-700">{service.outcome}</span>
+              </p>
+              <a href="/#contact" className="inline-block mt-4 text-sm font-semibold text-blue-700 hover:text-blue-800">
+                Request an assessment
+              </a>
             </div>
           ))}
         </div>

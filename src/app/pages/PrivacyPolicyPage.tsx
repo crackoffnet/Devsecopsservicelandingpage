@@ -1,15 +1,33 @@
 import { useEffect } from 'react';
+import { applySeo, seoBase } from '../lib/seo';
 
 export function PrivacyPolicyPage() {
   useEffect(() => {
-    document.title = 'Privacy Policy | GAX Global';
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute(
-        'content',
-        'Read the GAX Global Privacy Policy for how we collect, use, and protect information from website visitors and service inquiries.'
-      );
-    }
+    applySeo({
+      title: 'Privacy Policy | GAX Global',
+      description:
+        'Privacy Policy for GAX Global covering how information is collected, used, disclosed, and protected through this website and related communications.',
+      path: '/privacy-policy',
+      imagePath: seoBase.imagePath,
+      structuredData: {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: `${seoBase.siteUrl}/`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Privacy Policy',
+            item: `${seoBase.siteUrl}/privacy-policy`,
+          },
+        ],
+      },
+    });
   }, []);
 
   return (
@@ -17,6 +35,9 @@ export function PrivacyPolicyPage() {
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Privacy Policy</h1>
+          <p className="text-gray-700 mb-3">
+            This policy explains how GAX Global handles information collected through this website and related communications.
+          </p>
           <p className="text-gray-600">Last updated: April 15, 2026</p>
         </header>
 

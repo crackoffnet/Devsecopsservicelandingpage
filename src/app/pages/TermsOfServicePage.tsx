@@ -1,15 +1,33 @@
 import { useEffect } from 'react';
+import { applySeo, seoBase } from '../lib/seo';
 
 export function TermsOfServicePage() {
   useEffect(() => {
-    document.title = 'Terms of Service | GAX Global';
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute(
-        'content',
-        'Read the GAX Global Terms of Service governing use of the website and related communications and services.'
-      );
-    }
+    applySeo({
+      title: 'Terms of Service | GAX Global',
+      description:
+        'Terms of Service for GAX Global governing use of the website, related communications, and service interactions.',
+      path: '/terms-of-service',
+      imagePath: seoBase.imagePath,
+      structuredData: {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: `${seoBase.siteUrl}/`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Terms of Service',
+            item: `${seoBase.siteUrl}/terms-of-service`,
+          },
+        ],
+      },
+    });
   }, []);
 
   return (
@@ -17,6 +35,9 @@ export function TermsOfServicePage() {
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="mb-10">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Terms of Service</h1>
+          <p className="text-gray-700 mb-3">
+            These terms govern use of the GAX Global website and related interactions.
+          </p>
           <p className="text-gray-600">Last updated: April 15, 2026</p>
         </header>
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gax-global.com/sitemap.xml

@@ -9,12 +9,15 @@ const whyItems = [
 
 export function WhyGaxGlobal() {
   return (
-    <section id="why-gax" className="py-20 bg-gray-50">
+    <section id="about" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white border border-gray-200 rounded-2xl p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Why GAX Global</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">About GAX Global</h2>
           <p className="text-gray-600 mb-6">
-            We focus on practical cloud, DevSecOps, and AI infrastructure improvements that reduce risk and improve delivery speed for lean engineering teams.
+            GAX Global works with SaaS startups and small engineering teams to improve infrastructure security, delivery automation, platform reliability, and AI readiness through practical hands-on engineering.
+          </p>
+          <p className="text-gray-600 mb-6">
+            We focus on specialist DevSecOps and AI infrastructure consulting for cloud-native teams that need clear technical execution, not generic advisory.
           </p>
           <div className="space-y-3">
             {whyItems.map((item) => (

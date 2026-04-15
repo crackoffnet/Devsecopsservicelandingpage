@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">GAX Global DevSecOps and AI Infrastructure Consulting</title>
+  <desc id="desc">Secure cloud, DevSecOps, and AI infrastructure for growing SaaS teams.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#0b1220" />
+      <stop offset="100%" stop-color="#0f2f5b" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" x2="100%" y1="0%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0ea5e9" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect x="64" y="64" width="1072" height="502" rx="24" fill="none" stroke="#1d4ed8" stroke-opacity="0.45" />
+  <text x="96" y="170" fill="#93c5fd" font-size="32" font-family="Arial, Helvetica, sans-serif">GAX Global</text>
+  <text x="96" y="260" fill="#ffffff" font-size="62" font-weight="700" font-family="Arial, Helvetica, sans-serif">DevSecOps + AI Infrastructure</text>
+  <text x="96" y="330" fill="#ffffff" font-size="62" font-weight="700" font-family="Arial, Helvetica, sans-serif">Consulting for SaaS Teams</text>
+  <rect x="96" y="388" width="460" height="8" fill="url(#accent)" />
+  <text x="96" y="456" fill="#cbd5e1" font-size="30" font-family="Arial, Helvetica, sans-serif">Secure cloud delivery, platform reliability, and automation.</text>
+</svg>

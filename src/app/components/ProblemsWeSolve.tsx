@@ -9,6 +9,7 @@ const problems = [
   'releases are stressful and error-prone',
   'cloud operations lack visibility and standards',
   'teams are scaling without platform maturity',
+  'observability and alerting are not where they should be',
 ];
 
 export function ProblemsWeSolve() {

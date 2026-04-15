@@ -24,48 +24,29 @@ export function Footer() {
             <h4 className="font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <button
-                  onClick={() => {
-                    const element = document.getElementById('who-we-help');
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="hover:text-blue-400 transition-colors"
-                >
+                <a href="/#who-we-help" className="hover:text-blue-400 transition-colors">
                   Who We Help
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => {
-                    const element = document.getElementById('services');
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="hover:text-blue-400 transition-colors"
-                >
+                <a href="/#services" className="hover:text-blue-400 transition-colors">
                   Services
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => {
-                    const element = document.getElementById('capabilities');
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="hover:text-blue-400 transition-colors"
-                >
+                <a href="/#capabilities" className="hover:text-blue-400 transition-colors">
                   Capabilities
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={() => {
-                    const element = document.getElementById('contact');
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="hover:text-blue-400 transition-colors"
-                >
+                <a href="/#about" className="hover:text-blue-400 transition-colors">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="/#contact" className="hover:text-blue-400 transition-colors">
                   Contact
-                </button>
+                </a>
               </li>
             </ul>
           </div>

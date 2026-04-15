@@ -14,6 +14,7 @@ import { ChatAssistant } from './components/ChatAssistant';
 import { Toaster } from 'sonner';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsOfServicePage } from './pages/TermsOfServicePage';
+import { applySeo, seoBase } from './lib/seo';
 
 export default function App() {
   const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
@@ -23,14 +24,45 @@ export default function App() {
 
   useEffect(() => {
     if (!isLegalPage) {
-      document.title = 'GAX Global | DevSecOps, AI Infrastructure, CI/CD & Cloud Security';
-      const metaDescription = document.querySelector('meta[name="description"]');
-      if (metaDescription) {
-        metaDescription.setAttribute(
-          'content',
-          'GAX Global helps SaaS startups and small companies improve DevSecOps, AI infrastructure, CI/CD, cloud security, Kubernetes hardening, automation, and operational reliability.'
-        );
-      }
+      applySeo({
+        title: 'GAX Global | DevSecOps, AI Infrastructure, CI/CD & Cloud Security',
+        description:
+          'GAX Global helps SaaS startups and small companies improve DevSecOps, AI infrastructure, CI/CD, cloud security, Kubernetes hardening, automation, and operational reliability.',
+        path: '/',
+        imagePath: seoBase.imagePath,
+        structuredData: [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'GAX Global',
+            url: seoBase.siteUrl,
+            logo: `${seoBase.siteUrl}/favicon.svg`,
+            sameAs: ['https://linkedin.com/company/gax-global'],
+            email: 'info@gax-global.com',
+          },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'GAX Global',
+            url: seoBase.siteUrl,
+          },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'ProfessionalService',
+            name: 'GAX Global',
+            url: seoBase.siteUrl,
+            email: 'info@gax-global.com',
+            serviceType: [
+              'DevSecOps consulting',
+              'AI infrastructure consulting',
+              'CI/CD automation services',
+              'Cloud security consulting',
+              'Kubernetes hardening',
+              'Infrastructure as code consulting',
+            ],
+          },
+        ],
+      });
     }
   }, [isLegalPage]);
 
