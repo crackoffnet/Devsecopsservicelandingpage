@@ -1,4 +1,5 @@
 import { ClipboardCheck, Workflow, ShieldCheck, BrainCircuit } from 'lucide-react';
+import { CAL_BOOKING_URL } from '../config/booking';
 
 const services = [
   {
@@ -99,8 +100,15 @@ export function Services() {
               <p className="mt-4 text-sm text-gray-800 font-medium">
                 Outcome: <span className="font-normal text-gray-700">{service.outcome}</span>
               </p>
-              <a href="/#contact" className="inline-block mt-4 text-sm font-semibold text-blue-700 hover:text-blue-800">
-                Request an assessment
+              <a
+                href={CAL_BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Review your architecture with GAX Global"
+                data-cta="review-your-architecture-services"
+                className="inline-block mt-4 text-sm font-semibold text-blue-700 hover:text-blue-800"
+              >
+                Review your architecture
               </a>
             </div>
           ))}

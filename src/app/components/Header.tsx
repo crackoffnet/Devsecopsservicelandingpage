@@ -1,5 +1,6 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { CAL_BOOKING_URL } from '../config/booking';
 
 const navLinks = [
   { href: '/#services', label: 'Services' },
@@ -34,7 +35,11 @@ export function Header() {
               </a>
             ))}
             <a
-              href="/#contact"
+              href={CAL_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Book a consultation on Cal.com"
+              data-cta="book-consultation-header"
               className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
               Book a consultation
@@ -66,7 +71,11 @@ export function Header() {
               </a>
             ))}
             <a
-              href="/#contact"
+              href={CAL_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Book a consultation on Cal.com"
+              data-cta="book-consultation-header-mobile"
               onClick={() => setMobileMenuOpen(false)}
               className="block w-full text-left px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
             >

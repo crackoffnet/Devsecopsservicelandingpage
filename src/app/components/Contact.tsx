@@ -2,6 +2,7 @@ import { Mail, Linkedin, Globe2, CheckCircle, Loader2 } from 'lucide-react';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { toast } from 'sonner';
+import { CAL_BOOKING_URL } from '../config/booking';
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -293,6 +294,30 @@ Please reply to: ${formData.email}
 
           {/* Contact Info Sidebar */}
           <div className="space-y-6">
+            {/* Why Choose Us */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
+              <h4 className="font-bold text-gray-900 mb-3">Book a free 20-minute infrastructure review</h4>
+              <p className="text-sm text-gray-600 mb-4">
+                Book a short consultation to discuss your infrastructure, CI/CD, Kubernetes, cloud security, or AI platform needs.
+              </p>
+              <ul className="space-y-2 text-sm text-gray-700 mb-5">
+                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>cloud and DevSecOps review</li>
+                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>CI/CD and automation pain points</li>
+                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>Kubernetes and platform security questions</li>
+                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>AI infrastructure and LLMOps planning</li>
+              </ul>
+              <a
+                href={CAL_BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Book a free 20-minute infrastructure review on Cal.com"
+                data-cta="book-free-20min-review-contact"
+                className="block w-full text-center px-4 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium"
+              >
+                Talk to an engineer
+              </a>
+            </div>
+
             {/* Why Choose Us */}
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
               <h4 className="font-bold text-gray-900 mb-4">What Happens Next?</h4>
