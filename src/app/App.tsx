@@ -1,9 +1,11 @@
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { WhoWeHelp } from './components/WhoWeHelp';
 import { Services } from './components/Services';
-import { Process } from './components/Process';
-import { Outcomes } from './components/Outcomes';
-import { QuickContact } from './components/QuickContact';
+import { ProblemsWeSolve } from './components/ProblemsWeSolve';
+import { CapabilityPillars } from './components/CapabilityPillars';
+import { WhyGaxGlobal } from './components/WhyGaxGlobal';
+import { FinalCta } from './components/FinalCta';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ChatAssistant } from './components/ChatAssistant';
@@ -16,13 +18,12 @@ export default function App() {
       <Header />
       <main>
         <Hero />
-
+        <WhoWeHelp />
         <Services />
-
-        <Process />
-        <Outcomes />
-        <QuickContact />
-
+        <ProblemsWeSolve />
+        <CapabilityPillars />
+        <WhyGaxGlobal />
+        <FinalCta />
         <Contact />
       </main>
       <Footer />

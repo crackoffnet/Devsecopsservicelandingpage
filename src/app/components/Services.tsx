@@ -1,90 +1,41 @@
-import {
-  GitBranch,
-  Cloud,
-  Shield,
-  Zap,
-  Database,
-  Lock,
-  Settings,
-  TrendingDown,
-  Workflow,
-  Server,
-  RefreshCw,
-  BrainCircuit
-} from 'lucide-react';
+import { ClipboardCheck, Workflow, ShieldCheck } from 'lucide-react';
 
 const services = [
   {
-    icon: GitBranch,
-    title: 'Secure CI/CD Engineering',
-    description: 'Build guarded delivery pipelines with policy checks, quality gates, and automated release controls.',
-    features: ['GitHub Actions, GitLab CI, Jenkins', 'SAST/DAST/SCA in pipeline', 'Progressive and zero-downtime deploys']
-  },
-  {
-    icon: BrainCircuit,
-    title: 'AI Platform Engineering',
-    description: 'Design production-grade AI platforms for model serving, vector search, and prompt orchestration.',
-    features: ['LLM and RAG architecture', 'Model gateway and observability', 'Inference cost/performance tuning']
-  },
-  {
-    icon: Shield,
-    title: 'Cloud Security Hardening',
-    description: 'Reduce risk with continuous cloud security controls across network, workload, and identity layers.',
-    features: ['CSPM and vulnerability scanning', 'Policy-as-code guardrails', 'Zero-trust and least privilege']
-  },
-  {
-    icon: Zap,
-    title: 'AIOps Automation',
-    description: 'Automate incident detection and remediation using telemetry, anomaly detection, and runbook execution.',
-    features: ['Event correlation pipelines', 'Auto-remediation workflows', 'SLO-driven alert reduction']
-  },
-  {
-    icon: Database,
-    title: 'Data Platform Reliability',
-    description: 'Strengthen data infrastructure used by applications and AI workloads with resilience-first practices.',
-    features: ['Backup and disaster recovery', 'Encryption and key rotation', 'Performance and capacity planning']
-  },
-  {
-    icon: RefreshCw,
-    title: 'Cloud and Kubernetes Migration',
-    description: 'Migrate workloads safely from legacy or on-prem systems to cloud-native environments.',
-    features: ['Migration runway planning', 'Cutover with minimal downtime', 'Post-migration reliability tuning']
-  },
-  {
-    icon: TrendingDown,
-    title: 'FinOps and AI Cost Control',
-    description: 'Control cloud and AI spend with visibility, right-sizing, and intelligent consumption policies.',
-    features: ['Cloud resource rightsizing', 'GPU and inference spend tracking', 'Unit economics dashboards']
-  },
-  {
-    icon: Server,
-    title: 'Hybrid Infrastructure Operations',
-    description: 'Operate secure hybrid environments across cloud, edge, and datacenter footprints.',
-    features: ['Unified observability', 'Secure network connectivity', 'Operational runbook standardization']
+    icon: ClipboardCheck,
+    title: 'DevSecOps & Infrastructure Health Check',
+    description: 'A focused audit of your cloud setup, CI/CD pipelines, Kubernetes posture, infrastructure as code practices, and operational risks.',
+    features: [
+      'cloud and infrastructure review',
+      'CI/CD and release workflow review',
+      'security and hardening review',
+      'Kubernetes and platform risk review',
+      'prioritized findings and action plan',
+    ]
   },
   {
     icon: Workflow,
-    title: 'MLOps and Model CI/CD',
-    description: 'Industrialize model delivery with reproducible training, testing, and deployment pipelines.',
-    features: ['Model registry and lineage', 'Automated model validation', 'Controlled rollout and rollback']
+    title: 'Secure CI/CD & Automation Sprint',
+    description: 'Build or fix secure delivery pipelines, secrets handling, deployment controls, and automation workflows that reduce release risk.',
+    features: [
+      'pipeline setup or remediation',
+      'secrets and environment handling',
+      'release workflow hardening',
+      'deployment automation',
+      'rollback and delivery safeguards',
+    ]
   },
   {
-    icon: Lock,
-    title: 'LLM Security and Governance',
-    description: 'Protect AI systems with controls for prompt injection, data leakage, and unsafe model behavior.',
-    features: ['Prompt and output filtering', 'Secrets and PII protection', 'AI policy and compliance controls']
-  },
-  {
-    icon: Settings,
-    title: 'Observability and Reliability',
-    description: 'Gain operational clarity across infrastructure, apps, and AI workloads in one monitoring plane.',
-    features: ['Prometheus, Grafana, ELK/OpenSearch', 'Golden signal dashboards', 'SRE-oriented incident playbooks']
-  },
-  {
-    icon: Cloud,
-    title: 'Infrastructure as Code',
-    description: 'Standardize environment provisioning with reusable, secure, and version-controlled IaC patterns.',
-    features: ['Terraform and OpenTofu modules', 'Environment drift detection', 'Automated compliance baselines']
+    icon: ShieldCheck,
+    title: 'Cloud & Kubernetes Hardening Sprint',
+    description: 'Strengthen infrastructure, access controls, Kubernetes security, and production readiness for teams running real workloads.',
+    features: [
+      'IAM and access review',
+      'Kubernetes hardening',
+      'policy and configuration review',
+      'workload and platform security improvements',
+      'production readiness recommendations',
+    ]
   }
 ];
 
@@ -95,18 +46,18 @@ export function Services() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 rounded-full mb-4">
-            <span className="text-sm text-blue-700">DevSecOps + AI Services</span>
+            <span className="text-sm text-blue-700">Core Services</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            End-to-End DevSecOps and AI Delivery
+            Focused DevSecOps Engagements
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From secure pipelines to AI platform operations, we cover the full engineering lifecycle for modern teams
+            Practical services built for SaaS startups and small engineering teams that need stronger platform foundations
           </p>
         </div>
 
         {/* Service Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <div
               key={index}

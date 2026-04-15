@@ -18,12 +18,18 @@ export function Header() {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-              GAX-GLOBAL
+              GAX Global
             </h1>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
+            <button
+              onClick={() => scrollToSection('who-we-help')}
+              className="text-gray-700 hover:text-blue-600 transition-colors"
+            >
+              Who We Help
+            </button>
             <button
               onClick={() => scrollToSection('services')}
               className="text-gray-700 hover:text-blue-600 transition-colors"
@@ -31,22 +37,16 @@ export function Header() {
               Services
             </button>
             <button
-              onClick={() => scrollToSection('process')}
+              onClick={() => scrollToSection('capabilities')}
               className="text-gray-700 hover:text-blue-600 transition-colors"
             >
-              Process
-            </button>
-            <button
-              onClick={() => scrollToSection('outcomes')}
-              className="text-gray-700 hover:text-blue-600 transition-colors"
-            >
-              Outcomes
+              Capabilities
             </button>
             <button
               onClick={() => scrollToSection('contact')}
               className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
-              Get Started
+              Book Free Review
             </button>
           </div>
 
@@ -65,28 +65,28 @@ export function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 space-y-2">
             <button
+              onClick={() => scrollToSection('who-we-help')}
+              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg"
+            >
+              Who We Help
+            </button>
+            <button
               onClick={() => scrollToSection('services')}
               className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg"
             >
               Services
             </button>
             <button
-              onClick={() => scrollToSection('process')}
+              onClick={() => scrollToSection('capabilities')}
               className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg"
             >
-              Process
-            </button>
-            <button
-              onClick={() => scrollToSection('outcomes')}
-              className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg"
-            >
-              Outcomes
+              Capabilities
             </button>
             <button
               onClick={() => scrollToSection('contact')}
               className="block w-full text-left px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
             >
-              Get Started
+              Book Free Review
             </button>
           </div>
         )}

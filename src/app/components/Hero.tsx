@@ -1,15 +1,15 @@
-import { ArrowRight, Shield, Cloud, Lock, BrainCircuit } from 'lucide-react';
+import { ArrowRight, Shield } from 'lucide-react';
 
 export function Hero() {
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-16">
+    <section id="home" className="relative min-h-screen flex items-center pt-16">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -26,80 +26,39 @@ export function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full mb-6">
             <Shield className="w-4 h-4 text-blue-400" />
-            <span className="text-sm text-blue-200">DevSecOps + AI Engineering Excellence</span>
+            <span className="text-sm text-blue-200">Specialist DevSecOps Consultancy for SaaS Teams</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Secure, Automate, and Scale DevSecOps and AI Platforms
+            Secure cloud infrastructure and DevSecOps for growing SaaS teams
           </h1>
 
           {/* Subheading */}
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-            End-to-end services for DevSecOps, AI platform engineering, and cloud security. We implement
-            CI/CD, IaC, AIOps, LLM governance, and reliability controls so your teams can ship faster
-            with confidence.
+            We help startups and small companies improve CI/CD, cloud security, infrastructure as code, Kubernetes hardening, and operational reliability across cloud, hybrid, and multicloud environments.
           </p>
 
-          {/* Feature Pills */}
-          <div className="flex flex-wrap gap-3 mb-10">
-            <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-              <Cloud className="w-4 h-4 text-cyan-400" />
-              <span className="text-sm text-white">Cloud & Hybrid</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-              <Lock className="w-4 h-4 text-cyan-400" />
-              <span className="text-sm text-white">Security First</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-              <ArrowRight className="w-4 h-4 text-cyan-400" />
-              <span className="text-sm text-white">Full Automation</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20">
-              <BrainCircuit className="w-4 h-4 text-cyan-400" />
-              <span className="text-sm text-white">AI-Ready Operations</span>
-            </div>
-          </div>
-
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 mb-6">
             <button
-              onClick={scrollToContact}
+              onClick={() => scrollToSection('contact')}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg"
             >
-              <span>Start Your Transformation</span>
+              <span>Book a free 20-minute infrastructure review</span>
               <ArrowRight className="w-5 h-5" />
             </button>
             <button
-              onClick={() => {
-                const element = document.getElementById('services');
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-              }}
+              onClick={() => scrollToSection('services')}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-lg hover:bg-white/20 transition-all border border-white/30"
             >
-              Explore Our Services
+              See services
             </button>
           </div>
-        </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 max-w-4xl">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-1">100%</div>
-            <div className="text-sm text-gray-400">Infrastructure as Code</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-1">24/7</div>
-            <div className="text-sm text-gray-400">Security Monitoring</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-1">50%+</div>
-            <div className="text-sm text-gray-400">Faster AI Delivery</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-1">99.9%</div>
-            <div className="text-sm text-gray-400">Platform Reliability</div>
-          </div>
+          <p className="text-sm text-blue-100/90 max-w-2xl">
+            Hands-on DevSecOps, cloud infrastructure, automation, and platform security for teams that need practical results.
+          </p>
         </div>
       </div>
     </section>

@@ -26,10 +26,9 @@ interface ChatResult {
 const PROJECT_HINTS: Array<{ keywords: string[]; value: string }> = [
   { keywords: ['ci/cd', 'pipeline', 'github actions', 'gitlab', 'jenkins'], value: 'DevSecOps CI/CD Engineering' },
   { keywords: ['security', 'soc2', 'hipaa', 'compliance', 'zero trust'], value: 'Cloud Security Hardening' },
-  { keywords: ['ai', 'llm', 'rag', 'model serving', 'agent'], value: 'AI Platform Engineering' },
-  { keywords: ['mlops', 'model'], value: 'MLOps / Model Delivery' },
-  { keywords: ['aiops', 'observability', 'sre', 'incident'], value: 'AIOps and SRE Automation' },
-  { keywords: ['cost', 'finops', 'optimize spend'], value: 'Cloud and AI Cost Optimization' },
+  { keywords: ['kubernetes', 'cluster', 'k8s'], value: 'Cloud & Kubernetes Hardening Sprint' },
+  { keywords: ['terraform', 'iac', 'automation'], value: 'Secure CI/CD & Automation Sprint' },
+  { keywords: ['cloud', 'aws', 'azure', 'gcp', 'infrastructure'], value: 'DevSecOps & Infrastructure Health Check' },
 ];
 
 const BUDGET_HINTS = [
@@ -116,7 +115,7 @@ function generateReply(userText: string, lead: LeadData): ChatResult {
   if (input.includes('service') || input.includes('what do you offer')) {
     return {
       message:
-        'We support DevSecOps CI/CD, cloud security hardening, AI platform engineering, MLOps, AIOps automation, and cloud/AI cost optimization. If you want, share your project goal and I can suggest the best starting package.',
+        'We offer three core services: DevSecOps & Infrastructure Health Check, Secure CI/CD & Automation Sprint, and Cloud & Kubernetes Hardening Sprint. Share your current challenge and I can recommend the best fit.',
       leadData: extracted,
       leadComplete: false,
     };
@@ -156,7 +155,7 @@ function generateReply(userText: string, lead: LeadData): ChatResult {
     }
     if (nextMissing === 'projectType') {
       return {
-        message: 'Which project type do you need most right now: DevSecOps CI/CD, cloud security, AI platform, MLOps, or AIOps?',
+        message: 'Which project type do you need most right now: Infrastructure Health Check, CI/CD & Automation Sprint, or Cloud & Kubernetes Hardening Sprint?',
         leadData: extracted,
         leadComplete: false,
       };
@@ -180,7 +179,7 @@ function generateReply(userText: string, lead: LeadData): ChatResult {
 
   return {
     message:
-      'Thanks for the details. I can guide your DevSecOps or AI scope and next steps. If you are ready, say "start project" and I will complete a quick intake.',
+      'Thanks for the details. I can guide your DevSecOps scope and next steps. If you are ready, say "start project" and I will complete a quick intake.',
     leadData: extracted,
     leadComplete: false,
   };
@@ -191,7 +190,7 @@ export function ChatAssistant() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: "Hi, I am GAX Assistant. I can answer DevSecOps and AI project questions or help you start a project.",
+      text: "Hi, I am GAX Assistant. I can answer DevSecOps and cloud infrastructure questions or help you start a project.",
       sender: 'bot',
       timestamp: new Date(),
     },
@@ -216,7 +215,7 @@ export function ChatAssistant() {
   const sendLeadEmail = (lead: LeadData) => {
     const subject = encodeURIComponent(`New Chat Lead: ${lead.name}`);
     const body = encodeURIComponent(
-      `New Lead from GAX-GLOBAL Chat
+      `New Lead from GAX Global Chat
 
 Name: ${lead.name}
 Email: ${lead.email}
@@ -310,7 +309,7 @@ Source: Website Chat Assistant`.trim()
                 <div className="font-bold text-sm">GAX Assistant</div>
                 <div className="flex items-center gap-1.5 text-xs text-blue-100">
                   <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full inline-block" />
-                  Fast help for DevSecOps and AI projects
+                  Fast help for DevSecOps and cloud projects
                 </div>
               </div>
             </div>

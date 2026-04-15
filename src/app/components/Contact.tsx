@@ -52,7 +52,7 @@ export function Contact() {
         // EmailJS not configured - use email client as fallback
         const subject = encodeURIComponent(`New Project Request from ${formData.name}`);
         const body = encodeURIComponent(`
-New Project Request from GAX-GLOBAL Website
+New Project Request from GAX Global Website
 
 FROM:
 Name: ${formData.name}
@@ -114,10 +114,10 @@ Please reply to: ${formData.email}
             <span className="text-sm text-blue-700">Start Your Project</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Tell Us About Your DevSecOps or AI Initiative
+            Tell Us About Your DevSecOps Initiative
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Share your goals and constraints so we can craft a secure, practical delivery plan
+            Share your current infrastructure challenges and we will map practical next steps
           </p>
         </div>
 
@@ -195,13 +195,10 @@ Please reply to: ${formData.email}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
                   >
                     <option value="">Select a service...</option>
-                    <option value="DevSecOps CI/CD">DevSecOps CI/CD Engineering</option>
-                    <option value="Cloud Security">Cloud Security Hardening</option>
-                    <option value="AI Platform">AI Platform Engineering</option>
-                    <option value="MLOps">MLOps / Model Delivery</option>
-                    <option value="AIOps">AIOps and SRE Automation</option>
-                    <option value="Cost Optimization">Cloud and AI Cost Optimization</option>
-                    <option value="Full Modernization">Full Platform Modernization</option>
+                    <option value="Health Check">DevSecOps & Infrastructure Health Check</option>
+                    <option value="CI/CD Sprint">Secure CI/CD & Automation Sprint</option>
+                    <option value="Hardening Sprint">Cloud & Kubernetes Hardening Sprint</option>
+                    <option value="Consultation">General DevSecOps Consultation</option>
                     <option value="Other">Other / Consultation</option>
                   </select>
                 </div>
@@ -266,7 +263,7 @@ Please reply to: ${formData.email}
                   disabled={isSubmitting}
                   rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
-                  placeholder="Describe your current stack, security/compliance requirements, AI goals, and expected timeline..."
+                  placeholder="Describe your cloud setup, CI/CD pain points, security concerns, and timeline..."
                 />
               </div>
 
