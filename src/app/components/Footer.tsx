@@ -103,8 +103,8 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-400">{'\u00A9'} {currentYear} GAX Global. All rights reserved.</p>
             <div className="flex gap-6 text-sm text-gray-400">
-              <button className="hover:text-blue-400 transition-colors">Privacy Policy</button>
-              <button className="hover:text-blue-400 transition-colors">Terms of Service</button>
+              <a href="/privacy-policy" className="hover:text-blue-400 transition-colors">Privacy Policy</a>
+              <a href="/terms-of-service" className="hover:text-blue-400 transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>
