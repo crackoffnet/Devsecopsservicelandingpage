@@ -14,21 +14,21 @@ export function FinalCta() {
               href={CAL_BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Book a consultation on Cal.com"
+              aria-label="Book a 30-minute consultation on Cal.com"
               data-cta="book-consultation-final-cta"
               className="px-8 py-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition-colors font-medium"
             >
-              Book a consultation
+              Book a 30-minute consultation
             </a>
             <a
               href={CAL_BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Review your architecture with GAX Global"
+              aria-label="Schedule a 30-minute discussion with GAX Global"
               data-cta="review-architecture-final-cta"
               className="px-8 py-4 rounded-lg border border-white/30 hover:bg-white/10 transition-colors font-medium"
             >
-              Review your architecture
+              Schedule a 30-minute discussion
             </a>
             <a
               href="mailto:info@gax-global.com"

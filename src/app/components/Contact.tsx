@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Globe2, CheckCircle, Loader2 } from 'lucide-react';
+import { Mail, Loader2 } from 'lucide-react';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { toast } from 'sonner';
@@ -124,7 +124,7 @@ Please reply to: ${formData.email}
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Project Request Form - Takes 2 columns */}
-          <div className="lg:col-span-2 bg-white rounded-2xl p-8 shadow-xl border border-gray-200">
+          <div id="project-request-form" className="lg:col-span-2 bg-white rounded-2xl p-8 shadow-xl border border-gray-200">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Project Request Form</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Row 1: Name & Email */}
@@ -292,100 +292,34 @@ Please reply to: ${formData.email}
             </form>
           </div>
 
-          {/* Contact Info Sidebar */}
+          {/* Contact Options Sidebar */}
           <div className="space-y-6">
-            {/* Why Choose Us */}
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-              <h4 className="font-bold text-gray-900 mb-3">Book a free 20-minute infrastructure review</h4>
+              <h4 className="font-bold text-gray-900 mb-3">Choose how to start</h4>
               <p className="text-sm text-gray-600 mb-4">
-                Book a short consultation to discuss your infrastructure, CI/CD, Kubernetes, cloud security, or AI platform needs.
+                Choose one of two options: book a consultation now, or submit a project request with more detail.
               </p>
-              <ul className="space-y-2 text-sm text-gray-700 mb-5">
-                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>cloud and DevSecOps review</li>
-                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>CI/CD and automation pain points</li>
-                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>Kubernetes and platform security questions</li>
-                <li className="flex items-start gap-2"><span className="w-1.5 h-1.5 bg-blue-600 rounded-full mt-2 flex-shrink-0"></span>AI infrastructure and LLMOps planning</li>
-              </ul>
               <a
                 href={CAL_BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Book a free 20-minute infrastructure review on Cal.com"
-                data-cta="book-free-20min-review-contact"
+                aria-label="Book a 30-minute consultation on Cal.com"
+                data-cta="book-30min-consultation-contact"
                 className="block w-full text-center px-4 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium"
               >
-                Talk to an engineer
+                Book a 30-minute consultation
               </a>
-            </div>
-
-            {/* Why Choose Us */}
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200">
-              <h4 className="font-bold text-gray-900 mb-4">What Happens Next?</h4>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <div className="text-sm text-gray-600">
-                    We review your requirements and constraints
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <div className="text-sm text-gray-600">
-                    20-minute infrastructure review call
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <div className="text-sm text-gray-600">
-                    Receive a phased delivery plan and estimate
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                  <div className="text-sm text-gray-600">
-                    Launch execution with secure implementation milestones
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Direct Contact */}
-            <div className="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl p-6 text-white shadow-lg">
-              <h4 className="font-bold mb-4">Prefer to Reach Out Directly?</h4>
-              <div className="space-y-4">
-                <a
-                  href="mailto:info@gax-global.com"
-                  className="flex items-center gap-3 hover:bg-white/10 p-3 rounded-lg transition-colors"
-                >
-                  <Mail className="w-5 h-5 flex-shrink-0" />
-                  <div>
-                    <div className="text-sm font-medium">Email Us</div>
-                    <div className="text-xs text-blue-100">info@gax-global.com</div>
-                  </div>
-                </a>
-
-                <a
-                  href="https://linkedin.com/company/gax-global"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 hover:bg-white/10 p-3 rounded-lg transition-colors"
-                >
-                  <Linkedin className="w-5 h-5 flex-shrink-0" />
-                  <div>
-                    <div className="text-sm font-medium">Connect on LinkedIn</div>
-                    <div className="text-xs text-blue-100">linkedin.com/company/gax-global</div>
-                  </div>
-                </a>
-
-                <div className="flex items-center gap-3 p-3">
-                  <Globe2 className="w-5 h-5 flex-shrink-0" />
-                  <div>
-                    <div className="text-sm font-medium">Engagement Model</div>
-                    <div className="text-xs text-blue-100">Remote-first consulting for SaaS engineering teams</div>
-                    <div className="text-xs text-blue-100 mt-1">Available for cloud, DevSecOps, platform, and AI infrastructure engagements</div>
-                  </div>
-                </div>
-              </div>
+              <a
+                href="#project-request-form"
+                aria-label="Submit a project request using the project request form"
+                data-cta="submit-project-request-contact"
+                className="block w-full text-center px-4 py-3 mt-3 rounded-lg border border-blue-300 text-blue-700 hover:bg-blue-50 transition-colors font-medium"
+              >
+                Submit a project request
+              </a>
+              <p className="text-xs text-gray-500 mt-4">
+                For longer inquiries, use the Project Request Form and include your architecture, CI/CD, security, or AI platform goals.
+              </p>
             </div>
           </div>
         </div>

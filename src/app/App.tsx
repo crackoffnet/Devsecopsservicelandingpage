@@ -10,7 +10,6 @@ import { ProofOutputs } from './components/ProofOutputs';
 import { FinalCta } from './components/FinalCta';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { ChatAssistant } from './components/ChatAssistant';
 import { Toaster } from 'sonner';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsOfServicePage } from './pages/TermsOfServicePage';
@@ -88,7 +87,6 @@ export default function App() {
         </main>
       )}
       <Footer />
-      {!isLegalPage && <ChatAssistant />}
     </div>
   );
 }

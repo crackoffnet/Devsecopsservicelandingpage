@@ -46,11 +46,11 @@ export function Hero() {
               href={CAL_BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Book a free 20-minute infrastructure review on Cal.com"
-              data-cta="book-free-20min-review-hero"
+              aria-label="Book a free 30-minute infrastructure review on Cal.com"
+              data-cta="book-free-30min-review-hero"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg"
             >
-              <span>Book a free 20-minute infrastructure review</span>
+              <span>Book a free 30-minute infrastructure review</span>
               <ArrowRight className="w-5 h-5" />
             </a>
             <button

@@ -104,11 +104,11 @@ export function Services() {
                 href={CAL_BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Review your architecture with GAX Global"
+                aria-label="Schedule a 30-minute discussion with GAX Global"
                 data-cta="review-your-architecture-services"
                 className="inline-block mt-4 text-sm font-semibold text-blue-700 hover:text-blue-800"
               >
-                Review your architecture
+                Schedule a 30-minute discussion
               </a>
             </div>
           ))}
