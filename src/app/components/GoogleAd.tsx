@@ -30,26 +30,3 @@ export function GoogleAd({ slot, format = 'auto', style, className = '' }: Googl
     </div>
   );
 }
-
-// Placeholder Ad Component (for testing without real ads)
-export function GoogleAdPlaceholder({ 
-  height = '250px', 
-  className = '',
-  text = 'Advertisement' 
-}: { 
-  height?: string; 
-  className?: string;
-  text?: string;
-}) {
-  return (
-    <div 
-      className={`bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center ${className}`}
-      style={{ minHeight: height }}
-    >
-      <div className="text-center">
-        <div className="text-gray-400 text-sm font-medium mb-1">{text}</div>
-        <div className="text-xs text-gray-300">Google AdSense Placeholder</div>
-      </div>
-    </div>
-  );
-}
