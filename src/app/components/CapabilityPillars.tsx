@@ -1,4 +1,4 @@
-import { Cloud, GitBranch, Settings, Shield, Activity } from 'lucide-react';
+import { Cloud, GitBranch, Settings, Shield, Activity, BrainCircuit } from 'lucide-react';
 
 const pillars = [
   {
@@ -26,6 +26,12 @@ const pillars = [
       'Reduce cluster risk and improve platform resilience with practical hardening and operational guardrails.',
   },
   {
+    icon: BrainCircuit,
+    title: 'AI Infrastructure & LLMOps',
+    description:
+      'Build secure, scalable foundations for AI applications, model delivery, API integration, observability, and governance.',
+  },
+  {
     icon: Activity,
     title: 'Reliability & Operational Readiness',
     description:
@@ -46,7 +52,7 @@ export function CapabilityPillars() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
           {pillars.map((pillar) => (
             <article key={pillar.title} className="rounded-xl border border-gray-200 p-5 bg-gray-50">
               <div className="w-10 h-10 mb-4 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center">

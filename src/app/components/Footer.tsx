@@ -1,4 +1,4 @@
-import { Linkedin, Mail, Shield, MapPin } from 'lucide-react';
+import { Linkedin, Mail, Shield, Globe2 } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,7 +12,7 @@ export function Footer() {
               GAX Global
             </h3>
             <p className="text-gray-400 mb-4 max-w-md">
-              Specialist DevSecOps and cloud infrastructure consultancy for SaaS startups and small software companies.
+              Specialist DevSecOps, AI infrastructure, and cloud consultancy for SaaS startups and small software companies.
             </p>
             <div className="flex items-center gap-2 text-sm text-gray-400">
               <Shield className="w-4 h-4 text-blue-400" />
@@ -90,16 +90,18 @@ export function Footer() {
                 <span>LinkedIn</span>
               </a>
               <div className="flex items-center gap-2 text-gray-400">
-                <MapPin className="w-5 h-5" />
-                <span>LinkedIn Location: United States</span>
+                <Globe2 className="w-5 h-5" />
+                <span>Remote-first consulting</span>
               </div>
+              <div className="text-gray-400 text-sm">Serving SaaS startups and engineering teams</div>
+              <div className="text-gray-400 text-sm">Available for cloud, DevSecOps, platform, and AI infrastructure engagements</div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-gray-400">© {currentYear} GAX Global. All rights reserved.</p>
+            <p className="text-sm text-gray-400">{'\u00A9'} {currentYear} GAX Global. All rights reserved.</p>
             <div className="flex gap-6 text-sm text-gray-400">
               <button className="hover:text-blue-400 transition-colors">Privacy Policy</button>
               <button className="hover:text-blue-400 transition-colors">Terms of Service</button>

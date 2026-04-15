@@ -1,10 +1,10 @@
-import { ClipboardCheck, Workflow, ShieldCheck } from 'lucide-react';
+import { ClipboardCheck, Workflow, ShieldCheck, BrainCircuit } from 'lucide-react';
 
 const services = [
   {
     icon: ClipboardCheck,
     title: 'DevSecOps & Infrastructure Health Check',
-    description: 'A focused audit of your cloud setup, CI/CD pipelines, Kubernetes posture, infrastructure as code practices, and operational risks.',
+    description: 'A focused review of your cloud setup, CI/CD pipelines, Kubernetes posture, infrastructure as code practices, security gaps, and operational risks.',
     features: [
       'cloud and infrastructure review',
       'CI/CD and release workflow review',
@@ -36,6 +36,18 @@ const services = [
       'workload and platform security improvements',
       'production readiness recommendations',
     ]
+  },
+  {
+    icon: BrainCircuit,
+    title: 'AI Infrastructure & LLMOps Enablement',
+    description: 'Help teams build secure, scalable foundations for AI products and internal AI workloads.',
+    features: [
+      'AI platform architecture support',
+      'model/API gateway integration patterns',
+      'secure AI deployment workflows',
+      'observability and operational readiness for AI services',
+      'governance and environment design for AI systems',
+    ]
   }
 ];
 
@@ -52,12 +64,12 @@ export function Services() {
             Focused DevSecOps Engagements
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Practical services built for SaaS startups and small engineering teams that need stronger platform foundations
+            Practical services built for SaaS startups and small engineering teams that need stronger cloud and AI platform foundations
           </p>
         </div>
 
         {/* Service Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <div
               key={index}

@@ -5,6 +5,7 @@ import { Services } from './components/Services';
 import { ProblemsWeSolve } from './components/ProblemsWeSolve';
 import { CapabilityPillars } from './components/CapabilityPillars';
 import { WhyGaxGlobal } from './components/WhyGaxGlobal';
+import { ProofOutputs } from './components/ProofOutputs';
 import { FinalCta } from './components/FinalCta';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -23,6 +24,7 @@ export default function App() {
         <ProblemsWeSolve />
         <CapabilityPillars />
         <WhyGaxGlobal />
+        <ProofOutputs />
         <FinalCta />
         <Contact />
       </main>

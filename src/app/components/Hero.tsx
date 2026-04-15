@@ -26,17 +26,17 @@ export function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/20 border border-blue-400/30 rounded-full mb-6">
             <Shield className="w-4 h-4 text-blue-400" />
-            <span className="text-sm text-blue-200">Specialist DevSecOps Consultancy for SaaS Teams</span>
+            <span className="text-sm text-blue-200">DevSecOps and AI Infrastructure Consultancy for SaaS Teams</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Secure cloud infrastructure and DevSecOps for growing SaaS teams
+            Secure cloud, DevSecOps, and AI infrastructure for growing SaaS teams
           </h1>
 
           {/* Subheading */}
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-            We help startups and small companies improve CI/CD, cloud security, infrastructure as code, Kubernetes hardening, and operational reliability across cloud, hybrid, and multicloud environments.
+            We help startups and small companies improve CI/CD, cloud security, infrastructure as code, Kubernetes hardening, platform reliability, and AI infrastructure across cloud, hybrid, and multicloud environments.
           </p>
 
           {/* CTA Buttons */}
@@ -57,7 +57,7 @@ export function Hero() {
           </div>
 
           <p className="text-sm text-blue-100/90 max-w-2xl">
-            Hands-on DevSecOps, cloud infrastructure, automation, and platform security for teams that need practical results.
+            Hands-on DevSecOps, cloud architecture, automation, platform security, and AI infrastructure for teams that need practical results.
           </p>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Mail, Linkedin, MapPin, CheckCircle, Loader2 } from 'lucide-react';
+import { Mail, Linkedin, Globe2, CheckCircle, Loader2 } from 'lucide-react';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { toast } from 'sonner';
@@ -114,10 +114,10 @@ Please reply to: ${formData.email}
             <span className="text-sm text-blue-700">Start Your Project</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Tell Us About Your DevSecOps Initiative
+            Tell Us About Your DevSecOps or AI Infrastructure Goals
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Share your current infrastructure challenges and we will map practical next steps
+            Share your current cloud, CI/CD, security, Kubernetes, or AI platform challenges and we will map practical next steps
           </p>
         </div>
 
@@ -198,7 +198,7 @@ Please reply to: ${formData.email}
                     <option value="Health Check">DevSecOps & Infrastructure Health Check</option>
                     <option value="CI/CD Sprint">Secure CI/CD & Automation Sprint</option>
                     <option value="Hardening Sprint">Cloud & Kubernetes Hardening Sprint</option>
-                    <option value="Consultation">General DevSecOps Consultation</option>
+                    <option value="AI Enablement">AI Infrastructure & LLMOps Enablement</option>
                     <option value="Other">Other / Consultation</option>
                   </select>
                 </div>
@@ -263,7 +263,7 @@ Please reply to: ${formData.email}
                   disabled={isSubmitting}
                   rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
-                  placeholder="Describe your cloud setup, CI/CD pain points, security concerns, and timeline..."
+                  placeholder="Describe your cloud setup, CI/CD pain points, security concerns, AI workload needs, and timeline..."
                 />
               </div>
 
@@ -306,7 +306,7 @@ Please reply to: ${formData.email}
                 <div className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                   <div className="text-sm text-gray-600">
-                    30-minute architecture and risk alignment call
+                    20-minute infrastructure review call
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -353,10 +353,11 @@ Please reply to: ${formData.email}
                 </a>
 
                 <div className="flex items-center gap-3 p-3">
-                  <MapPin className="w-5 h-5 flex-shrink-0" />
+                  <Globe2 className="w-5 h-5 flex-shrink-0" />
                   <div>
-                    <div className="text-sm font-medium">LinkedIn Location</div>
-                    <div className="text-xs text-blue-100">United States (Remote-First)</div>
+                    <div className="text-sm font-medium">Engagement Model</div>
+                    <div className="text-xs text-blue-100">Remote-first consulting for SaaS engineering teams</div>
+                    <div className="text-xs text-blue-100 mt-1">Available for cloud, DevSecOps, platform, and AI infrastructure engagements</div>
                   </div>
                 </div>
               </div>

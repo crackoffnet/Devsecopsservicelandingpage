@@ -5,10 +5,10 @@ const problems = [
   'infrastructure is inconsistent across environments',
   'security controls are weak or unclear',
   'Kubernetes feels risky to manage',
+  'AI services are being added without strong platform foundations',
   'releases are stressful and error-prone',
   'cloud operations lack visibility and standards',
   'teams are scaling without platform maturity',
-  'observability and alerting are not where they should be',
 ];
 
 export function ProblemsWeSolve() {
@@ -20,7 +20,7 @@ export function ProblemsWeSolve() {
             <span className="text-sm text-red-700">Problems We Solve</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Common DevSecOps Pain in Growing Teams
+            Common Cloud, DevSecOps, and AI Platform Pain
           </h2>
         </div>
 

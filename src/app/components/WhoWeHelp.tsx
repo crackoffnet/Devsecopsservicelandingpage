@@ -15,7 +15,7 @@ const audience = [
   },
   {
     icon: ShieldAlert,
-    title: 'companies needing stronger security, automation, and reliability',
+    title: 'companies building AI-enabled products and internal platforms',
   },
 ];
 
@@ -31,7 +31,7 @@ export function WhoWeHelp() {
             Built for Lean, Growing Engineering Teams
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We work best with startups and small engineering teams that need stronger infrastructure foundations without building a full in-house platform team.
+            We work with startups and small engineering teams that need stronger cloud, platform, security, and AI foundations without building a full in-house platform organization.
           </p>
         </div>
 

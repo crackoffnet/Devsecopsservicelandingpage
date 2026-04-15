@@ -28,6 +28,7 @@ const PROJECT_HINTS: Array<{ keywords: string[]; value: string }> = [
   { keywords: ['security', 'soc2', 'hipaa', 'compliance', 'zero trust'], value: 'Cloud Security Hardening' },
   { keywords: ['kubernetes', 'cluster', 'k8s'], value: 'Cloud & Kubernetes Hardening Sprint' },
   { keywords: ['terraform', 'iac', 'automation'], value: 'Secure CI/CD & Automation Sprint' },
+  { keywords: ['ai', 'llm', 'genai', 'inference', 'model gateway', 'rag'], value: 'AI Infrastructure & LLMOps Enablement' },
   { keywords: ['cloud', 'aws', 'azure', 'gcp', 'infrastructure'], value: 'DevSecOps & Infrastructure Health Check' },
 ];
 
@@ -115,7 +116,7 @@ function generateReply(userText: string, lead: LeadData): ChatResult {
   if (input.includes('service') || input.includes('what do you offer')) {
     return {
       message:
-        'We offer three core services: DevSecOps & Infrastructure Health Check, Secure CI/CD & Automation Sprint, and Cloud & Kubernetes Hardening Sprint. Share your current challenge and I can recommend the best fit.',
+        'We offer four core services: DevSecOps & Infrastructure Health Check, Secure CI/CD & Automation Sprint, Cloud & Kubernetes Hardening Sprint, and AI Infrastructure & LLMOps Enablement. Share your current challenge and I can recommend the best fit.',
       leadData: extracted,
       leadComplete: false,
     };
@@ -155,7 +156,7 @@ function generateReply(userText: string, lead: LeadData): ChatResult {
     }
     if (nextMissing === 'projectType') {
       return {
-        message: 'Which project type do you need most right now: Infrastructure Health Check, CI/CD & Automation Sprint, or Cloud & Kubernetes Hardening Sprint?',
+        message: 'Which project type do you need most right now: Infrastructure Health Check, CI/CD & Automation Sprint, Cloud & Kubernetes Hardening Sprint, or AI Infrastructure & LLMOps Enablement?',
         leadData: extracted,
         leadComplete: false,
       };
@@ -179,7 +180,7 @@ function generateReply(userText: string, lead: LeadData): ChatResult {
 
   return {
     message:
-      'Thanks for the details. I can guide your DevSecOps scope and next steps. If you are ready, say "start project" and I will complete a quick intake.',
+      'Thanks for the details. I can guide your DevSecOps and AI infrastructure scope and next steps. If you are ready, say "start project" and I will complete a quick intake.',
     leadData: extracted,
     leadComplete: false,
   };
@@ -190,7 +191,7 @@ export function ChatAssistant() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: "Hi, I am GAX Assistant. I can answer DevSecOps and cloud infrastructure questions or help you start a project.",
+      text: "Hi, I am GAX Assistant. I can answer DevSecOps, cloud, and AI infrastructure questions or help you start a project.",
       sender: 'bot',
       timestamp: new Date(),
     },
@@ -309,7 +310,7 @@ Source: Website Chat Assistant`.trim()
                 <div className="font-bold text-sm">GAX Assistant</div>
                 <div className="flex items-center gap-1.5 text-xs text-blue-100">
                   <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full inline-block" />
-                  Fast help for DevSecOps and cloud projects
+                  Fast help for DevSecOps, cloud, and AI infrastructure projects
                 </div>
               </div>
             </div>
