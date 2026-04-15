@@ -4,36 +4,42 @@ const pillars = [
   {
     icon: Cloud,
     title: 'Cloud Infrastructure',
+    href: '/cloud-security-consulting',
     description:
       'Design, improve, and stabilize cloud foundations across AWS, Azure, GCP, hybrid, and multicloud environments.',
   },
   {
     icon: GitBranch,
     title: 'DevSecOps & CI/CD',
+    href: '/devsecops-services',
     description:
       'Build secure delivery workflows with stronger automation, controls, and release confidence.',
   },
   {
     icon: Settings,
     title: 'Infrastructure as Code & Automation',
+    href: '/terraform-iac',
     description:
       'Standardize infrastructure with Terraform, reusable patterns, and consistent environments.',
   },
   {
     icon: Shield,
     title: 'Kubernetes & Platform Security',
+    href: '/kubernetes-hardening',
     description:
       'Reduce cluster risk and improve platform resilience with practical hardening and operational guardrails.',
   },
   {
     icon: BrainCircuit,
     title: 'AI Infrastructure & LLMOps',
+    href: '/ai-infrastructure-llmops',
     description:
       'Build secure, scalable foundations for AI applications, model delivery, API integration, observability, and governance.',
   },
   {
     icon: Activity,
     title: 'Reliability & Operational Readiness',
+    href: '/cicd-automation',
     description:
       'Improve monitoring, alerting, logging, and production stability for real-world engineering teams.',
   },
@@ -58,7 +64,11 @@ export function CapabilityPillars() {
               <div className="w-10 h-10 mb-4 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center">
                 <pillar.icon className="w-5 h-5" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-2">{pillar.title}</h3>
+              <h3 className="font-semibold text-gray-900 mb-2">
+                <a href={pillar.href} className="hover:text-blue-700 transition-colors">
+                  {pillar.title}
+                </a>
+              </h3>
               <p className="text-sm text-gray-600">{pillar.description}</p>
             </article>
           ))}

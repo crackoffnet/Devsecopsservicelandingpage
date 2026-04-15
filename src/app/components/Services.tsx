@@ -4,6 +4,7 @@ import { CAL_BOOKING_URL } from '../config/booking';
 const services = [
   {
     icon: ClipboardCheck,
+    slug: '/devsecops-services',
     title: 'DevSecOps & Infrastructure Health Check',
     description: 'A focused review of your cloud setup, CI/CD pipelines, Kubernetes posture, infrastructure as code practices, security gaps, and operational risks.',
     features: [
@@ -18,6 +19,7 @@ const services = [
   },
   {
     icon: Workflow,
+    slug: '/cicd-automation',
     title: 'Secure CI/CD & Automation Sprint',
     description: 'Build or fix secure delivery pipelines, secrets handling, deployment controls, and automation workflows that reduce release risk.',
     features: [
@@ -32,6 +34,7 @@ const services = [
   },
   {
     icon: ShieldCheck,
+    slug: '/kubernetes-hardening',
     title: 'Cloud & Kubernetes Hardening Sprint',
     description: 'Strengthen infrastructure, access controls, Kubernetes security, and production readiness for teams running real workloads.',
     features: [
@@ -46,6 +49,7 @@ const services = [
   },
   {
     icon: BrainCircuit,
+    slug: '/ai-infrastructure-llmops',
     title: 'AI Infrastructure & LLMOps Enablement',
     description: 'Help teams build secure, scalable foundations for AI products and internal AI workloads.',
     features: [
@@ -87,7 +91,11 @@ export function Services() {
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors">
                 <service.icon className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <a href={service.slug} className="hover:text-blue-700 transition-colors">
+                  {service.title}
+                </a>
+              </h3>
               <p className="text-gray-600 mb-4">{service.description}</p>
               <ul className="space-y-2">
                 {service.features.map((feature, idx) => (
@@ -100,6 +108,9 @@ export function Services() {
               <p className="mt-4 text-sm text-gray-800 font-medium">
                 Outcome: <span className="font-normal text-gray-700">{service.outcome}</span>
               </p>
+              <a href={service.slug} className="inline-block mt-4 text-sm font-semibold text-blue-700 hover:text-blue-800">
+                Learn more
+              </a>
             </div>
           ))}
         </div>

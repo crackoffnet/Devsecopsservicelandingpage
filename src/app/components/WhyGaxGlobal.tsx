@@ -17,7 +17,7 @@ export function WhyGaxGlobal() {
             GAX Global works with SaaS startups and small engineering teams to improve infrastructure security, delivery automation, platform reliability, and AI readiness through practical hands-on engineering.
           </p>
           <p className="text-gray-600 mb-6">
-            We focus on specialist DevSecOps and AI infrastructure consulting for cloud-native teams that need clear technical execution, not generic advisory.
+            We focus on specialist DevSecOps and AI infrastructure consulting for cloud-native teams that need clear execution, not generic advisory.
           </p>
           <div className="space-y-3">
             {whyItems.map((item) => (

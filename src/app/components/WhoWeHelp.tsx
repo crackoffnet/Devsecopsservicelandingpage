@@ -31,7 +31,7 @@ export function WhoWeHelp() {
             Built for Lean, Growing Engineering Teams
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We work with startups and small engineering teams that need stronger cloud, platform, security, and AI foundations without building a full in-house platform organization.
+            We work with startups and small engineering teams that need stronger cloud, security, and AI foundations without building a full in-house platform organization.
           </p>
         </div>
 

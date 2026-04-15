@@ -13,16 +13,35 @@ import { Footer } from './components/Footer';
 import { Toaster } from 'sonner';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsOfServicePage } from './pages/TermsOfServicePage';
+import { DevsecopsServicesPage } from './pages/DevsecopsServicesPage';
+import { AiInfrastructureLlmopsPage } from './pages/AiInfrastructureLlmopsPage';
+import { CicdAutomationPage } from './pages/CicdAutomationPage';
+import { KubernetesHardeningPage } from './pages/KubernetesHardeningPage';
+import { TerraformIacPage } from './pages/TerraformIacPage';
+import { CloudSecurityConsultingPage } from './pages/CloudSecurityConsultingPage';
 import { applySeo, seoBase } from './lib/seo';
 
 export default function App() {
   const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
   const isPrivacyPage = pathname === '/privacy-policy';
   const isTermsPage = pathname === '/terms-of-service';
+  const isDevsecopsServicesPage = pathname === '/devsecops-services';
+  const isAiInfrastructurePage = pathname === '/ai-infrastructure-llmops';
+  const isCicdAutomationPage = pathname === '/cicd-automation';
+  const isKubernetesHardeningPage = pathname === '/kubernetes-hardening';
+  const isTerraformIacPage = pathname === '/terraform-iac';
+  const isCloudSecurityConsultingPage = pathname === '/cloud-security-consulting';
   const isLegalPage = isPrivacyPage || isTermsPage;
+  const isServicePage =
+    isDevsecopsServicesPage ||
+    isAiInfrastructurePage ||
+    isCicdAutomationPage ||
+    isKubernetesHardeningPage ||
+    isTerraformIacPage ||
+    isCloudSecurityConsultingPage;
 
   useEffect(() => {
-    if (!isLegalPage) {
+    if (!isLegalPage && !isServicePage) {
       applySeo({
         title: 'GAX Global | DevSecOps, AI Infrastructure, CI/CD & Cloud Security',
         description:
@@ -63,7 +82,7 @@ export default function App() {
         ],
       });
     }
-  }, [isLegalPage]);
+  }, [isLegalPage, isServicePage]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -73,6 +92,18 @@ export default function App() {
         <PrivacyPolicyPage />
       ) : isTermsPage ? (
         <TermsOfServicePage />
+      ) : isDevsecopsServicesPage ? (
+        <DevsecopsServicesPage />
+      ) : isAiInfrastructurePage ? (
+        <AiInfrastructureLlmopsPage />
+      ) : isCicdAutomationPage ? (
+        <CicdAutomationPage />
+      ) : isKubernetesHardeningPage ? (
+        <KubernetesHardeningPage />
+      ) : isTerraformIacPage ? (
+        <TerraformIacPage />
+      ) : isCloudSecurityConsultingPage ? (
+        <CloudSecurityConsultingPage />
       ) : (
         <main>
           <Hero />
