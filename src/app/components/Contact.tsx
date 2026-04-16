@@ -61,11 +61,10 @@ Email: ${formData.email}
 Company: ${formData.company || 'Not specified'}
 
 PROJECT DETAILS:
-Type: ${formData.helpNeeded}
+What you need help with: ${formData.helpNeeded}
 Budget: ${formData.budget || 'Not specified'}
 Timeline: ${formData.timeline || 'Not specified'}
 Cloud / Stack: ${formData.cloudStack || 'Not specified'}
-Help Needed: ${formData.helpNeeded}
 
 DESCRIPTION:
 ${formData.projectDetails}
