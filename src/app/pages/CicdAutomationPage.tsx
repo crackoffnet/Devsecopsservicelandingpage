@@ -49,6 +49,7 @@ export function CicdAutomationPage() {
         { href: '/terraform-iac', label: 'Terraform and IaC' },
         { href: '/kubernetes-hardening', label: 'Kubernetes hardening' },
         { href: '/cloud-security-consulting', label: 'cloud security consulting' },
+        { href: '/cicd-security-checklist', label: 'CI/CD security checklist' },
       ]}
     />
   );

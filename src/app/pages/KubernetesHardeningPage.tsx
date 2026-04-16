@@ -49,6 +49,7 @@ export function KubernetesHardeningPage() {
         { href: '/devsecops-services', label: 'DevSecOps services' },
         { href: '/terraform-iac', label: 'Terraform and IaC' },
         { href: '/cicd-automation', label: 'CI/CD automation' },
+        { href: '/kubernetes-hardening-checklist', label: 'Kubernetes hardening checklist' },
       ]}
     />
   );

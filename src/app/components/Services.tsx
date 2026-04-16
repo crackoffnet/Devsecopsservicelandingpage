@@ -115,6 +115,27 @@ export function Services() {
           ))}
         </div>
 
+        <div className="mt-10 rounded-xl border border-gray-200 bg-white p-6">
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">Operational checklists</h3>
+          <p className="text-gray-600 text-sm mb-4">
+            Use these practical checklists to assess readiness before starting a consulting engagement.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <a href="/devsecops-assessment-checklist" className="text-sm text-blue-700 hover:text-blue-800">
+              DevSecOps assessment checklist
+            </a>
+            <a href="/ai-infrastructure-readiness-checklist" className="text-sm text-blue-700 hover:text-blue-800">
+              AI infrastructure readiness checklist
+            </a>
+            <a href="/cicd-security-checklist" className="text-sm text-blue-700 hover:text-blue-800">
+              CI/CD security checklist
+            </a>
+            <a href="/kubernetes-hardening-checklist" className="text-sm text-blue-700 hover:text-blue-800">
+              Kubernetes hardening checklist
+            </a>
+          </div>
+        </div>
+
         <div className="mt-10 text-center">
           <p className="text-gray-600 mb-4">Need help deciding the right starting point?</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">

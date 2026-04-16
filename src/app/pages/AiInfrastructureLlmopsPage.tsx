@@ -49,6 +49,7 @@ export function AiInfrastructureLlmopsPage() {
         { href: '/cicd-automation', label: 'CI/CD automation' },
         { href: '/cloud-security-consulting', label: 'cloud security consulting' },
         { href: '/kubernetes-hardening', label: 'Kubernetes hardening' },
+        { href: '/ai-infrastructure-readiness-checklist', label: 'AI infrastructure readiness checklist' },
       ]}
     />
   );

@@ -49,6 +49,7 @@ export function DevsecopsServicesPage() {
         { href: '/kubernetes-hardening', label: 'Kubernetes hardening' },
         { href: '/cloud-security-consulting', label: 'cloud security consulting' },
         { href: '/terraform-iac', label: 'Terraform and IaC' },
+        { href: '/devsecops-assessment-checklist', label: 'DevSecOps assessment checklist' },
       ]}
     />
   );

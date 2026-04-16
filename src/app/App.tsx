@@ -19,6 +19,10 @@ import { CicdAutomationPage } from './pages/CicdAutomationPage';
 import { KubernetesHardeningPage } from './pages/KubernetesHardeningPage';
 import { TerraformIacPage } from './pages/TerraformIacPage';
 import { CloudSecurityConsultingPage } from './pages/CloudSecurityConsultingPage';
+import { DevsecopsAssessmentChecklistPage } from './pages/DevsecopsAssessmentChecklistPage';
+import { AiInfrastructureReadinessChecklistPage } from './pages/AiInfrastructureReadinessChecklistPage';
+import { CicdSecurityChecklistPage } from './pages/CicdSecurityChecklistPage';
+import { KubernetesHardeningChecklistPage } from './pages/KubernetesHardeningChecklistPage';
 import { applySeo, seoBase } from './lib/seo';
 
 export default function App() {
@@ -31,6 +35,10 @@ export default function App() {
   const isKubernetesHardeningPage = pathname === '/kubernetes-hardening';
   const isTerraformIacPage = pathname === '/terraform-iac';
   const isCloudSecurityConsultingPage = pathname === '/cloud-security-consulting';
+  const isDevsecopsChecklistPage = pathname === '/devsecops-assessment-checklist';
+  const isAiChecklistPage = pathname === '/ai-infrastructure-readiness-checklist';
+  const isCicdChecklistPage = pathname === '/cicd-security-checklist';
+  const isKubernetesChecklistPage = pathname === '/kubernetes-hardening-checklist';
   const isLegalPage = isPrivacyPage || isTermsPage;
   const isServicePage =
     isDevsecopsServicesPage ||
@@ -39,9 +47,14 @@ export default function App() {
     isKubernetesHardeningPage ||
     isTerraformIacPage ||
     isCloudSecurityConsultingPage;
+  const isSupportPage =
+    isDevsecopsChecklistPage ||
+    isAiChecklistPage ||
+    isCicdChecklistPage ||
+    isKubernetesChecklistPage;
 
   useEffect(() => {
-    if (!isLegalPage && !isServicePage) {
+    if (!isLegalPage && !isServicePage && !isSupportPage) {
       applySeo({
         title: 'GAX Global | DevSecOps, AI Infrastructure, CI/CD & Cloud Security',
         description:
@@ -82,7 +95,7 @@ export default function App() {
         ],
       });
     }
-  }, [isLegalPage, isServicePage]);
+  }, [isLegalPage, isServicePage, isSupportPage]);
 
   return (
     <div className="min-h-screen bg-white">
@@ -104,6 +117,14 @@ export default function App() {
         <TerraformIacPage />
       ) : isCloudSecurityConsultingPage ? (
         <CloudSecurityConsultingPage />
+      ) : isDevsecopsChecklistPage ? (
+        <DevsecopsAssessmentChecklistPage />
+      ) : isAiChecklistPage ? (
+        <AiInfrastructureReadinessChecklistPage />
+      ) : isCicdChecklistPage ? (
+        <CicdSecurityChecklistPage />
+      ) : isKubernetesChecklistPage ? (
+        <KubernetesHardeningChecklistPage />
       ) : (
         <main>
           <Hero />
