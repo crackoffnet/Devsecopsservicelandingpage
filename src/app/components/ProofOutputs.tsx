@@ -20,6 +20,9 @@ export function ProofOutputs() {
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             What engagements can include
           </h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Practical deliverables that help your team execute with clearer priorities and lower delivery risk.
+          </p>
         </div>
 
         <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8">

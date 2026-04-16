@@ -4,14 +4,20 @@ import emailjs from '@emailjs/browser';
 import { toast } from 'sonner';
 
 export function Contact() {
+  const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID || '';
+  const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '';
+  const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
+  const emailRecipient = import.meta.env.VITE_CONTACT_EMAIL || 'info@gax-global.com';
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
-    projectType: '',
+    helpNeeded: '',
+    cloudStack: '',
     budget: '',
     timeline: '',
-    description: ''
+    projectDetails: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -20,13 +26,7 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      // EmailJS configuration
-      const serviceID = 'YOUR_SERVICE_ID'; // Replace with your EmailJS Service ID
-      const templateID = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS Template ID
-      const publicKey = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS Public Key
-
-      // Check if EmailJS is configured
-      if (serviceID !== 'YOUR_SERVICE_ID' && templateID !== 'YOUR_TEMPLATE_ID' && publicKey !== 'YOUR_PUBLIC_KEY') {
+      if (serviceID && templateID && publicKey) {
         // EmailJS is configured - send email in background
         await emailjs.send(
           serviceID,
@@ -35,11 +35,12 @@ export function Contact() {
             from_name: formData.name,
             from_email: formData.email,
             company: formData.company || 'Not specified',
-            project_type: formData.projectType,
+            project_type: formData.helpNeeded,
+            cloud_stack: formData.cloudStack || 'Not specified',
             budget: formData.budget || 'Not specified',
             timeline: formData.timeline || 'Not specified',
-            message: formData.description,
-            to_email: 'info@gax-global.com'
+            message: formData.projectDetails,
+            to_email: emailRecipient
           },
           publicKey
         );
@@ -60,18 +61,20 @@ Email: ${formData.email}
 Company: ${formData.company || 'Not specified'}
 
 PROJECT DETAILS:
-Type: ${formData.projectType}
+Type: ${formData.helpNeeded}
 Budget: ${formData.budget || 'Not specified'}
 Timeline: ${formData.timeline || 'Not specified'}
+Cloud / Stack: ${formData.cloudStack || 'Not specified'}
+Help Needed: ${formData.helpNeeded}
 
 DESCRIPTION:
-${formData.description}
+${formData.projectDetails}
 
 ---
 Please reply to: ${formData.email}
         `.trim());
 
-        window.open(`mailto:info@gax-global.com?subject=${subject}&body=${body}`, '_blank');
+        window.open(`mailto:${emailRecipient}?subject=${subject}&body=${body}`, '_blank');
         toast.success('Opening email client with your request...', {
           duration: 5000,
         });
@@ -82,10 +85,11 @@ Please reply to: ${formData.email}
         name: '',
         email: '',
         company: '',
-        projectType: '',
+        helpNeeded: '',
+        cloudStack: '',
         budget: '',
         timeline: '',
-        description: ''
+        projectDetails: ''
       });
 
     } catch (error) {
@@ -123,7 +127,7 @@ Please reply to: ${formData.email}
 
         <div className="grid grid-cols-1 gap-8">
           {/* Project Request Form - Takes 2 columns */}
-          <div id="project-request-form" className="lg:col-span-2 bg-white rounded-2xl p-8 shadow-xl border border-gray-200">
+          <div id="project-request-form" className="bg-white rounded-2xl p-8 shadow-xl border border-gray-200">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Project Request Form</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Row 1: Name & Email */}
@@ -182,14 +186,14 @@ Please reply to: ${formData.email}
                 </div>
 
                 <div>
-                  <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 mb-2">
-                    Project Type *
+                  <label htmlFor="helpNeeded" className="block text-sm font-medium text-gray-700 mb-2">
+                    What do you need help with? *
                   </label>
                   <select
-                    id="projectType"
-                    name="projectType"
+                    id="helpNeeded"
+                    name="helpNeeded"
                     required
-                    value={formData.projectType}
+                    value={formData.helpNeeded}
                     onChange={handleChange}
                     disabled={isSubmitting}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
@@ -204,27 +208,22 @@ Please reply to: ${formData.email}
                 </div>
               </div>
 
-              {/* Row 3: Budget & Timeline */}
+              {/* Row 3: Cloud Stack & Timeline */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-2">
-                    Budget Range
+                  <label htmlFor="cloudStack" className="block text-sm font-medium text-gray-700 mb-2">
+                    Cloud / Stack
                   </label>
-                  <select
-                    id="budget"
-                    name="budget"
-                    value={formData.budget}
+                  <input
+                    type="text"
+                    id="cloudStack"
+                    name="cloudStack"
+                    value={formData.cloudStack}
                     onChange={handleChange}
                     disabled={isSubmitting}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
-                  >
-                    <option value="">Select budget...</option>
-                    <option value="Under $10k">Under $10k</option>
-                    <option value="$10k - $50k">$10k - $50k</option>
-                    <option value="$50k - $100k">$50k - $100k</option>
-                    <option value="$100k+">$100k+</option>
-                    <option value="Not sure">Not sure yet</option>
-                  </select>
+                    placeholder="AWS, Azure, GCP, Kubernetes, Terraform, GitHub Actions..."
+                  />
                 </div>
 
                 <div>
@@ -249,21 +248,43 @@ Please reply to: ${formData.email}
                 </div>
               </div>
 
-              {/* Description */}
+              {/* Row 4: Budget */}
               <div>
-                <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">
-                  Project Description *
+                <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-2">
+                  Optional Budget Range
+                </label>
+                <select
+                  id="budget"
+                  name="budget"
+                  value={formData.budget}
+                  onChange={handleChange}
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
+                >
+                  <option value="">Select budget...</option>
+                  <option value="Under $10k">Under $10k</option>
+                  <option value="$10k - $50k">$10k - $50k</option>
+                  <option value="$50k - $100k">$50k - $100k</option>
+                  <option value="$100k+">$100k+</option>
+                  <option value="Not sure">Not sure yet</option>
+                </select>
+              </div>
+
+              {/* Project Details */}
+              <div>
+                <label htmlFor="projectDetails" className="block text-sm font-medium text-gray-700 mb-2">
+                  Project Details *
                 </label>
                 <textarea
-                  id="description"
-                  name="description"
+                  id="projectDetails"
+                  name="projectDetails"
                   required
-                  value={formData.description}
+                  value={formData.projectDetails}
                   onChange={handleChange}
                   disabled={isSubmitting}
                   rows={4}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none disabled:bg-gray-100 disabled:cursor-not-allowed"
-                  placeholder="Describe your cloud setup, CI/CD pain points, security concerns, AI workload needs, and timeline..."
+                  placeholder="Describe your current setup, pain points, and desired outcome."
                 />
               </div>
 
@@ -286,7 +307,7 @@ Please reply to: ${formData.email}
               </button>
 
               <p className="text-sm text-gray-500 text-center">
-                We review each request and reply with next steps within 24 hours
+                We review each request and reply with next steps. If email service is not configured, your email client opens as a fallback.
               </p>
             </form>
           </div>
