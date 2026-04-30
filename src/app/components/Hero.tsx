@@ -1,5 +1,5 @@
 import { ArrowRight, Shield } from 'lucide-react';
-import { CAL_BOOKING_URL } from '../config/booking';
+import { CAL_BOOKING_URL, trackBookAppointmentConversion } from '../config/booking';
 
 export function Hero() {
   return (
@@ -41,6 +41,7 @@ export function Hero() {
               rel="noopener noreferrer"
               aria-label="Book a 30-minute consultation on Cal.com"
               data-cta="book-consultation-hero"
+              onClick={trackBookAppointmentConversion}
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg"
             >
               <span>Book a 30-minute consultation</span>

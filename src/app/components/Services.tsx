@@ -1,5 +1,5 @@
 import { ClipboardCheck, Workflow, ShieldCheck, BrainCircuit } from 'lucide-react';
-import { CAL_BOOKING_URL } from '../config/booking';
+import { CAL_BOOKING_URL, trackBookAppointmentConversion } from '../config/booking';
 
 const services = [
   {
@@ -145,6 +145,7 @@ export function Services() {
               rel="noopener noreferrer"
               aria-label="Book a 30-minute consultation on Cal.com"
               data-cta="book-consultation-services-mid"
+              onClick={trackBookAppointmentConversion}
               className="px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium"
             >
               Book a 30-minute consultation

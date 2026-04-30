@@ -1,4 +1,4 @@
-import { CAL_BOOKING_URL } from '../config/booking';
+import { CAL_BOOKING_URL, trackBookAppointmentConversion } from '../config/booking';
 
 type ChecklistSection = {
   title: string;
@@ -65,6 +65,7 @@ export function SupportChecklistPage({
               rel="noopener noreferrer"
               aria-label="Book a 30-minute consultation on Cal.com"
               data-cta="book-consultation-checklist-page"
+              onClick={trackBookAppointmentConversion}
               className="text-center px-6 py-4 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium"
             >
               Book a 30-minute consultation

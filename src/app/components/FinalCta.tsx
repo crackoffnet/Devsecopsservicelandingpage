@@ -1,4 +1,4 @@
-import { CAL_BOOKING_URL } from '../config/booking';
+import { CAL_BOOKING_URL, trackBookAppointmentConversion } from '../config/booking';
 
 export function FinalCta() {
   return (
@@ -16,6 +16,7 @@ export function FinalCta() {
               rel="noopener noreferrer"
               aria-label="Book a 30-minute consultation on Cal.com"
               data-cta="book-consultation-final-cta"
+              onClick={trackBookAppointmentConversion}
               className="px-8 py-4 rounded-lg bg-blue-600 hover:bg-blue-700 transition-colors font-medium"
             >
               Book a 30-minute consultation
