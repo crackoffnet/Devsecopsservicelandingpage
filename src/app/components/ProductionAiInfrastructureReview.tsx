@@ -29,8 +29,8 @@ export function ProductionAiInfrastructureReview() {
             rel="noopener noreferrer"
             aria-label="Book Infrastructure Review on Cal.com"
             data-cta="book-infrastructure-review"
-            data-location="middle"
-            onClick={createBookReviewClickHandler('middle')}
+            data-location="review"
+            onClick={createBookReviewClickHandler('review')}
             className="inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-400 px-7 py-4 font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition-colors hover:bg-cyan-300"
           >
             Book Infrastructure Review

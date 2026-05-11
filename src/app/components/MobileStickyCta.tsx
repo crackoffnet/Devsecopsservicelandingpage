@@ -30,8 +30,8 @@ export function MobileStickyCta() {
         rel="noopener noreferrer"
         aria-label="Book Infrastructure Review on Cal.com"
         data-cta="book-infrastructure-review"
-        data-location="bottom"
-        onClick={createBookReviewClickHandler('bottom')}
+        data-location="mobile-sticky"
+        onClick={createBookReviewClickHandler('mobile-sticky')}
         className="mx-auto flex max-w-sm items-center justify-center rounded-lg bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950"
       >
         Book Review

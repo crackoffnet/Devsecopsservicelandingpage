@@ -35,8 +35,8 @@ export function ServiceLandingPage({
             rel="noopener noreferrer"
             aria-label="Book Infrastructure Review on Cal.com"
             data-cta="book-infrastructure-review"
-            data-location="middle"
-            onClick={createBookReviewClickHandler('middle')}
+            data-location="review"
+            onClick={createBookReviewClickHandler('review')}
             className="text-center px-6 py-4 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium"
           >
             Book Infrastructure Review

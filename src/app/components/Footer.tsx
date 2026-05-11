@@ -25,8 +25,8 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               data-cta="book-infrastructure-review"
-              data-location="bottom"
-              onClick={createBookReviewClickHandler('bottom')}
+              data-location="footer"
+              onClick={createBookReviewClickHandler('footer')}
               className="mt-5 inline-flex rounded-lg bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-cyan-300"
             >
               Book Infrastructure Review

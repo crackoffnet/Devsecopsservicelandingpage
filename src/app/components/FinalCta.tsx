@@ -16,8 +16,8 @@ export function FinalCta() {
             rel="noopener noreferrer"
             aria-label="Book Infrastructure Review on Cal.com"
             data-cta="book-infrastructure-review"
-            data-location="bottom"
-            onClick={createBookReviewClickHandler('bottom')}
+            data-location="footer"
+            onClick={createBookReviewClickHandler('footer')}
             className="inline-flex px-8 py-4 rounded-lg bg-cyan-400 text-slate-950 hover:bg-cyan-300 transition-colors font-semibold"
           >
             Book Infrastructure Review

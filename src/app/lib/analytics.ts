@@ -1,15 +1,17 @@
 import { CAL_BOOKING_URL, GOOGLE_ADS_BOOK_APPOINTMENT_CONVERSION_ID } from '../config/booking';
 
 type GtagCommand = 'event' | 'js' | 'config';
-export type CtaLocation = 'hero' | 'middle' | 'bottom' | 'case-study' | 'navbar';
+export type CtaLocation = 'hero' | 'navbar' | 'review' | 'case-studies' | 'footer' | 'mobile-sticky';
 
 declare global {
   interface Window {
     gtag?: (command: GtagCommand, target: string | Date, params?: Record<string, unknown>) => void;
+    dataLayer?: unknown[];
     clarity?: {
       (command: string, ...args: unknown[]): void;
       q?: unknown[];
     };
+    __gaxGaInitialized?: boolean;
     __gaxClarityInitialized?: boolean;
     __gaxScrollDepthThresholds?: Set<number>;
     __gaxEngagementListenersInitialized?: boolean;
@@ -30,6 +32,35 @@ export function trackBookReviewClick(location: CtaLocation) {
 
 export function createBookReviewClickHandler(location: CtaLocation) {
   return () => trackBookReviewClick(location);
+}
+
+export function initGoogleAnalytics() {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return;
+
+  const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
+  if (!measurementId) return;
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag =
+    window.gtag ||
+    function gtagQueue(...args: [GtagCommand, string | Date, Record<string, unknown>?]) {
+      window.dataLayer!.push(args);
+    };
+
+  if (!document.querySelector(`script[src="https://www.googletagmanager.com/gtag/js?id=${measurementId}"]`)) {
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+    document.head.appendChild(script);
+  }
+
+  if (!window.__gaxGaInitialized) {
+    window.__gaxGaInitialized = true;
+    window.gtag('config', measurementId, {
+      page_path: window.location.pathname + window.location.search,
+      page_title: document.title,
+    });
+  }
 }
 
 export function initMicrosoftClarity() {
@@ -103,12 +134,19 @@ export function initEngagementTracking() {
     if (!href) return;
 
     if (href.startsWith(CAL_BOOKING_URL)) {
-      trackEvent('booking_link_open', { url: href });
+      trackEvent('calcom_open', { source: 'book-infrastructure-review' });
+      trackEvent('outbound_link_click', {
+        label: 'calcom',
+        url: href,
+      });
       return;
     }
 
     if (href.startsWith('mailto:')) {
-      trackEvent('email_click', { email: href.replace('mailto:', '') });
+      trackEvent('outbound_link_click', {
+        label: 'email',
+        url: href,
+      });
       return;
     }
 
@@ -117,15 +155,15 @@ export function initEngagementTracking() {
     if (!isExternal) return;
 
     if (url.hostname.includes('linkedin.com')) {
-      trackEvent('social_link_click', {
-        platform: 'linkedin',
+      trackEvent('outbound_link_click', {
+        label: 'linkedin',
         url: href,
       });
       return;
     }
 
     trackEvent('outbound_link_click', {
-      domain: url.hostname,
+      label: 'other',
       url: href,
     });
   };

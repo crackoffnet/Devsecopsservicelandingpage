@@ -3,6 +3,7 @@ interface ImportMetaEnv {
   readonly VITE_EMAILJS_TEMPLATE_ID?: string;
   readonly VITE_EMAILJS_PUBLIC_KEY?: string;
   readonly VITE_CONTACT_EMAIL?: string;
+  readonly VITE_GA_MEASUREMENT_ID?: string;
   readonly VITE_CLARITY_PROJECT_ID?: string;
 }
 

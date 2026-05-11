@@ -25,7 +25,7 @@ import { AiInfrastructureReadinessChecklistPage } from './pages/AiInfrastructure
 import { CicdSecurityChecklistPage } from './pages/CicdSecurityChecklistPage';
 import { KubernetesHardeningChecklistPage } from './pages/KubernetesHardeningChecklistPage';
 import { applySeo, seoBase } from './lib/seo';
-import { initEngagementTracking, initMicrosoftClarity, initScrollDepthTracking } from './lib/analytics';
+import { initEngagementTracking, initGoogleAnalytics, initMicrosoftClarity, initScrollDepthTracking } from './lib/analytics';
 
 export default function App() {
   const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
@@ -106,6 +106,7 @@ export default function App() {
   }, [isLegalPage, isServicePage, isSupportPage]);
 
   useEffect(() => {
+    initGoogleAnalytics();
     initMicrosoftClarity();
     const cleanupScrollDepth = initScrollDepthTracking();
     const cleanupEngagement = initEngagementTracking();
