@@ -30,8 +30,15 @@ declare global {
 
 export function trackEvent(name: string, params?: Record<string, unknown>) {
   if (typeof window === 'undefined') return;
-  window.gtag?.('event', name, params);
-  debugLog('event fired', { name, ...(params || {}) });
+  if (!window.gtag) return;
+
+  const eventParams = {
+    ...(params || {}),
+    ...(import.meta.env.DEV ? { debug_mode: true } : {}),
+  };
+
+  window.gtag('event', name, eventParams);
+  debugLog('GA4 event fired', { name, ...eventParams });
 }
 
 export function trackCTA(location: CtaLocation) {
@@ -80,10 +87,13 @@ export function initGoogleAnalytics() {
 
   if (!window.__gaxGaInitialized) {
     window.__gaxGaInitialized = true;
-    window.gtag('config', measurementId, {
-      page_path: window.location.pathname + window.location.search,
-      page_title: document.title,
-    });
+    if (import.meta.env.DEV) {
+      window.gtag('config', measurementId, {
+        debug_mode: true,
+      });
+    } else {
+      window.gtag('config', measurementId);
+    }
     debugLog('analytics initialized', { measurementId });
   }
 }
