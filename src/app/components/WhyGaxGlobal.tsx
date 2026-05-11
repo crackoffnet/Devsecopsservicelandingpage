@@ -3,7 +3,7 @@ import { CheckCircle2 } from 'lucide-react';
 const whyItems = [
   'Experience supporting complex production infrastructure environments',
   'Production reliability and operational resilience focus',
-  'Multi-cluster Kubernetes platform experience',
+  'Kubernetes platform operations across complex environments',
   'Large-scale microservice platform operations',
   'Security and compliance-focused platform delivery',
   'Multi-cloud infrastructure and platform operations',

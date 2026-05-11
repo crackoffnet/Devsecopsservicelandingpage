@@ -69,11 +69,12 @@ export function initGoogleAnalytics() {
       window.dataLayer!.push(args);
     };
 
-  const existingGoogleTag = document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js"]');
-  if (!existingGoogleTag) {
+  const ga4ScriptUrl = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+  const existingGa4Tag = document.querySelector(`script[src="${ga4ScriptUrl}"]`);
+  if (!existingGa4Tag) {
     const script = document.createElement('script');
     script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+    script.src = ga4ScriptUrl;
     document.head.appendChild(script);
   }
 
