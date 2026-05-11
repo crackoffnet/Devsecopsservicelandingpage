@@ -12,7 +12,7 @@ export function Hero() {
             'radial-gradient(circle at top left, rgba(14, 165, 233, 0.28), transparent 32%), linear-gradient(135deg, #020617 0%, #0f172a 48%, #0b3b66 100%)',
         }}
       />
-      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slate-950 to-transparent" />
 
       <div className="relative z-10 mx-auto grid min-h-[calc(100vh-4rem)] max-w-7xl grid-cols-1 items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-20">
         <div className="max-w-3xl">
@@ -53,7 +53,7 @@ export function Hero() {
           </div>
 
           <p className="max-w-2xl text-sm leading-relaxed text-slate-300">
-            Remote / US-based consulting for engineering teams that need stable platforms, clearer operational risk, and practical implementation support.
+            Remote US-focused consulting for engineering teams that need stable platforms, clearer risk, and practical implementation support.
           </p>
         </div>
 
@@ -62,7 +62,7 @@ export function Hero() {
             <div className="mb-6 flex items-center justify-between">
               <div>
                 <p className="text-sm text-cyan-100">Production infrastructure review</p>
-                <p className="text-2xl font-semibold">AI/LLM platform risk</p>
+                <p className="text-2xl font-semibold">Production infrastructure layers</p>
               </div>
               <div className="rounded-lg bg-cyan-400/15 p-3 text-cyan-200">
                 <Network className="h-6 w-6" />
@@ -70,10 +70,11 @@ export function Hero() {
             </div>
             <div className="space-y-4">
               {[
-                'LLM gateways & AI services',
-                'AI gateways, networking & security',
-                'Platform & orchestration layers',
-                'Delivery pipelines & operational controls',
+                'AI/LLM applications & services',
+                'Gateways, APIs & access controls',
+                'Kubernetes, workloads & orchestration',
+                'CI/CD, GitOps & operational guardrails',
+                'Cloud, networking & security foundation',
               ].map((label, index) => (
                 <div key={label} className="relative rounded-xl border border-white/10 bg-slate-950/55 p-4">
                   <div className="flex items-center justify-between gap-4">
@@ -90,13 +91,12 @@ export function Hero() {
             </div>
             <div className="mt-6 grid grid-cols-3 gap-3 text-center">
               {[
-                { label: 'reliability', status: 'validated' },
-                { label: 'scalability', status: 'reviewed' },
-                { label: 'security', status: 'assessed' },
+                'Risk surfaced',
+                'Fixes prioritized',
+                'Delivery supported',
               ].map((item) => (
-                <div key={item.label} className="rounded-lg border border-cyan-300/20 bg-cyan-300/10 px-3 py-4">
-                  <p className="text-xs uppercase tracking-wide text-cyan-100">{item.label}</p>
-                  <p className="mt-1 text-sm font-semibold text-white">{item.status}</p>
+                <div key={item} className="rounded-lg border border-cyan-300/20 bg-cyan-300/10 px-3 py-4">
+                  <p className="text-sm font-semibold text-white">{item}</p>
                 </div>
               ))}
             </div>

@@ -2,6 +2,16 @@ import { CAL_BOOKING_URL, GOOGLE_ADS_BOOK_APPOINTMENT_CONVERSION_ID } from '../c
 
 type GtagCommand = 'event' | 'js' | 'config';
 export type CtaLocation = 'hero' | 'navbar' | 'review' | 'case-studies' | 'footer' | 'mobile-sticky';
+type OutboundLabel = 'linkedin' | 'email' | 'calcom' | 'other';
+
+function debugLog(message: string, data?: Record<string, unknown>) {
+  if (!import.meta.env.DEV) return;
+  if (data) {
+    console.info(`[analytics] ${message}`, data);
+    return;
+  }
+  console.info(`[analytics] ${message}`);
+}
 
 declare global {
   interface Window {
@@ -21,9 +31,10 @@ declare global {
 export function trackEvent(name: string, params?: Record<string, unknown>) {
   if (typeof window === 'undefined') return;
   window.gtag?.('event', name, params);
+  debugLog('event fired', { name, ...(params || {}) });
 }
 
-export function trackBookReviewClick(location: CtaLocation) {
+export function trackCTA(location: CtaLocation) {
   trackEvent('book_review_click', { location });
   trackEvent('conversion', {
     send_to: GOOGLE_ADS_BOOK_APPOINTMENT_CONVERSION_ID,
@@ -31,14 +42,25 @@ export function trackBookReviewClick(location: CtaLocation) {
 }
 
 export function createBookReviewClickHandler(location: CtaLocation) {
-  return () => trackBookReviewClick(location);
+  return () => trackCTA(location);
+}
+
+export function trackScrollDepth(percent: 25 | 50 | 75 | 100) {
+  trackEvent('scroll_depth', { percent });
+}
+
+export function trackOutboundLink(label: OutboundLabel, url: string) {
+  trackEvent('outbound_link_click', { label, url });
 }
 
 export function initGoogleAnalytics() {
   if (typeof window === 'undefined' || typeof document === 'undefined') return;
 
   const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
-  if (!measurementId) return;
+  if (!measurementId) {
+    debugLog('GA4 skipped: missing VITE_GA_MEASUREMENT_ID');
+    return;
+  }
 
   window.dataLayer = window.dataLayer || [];
   window.gtag =
@@ -47,7 +69,8 @@ export function initGoogleAnalytics() {
       window.dataLayer!.push(args);
     };
 
-  if (!document.querySelector(`script[src="https://www.googletagmanager.com/gtag/js?id=${measurementId}"]`)) {
+  const existingGoogleTag = document.querySelector('script[src^="https://www.googletagmanager.com/gtag/js"]');
+  if (!existingGoogleTag) {
     const script = document.createElement('script');
     script.async = true;
     script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
@@ -60,6 +83,7 @@ export function initGoogleAnalytics() {
       page_path: window.location.pathname + window.location.search,
       page_title: document.title,
     });
+    debugLog('analytics initialized', { measurementId });
   }
 }
 
@@ -70,6 +94,7 @@ export function initMicrosoftClarity() {
   const clarityProjectId = import.meta.env.VITE_CLARITY_PROJECT_ID;
   if (!clarityProjectId) {
     // TODO: Add VITE_CLARITY_PROJECT_ID after creating the Microsoft Clarity project.
+    debugLog('Clarity skipped: missing VITE_CLARITY_PROJECT_ID');
     return;
   }
 
@@ -80,11 +105,17 @@ export function initMicrosoftClarity() {
       (window.clarity!.q = window.clarity!.q || []).push([command, ...args]);
     };
 
+  if (document.querySelector(`script[src="https://www.clarity.ms/tag/${clarityProjectId}"]`)) {
+    debugLog('clarity initialized', { clarityProjectId });
+    return;
+  }
+
   const script = document.createElement('script');
   script.async = true;
   script.src = `https://www.clarity.ms/tag/${clarityProjectId}`;
   const firstScript = document.getElementsByTagName('script')[0];
   firstScript.parentNode?.insertBefore(script, firstScript);
+  debugLog('clarity initialized', { clarityProjectId });
 }
 
 export function initScrollDepthTracking() {
@@ -100,7 +131,7 @@ export function initScrollDepthTracking() {
     [25, 50, 75, 100].forEach((percent) => {
       if (scrolled >= percent && !thresholds.has(percent)) {
         thresholds.add(percent);
-        trackEvent('scroll_depth', { percent });
+        trackScrollDepth(percent as 25 | 50 | 75 | 100);
       }
     });
   };
@@ -135,18 +166,12 @@ export function initEngagementTracking() {
 
     if (href.startsWith(CAL_BOOKING_URL)) {
       trackEvent('calcom_open', { source: 'book-infrastructure-review' });
-      trackEvent('outbound_link_click', {
-        label: 'calcom',
-        url: href,
-      });
+      trackOutboundLink('calcom', href);
       return;
     }
 
     if (href.startsWith('mailto:')) {
-      trackEvent('outbound_link_click', {
-        label: 'email',
-        url: href,
-      });
+      trackOutboundLink('email', href);
       return;
     }
 
@@ -155,17 +180,11 @@ export function initEngagementTracking() {
     if (!isExternal) return;
 
     if (url.hostname.includes('linkedin.com')) {
-      trackEvent('outbound_link_click', {
-        label: 'linkedin',
-        url: href,
-      });
+      trackOutboundLink('linkedin', href);
       return;
     }
 
-    trackEvent('outbound_link_click', {
-      label: 'other',
-      url: href,
-    });
+    trackOutboundLink('other', href);
   };
 
   document.addEventListener('click', handleClick);
