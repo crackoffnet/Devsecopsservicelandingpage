@@ -3,19 +3,19 @@ import { Users, Rocket, GitBranch, ShieldAlert } from 'lucide-react';
 const audience = [
   {
     icon: Rocket,
-    title: 'SaaS startups scaling quickly',
+    title: 'AI startups running OpenAI or Azure OpenAI in production',
   },
   {
     icon: Users,
-    title: 'small software companies with cloud complexity',
+    title: 'SaaS teams scaling Kubernetes and cloud platforms',
   },
   {
     icon: GitBranch,
-    title: 'teams with fragile CI/CD or release workflows',
+    title: 'Engineering teams preparing for SOC 2 / ISO 27001',
   },
   {
     icon: ShieldAlert,
-    title: 'companies building AI-enabled products and internal platforms',
+    title: 'Companies with cloud cost, reliability, or security pressure',
   },
 ];
 
@@ -28,10 +28,10 @@ export function WhoWeHelp() {
             <span className="text-sm text-blue-700">Who We Help</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Built for Lean, Growing Engineering Teams
+            Who We Help
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We work with startups and small engineering teams that need stronger cloud, security, and AI foundations without building a full in-house platform organization.
+            Best fit for founders and engineering leaders who already have production infrastructure and need it to hold up under growth, audits, and customer pressure.
           </p>
         </div>
 
@@ -39,7 +39,7 @@ export function WhoWeHelp() {
           {audience.map((item) => (
             <div
               key={item.title}
-              className="bg-gray-50 border border-gray-200 rounded-xl p-6 flex items-start gap-4"
+              className="bg-white border border-gray-200 rounded-xl p-6 flex items-start gap-4 shadow-sm"
             >
               <div className="w-10 h-10 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center flex-shrink-0">
                 <item.icon className="w-5 h-5" />

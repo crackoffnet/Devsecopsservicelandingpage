@@ -1,6 +1,8 @@
 type SeoConfig = {
   title: string;
   description: string;
+  ogTitle?: string;
+  ogDescription?: string;
   path: string;
   type?: 'website' | 'article';
   imagePath?: string;
@@ -63,15 +65,15 @@ export function applySeo(config: SeoConfig) {
   upsertMetaByName('robots', config.robots || 'index,follow');
 
   upsertMetaByProperty('og:type', config.type || 'website');
-  upsertMetaByProperty('og:title', config.title);
-  upsertMetaByProperty('og:description', config.description);
+  upsertMetaByProperty('og:title', config.ogTitle || config.title);
+  upsertMetaByProperty('og:description', config.ogDescription || config.description);
   upsertMetaByProperty('og:url', pageUrl);
   upsertMetaByProperty('og:image', imageUrl);
   upsertMetaByProperty('og:site_name', 'GAX Global');
 
   upsertMetaByName('twitter:card', 'summary_large_image');
-  upsertMetaByName('twitter:title', config.title);
-  upsertMetaByName('twitter:description', config.description);
+  upsertMetaByName('twitter:title', config.ogTitle || config.title);
+  upsertMetaByName('twitter:description', config.ogDescription || config.description);
   upsertMetaByName('twitter:image', imageUrl);
 
   upsertCanonical(pageUrl);

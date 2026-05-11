@@ -32,20 +32,20 @@ export function ServiceLandingPage({
             href={CAL_BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Book a 30-minute consultation on Cal.com"
-            data-cta="book-consultation-service-page"
+            aria-label="Book Infrastructure Review on Cal.com"
+            data-cta="book-infrastructure-review"
             onClick={trackBookAppointmentConversion}
             className="text-center px-6 py-4 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium"
           >
-            Book a 30-minute consultation
+            Book Infrastructure Review
           </a>
           <a
-            href="/#project-request-form"
-            aria-label="Submit a project request"
-            data-cta="submit-project-request-service-page"
+            href="mailto:info@gax-global.com"
+            aria-label="Email GAX Global"
+            data-cta="email-service-page"
             className="text-center px-6 py-4 rounded-lg border border-blue-300 text-blue-700 hover:bg-blue-50 transition-colors font-medium"
           >
-            Submit a project request
+            Email GAX Global
           </a>
         </section>
 

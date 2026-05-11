@@ -1,12 +1,12 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { CAL_BOOKING_URL, trackBookAppointmentConversion } from '../config/booking';
 
 const navLinks = [
-  { href: '/#services', label: 'Services' },
+  { href: '/#problems', label: 'Problems' },
+  { href: '/#review', label: 'Review' },
+  { href: '/#why', label: 'Why GAX' },
   { href: '/#who-we-help', label: 'Who We Help' },
-  { href: '/#capabilities', label: 'Capabilities' },
-  { href: '/#about', label: 'About' },
-  { href: '/#contact', label: 'Contact' },
 ];
 
 export function Header() {
@@ -23,7 +23,7 @@ export function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-7">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -33,6 +33,16 @@ export function Header() {
                 {link.label}
               </a>
             ))}
+            <a
+              href={CAL_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta="book-infrastructure-review"
+              onClick={trackBookAppointmentConversion}
+              className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-blue-600/20 transition-colors hover:bg-blue-700"
+            >
+              Book Infrastructure Review
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -59,6 +69,16 @@ export function Header() {
                 {link.label}
               </a>
             ))}
+            <a
+              href={CAL_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta="book-infrastructure-review"
+              onClick={trackBookAppointmentConversion}
+              className="block w-full rounded-lg bg-blue-600 px-4 py-3 text-center font-semibold text-white"
+            >
+              Book Infrastructure Review
+            </a>
           </div>
         )}
       </nav>

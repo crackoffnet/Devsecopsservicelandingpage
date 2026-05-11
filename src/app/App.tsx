@@ -2,13 +2,10 @@ import { useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { WhoWeHelp } from './components/WhoWeHelp';
-import { Services } from './components/Services';
 import { ProblemsWeSolve } from './components/ProblemsWeSolve';
-import { CapabilityPillars } from './components/CapabilityPillars';
+import { ProductionAiInfrastructureReview } from './components/ProductionAiInfrastructureReview';
 import { WhyGaxGlobal } from './components/WhyGaxGlobal';
-import { ProofOutputs } from './components/ProofOutputs';
 import { FinalCta } from './components/FinalCta';
-import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { Toaster } from 'sonner';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
@@ -56,9 +53,12 @@ export default function App() {
   useEffect(() => {
     if (!isLegalPage && !isServicePage && !isSupportPage) {
       applySeo({
-        title: 'GAX Global | DevSecOps, AI Infrastructure, CI/CD & Cloud Security',
+        title: 'GAX Global | AI Infrastructure, DevSecOps & Kubernetes Consulting',
         description:
-          'GAX Global helps SaaS startups and small companies improve DevSecOps, AI infrastructure, CI/CD, cloud security, Kubernetes hardening, automation, and operational reliability.',
+          'GAX Global helps SaaS and AI startups stabilize Azure/OpenAI, Kubernetes, APIM, cloud security, CI/CD, and production infrastructure before outages and cost spikes become expensive.',
+        ogTitle: 'GAX Global | Fix AI & SaaS Infrastructure Before It Breaks',
+        ogDescription:
+          'DevSecOps, Kubernetes, Azure/OpenAI, APIM, cloud security, CI/CD, and platform reliability consulting for SaaS and AI teams.',
         path: '/',
         imagePath: seoBase.imagePath,
         structuredData: [
@@ -86,6 +86,8 @@ export default function App() {
             serviceType: [
               'DevSecOps consulting',
               'AI infrastructure consulting',
+              'Azure OpenAI consulting',
+              'APIM consulting',
               'CI/CD automation services',
               'Cloud security consulting',
               'Kubernetes hardening',
@@ -128,14 +130,11 @@ export default function App() {
       ) : (
         <main>
           <Hero />
-          <WhoWeHelp />
-          <Services />
           <ProblemsWeSolve />
-          <CapabilityPillars />
+          <ProductionAiInfrastructureReview />
           <WhyGaxGlobal />
-          <ProofOutputs />
+          <WhoWeHelp />
           <FinalCta />
-          <Contact />
         </main>
       )}
       <Footer />

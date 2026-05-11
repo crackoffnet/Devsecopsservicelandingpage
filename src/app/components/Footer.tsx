@@ -24,28 +24,23 @@ export function Footer() {
             <h4 className="font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
+                <a href="/#problems" className="hover:text-blue-400 transition-colors">
+                  Problems
+                </a>
+              </li>
+              <li>
+                <a href="/#review" className="hover:text-blue-400 transition-colors">
+                  Review
+                </a>
+              </li>
+              <li>
+                <a href="/#why" className="hover:text-blue-400 transition-colors">
+                  Why GAX
+                </a>
+              </li>
+              <li>
                 <a href="/#who-we-help" className="hover:text-blue-400 transition-colors">
                   Who We Help
-                </a>
-              </li>
-              <li>
-                <a href="/#services" className="hover:text-blue-400 transition-colors">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="/#capabilities" className="hover:text-blue-400 transition-colors">
-                  Capabilities
-                </a>
-              </li>
-              <li>
-                <a href="/#about" className="hover:text-blue-400 transition-colors">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="/#contact" className="hover:text-blue-400 transition-colors">
-                  Contact
                 </a>
               </li>
             </ul>
