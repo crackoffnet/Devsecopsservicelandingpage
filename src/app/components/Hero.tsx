@@ -1,6 +1,34 @@
-import { ArrowRight, Network, Shield } from 'lucide-react';
+import { ArrowRight, Cloud, GitBranch, LockKeyhole, Network, Server, Shield } from 'lucide-react';
 import { CAL_BOOKING_URL } from '../config/booking';
 import { createBookReviewClickHandler } from '../lib/analytics';
+
+const reviewAreas = [
+  {
+    icon: Server,
+    title: 'AI/LLM Platforms',
+    description: 'Model integrations, gateways, scaling, reliability, and operational risk.',
+  },
+  {
+    icon: Network,
+    title: 'Kubernetes & Platform Operations',
+    description: 'Cluster reliability, workload orchestration, deployment safety, and operational maturity.',
+  },
+  {
+    icon: GitBranch,
+    title: 'CI/CD & Delivery',
+    description: 'Release pipelines, GitOps, rollback readiness, and deployment controls.',
+  },
+  {
+    icon: Cloud,
+    title: 'Cloud & Networking',
+    description: 'Infrastructure design, connectivity, DNS, access patterns, and traffic flow.',
+  },
+  {
+    icon: LockKeyhole,
+    title: 'Security & Compliance',
+    description: 'Access control, secrets, platform hardening, and compliance readiness.',
+  },
+];
 
 export function Hero() {
   return (
@@ -59,45 +87,41 @@ export function Hero() {
 
         <div className="relative hidden lg:block" aria-hidden="true">
           <div className="rounded-2xl border border-white/10 bg-white/10 p-6 shadow-2xl shadow-cyan-950/40 backdrop-blur">
-            <div className="mb-6 flex items-center justify-between">
+            <div className="mb-6 flex items-start justify-between gap-6">
               <div>
-                <p className="text-sm text-cyan-100">Production infrastructure review</p>
-                <p className="text-2xl font-semibold">Production infrastructure layers</p>
+                <p className="text-2xl font-semibold">Production Infrastructure Review</p>
+                <p className="mt-2 text-sm leading-relaxed text-cyan-100">
+                  Key infrastructure areas we help teams assess, stabilize, and improve.
+                </p>
               </div>
               <div className="rounded-lg bg-cyan-400/15 p-3 text-cyan-200">
                 <Network className="h-6 w-6" />
               </div>
             </div>
-            <div className="space-y-4">
-              {[
-                'AI/LLM applications & services',
-                'Gateways, APIs & access controls',
-                'Kubernetes, workloads & orchestration',
-                'CI/CD, GitOps & operational guardrails',
-                'Cloud, networking & security foundation',
-              ].map((label, index) => (
-                <div key={label} className="relative rounded-xl border border-white/10 bg-slate-950/55 p-4">
-                  <div className="flex items-center justify-between gap-4">
-                    <span className="font-medium text-slate-100">{label}</span>
-                    <span className="rounded-full bg-cyan-400/15 px-3 py-1 text-xs text-cyan-100">
-                      layer {index + 1}
-                    </span>
-                  </div>
-                  <div className="mt-3 h-2 overflow-hidden rounded-full bg-slate-800">
-                    <div className="h-full rounded-full bg-gradient-to-r from-cyan-300 to-blue-500" style={{ width: `${86 - index * 9}%` }} />
+            <div className="space-y-3">
+              {reviewAreas.map((area) => (
+                <div key={area.title} className="rounded-xl border border-white/10 bg-slate-950/55 p-4">
+                  <div className="flex items-start gap-3">
+                    <div className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-cyan-400/15 text-cyan-200">
+                      <area.icon className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-slate-100">{area.title}</p>
+                      <p className="mt-1 text-sm leading-relaxed text-slate-300">{area.description}</p>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="mt-6 grid grid-cols-3 gap-3 text-center">
+            <div className="mt-6 flex flex-wrap gap-3">
               {[
-                'Risk surfaced',
+                'Risk identified',
                 'Fixes prioritized',
-                'Delivery supported',
+                'Practical next steps',
               ].map((item) => (
-                <div key={item} className="rounded-lg border border-cyan-300/20 bg-cyan-300/10 px-3 py-4">
-                  <p className="text-sm font-semibold text-white">{item}</p>
-                </div>
+                <span key={item} className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1.5 text-sm font-semibold text-cyan-50">
+                  {item}
+                </span>
               ))}
             </div>
           </div>
