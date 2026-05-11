@@ -1,12 +1,12 @@
 import { CheckCircle2 } from 'lucide-react';
 
 const whyItems = [
-  '15+ years in DevOps, Platform, and DevSecOps',
-  '99.95%+ uptime production environments',
-  '5-7 Kubernetes clusters per project',
-  '200+ microservices supported',
-  'SOC 2 Type II and ISO 27001 passed with zero major findings',
-  'AWS, Azure, GCP, Oracle experience',
+  'Experience supporting complex production infrastructure environments',
+  'Production reliability and operational resilience focus',
+  'Multi-cluster Kubernetes platform experience',
+  'Large-scale microservice platform operations',
+  'Security and compliance-focused platform delivery',
+  'Multi-cloud infrastructure and platform operations',
 ];
 
 export function WhyGaxGlobal() {
@@ -20,7 +20,10 @@ export function WhyGaxGlobal() {
             </div>
             <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">Why GAX Global</h2>
             <p className="text-lg leading-relaxed text-gray-600">
-              Senior, hands-on infrastructure help for teams that need production judgment, not a generic DevOps agency playbook.
+              GAX Global supports engineering teams operating production infrastructure where reliability, security, and operational stability directly affect the business.
+            </p>
+            <p className="mt-4 text-lg leading-relaxed text-gray-600">
+              We work with companies running AI/LLM systems, Kubernetes platforms, cloud infrastructure, and CI/CD pipelines under real customer and scaling pressure.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

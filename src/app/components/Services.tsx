@@ -1,5 +1,6 @@
 import { ClipboardCheck, Workflow, ShieldCheck, BrainCircuit } from 'lucide-react';
-import { CAL_BOOKING_URL, trackBookAppointmentConversion } from '../config/booking';
+import { CAL_BOOKING_URL } from '../config/booking';
+import { createBookReviewClickHandler } from '../lib/analytics';
 
 const services = [
   {
@@ -143,20 +144,21 @@ export function Services() {
               href={CAL_BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Book a 30-minute consultation on Cal.com"
-              data-cta="book-consultation-services-mid"
-              onClick={trackBookAppointmentConversion}
+              aria-label="Book Infrastructure Review on Cal.com"
+              data-cta="book-infrastructure-review"
+              data-location="middle"
+              onClick={createBookReviewClickHandler('middle')}
               className="px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium"
             >
-              Book a 30-minute consultation
+              Book Infrastructure Review
             </a>
             <a
-              href="/#project-request-form"
-              aria-label="Submit a project request"
-              data-cta="submit-project-request-services-mid"
+              href="mailto:info@gax-global.com"
+              aria-label="Email GAX Global"
+              data-cta="email-services-mid"
               className="px-6 py-3 rounded-lg border border-blue-300 text-blue-700 hover:bg-blue-50 transition-colors font-medium"
             >
-              Submit a project request
+              Email GAX Global
             </a>
           </div>
         </div>

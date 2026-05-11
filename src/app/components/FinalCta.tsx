@@ -1,4 +1,5 @@
-import { CAL_BOOKING_URL, trackBookAppointmentConversion } from '../config/booking';
+import { CAL_BOOKING_URL } from '../config/booking';
+import { createBookReviewClickHandler } from '../lib/analytics';
 
 export function FinalCta() {
   return (
@@ -15,7 +16,8 @@ export function FinalCta() {
             rel="noopener noreferrer"
             aria-label="Book Infrastructure Review on Cal.com"
             data-cta="book-infrastructure-review"
-            onClick={trackBookAppointmentConversion}
+            data-location="bottom"
+            onClick={createBookReviewClickHandler('bottom')}
             className="inline-flex px-8 py-4 rounded-lg bg-cyan-400 text-slate-950 hover:bg-cyan-300 transition-colors font-semibold"
           >
             Book Infrastructure Review

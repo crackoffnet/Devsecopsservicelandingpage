@@ -3,33 +3,33 @@ import { AlertCircle, CloudLightning, GitBranch, LockKeyhole, Network, ServerCra
 const problems = [
   {
     icon: ServerCrash,
-    title: 'Unstable AI APIs',
-    copy: 'Random OpenAI or Azure AI failures, bad routing, regional failover issues, and production inference instability.',
+    title: 'AI/LLM Platform Instability',
+    copy: 'Failures across LLM gateways, model integrations, routing, latency, rate limits, and production AI workloads.',
   },
   {
     icon: ShieldAlert,
     title: 'Kubernetes & Platform Risk',
-    copy: 'RBAC gaps, weak isolation, fragile deployments, multi-cluster drift, and platform reliability problems.',
+    copy: 'RBAC gaps, weak isolation, fragile deployments, multi-cluster drift, and reliability issues across platform layers.',
   },
   {
     icon: CloudLightning,
     title: 'Cloud Cost Spikes',
-    copy: 'Unexpected spend from inefficient architecture, duplicate traffic, missing limits, and poor observability.',
+    copy: 'Unexpected spend caused by inefficient architecture, duplicate traffic, missing limits, poor scaling, and weak observability.',
   },
   {
     icon: GitBranch,
     title: 'CI/CD & Release Bottlenecks',
-    copy: 'Slow, risky releases, weak pipeline controls, missing GitOps patterns, and poor rollback readiness.',
+    copy: 'Slow releases, fragile pipelines, missing GitOps controls, poor rollback readiness, and weak deployment governance.',
   },
   {
     icon: LockKeyhole,
     title: 'Security & Compliance Gaps',
-    copy: 'SOC 2, ISO 27001, least privilege, secrets, policy-as-code, and DevSecOps controls.',
+    copy: 'SOC 2, ISO 27001, least privilege, secrets management, policy-as-code, and DevSecOps controls.',
   },
   {
     icon: Network,
-    title: 'Private Networking Issues',
-    copy: 'Private endpoints, DNS, VPN/IPSec, mTLS, APIM backend connectivity, and cross-cloud access problems.',
+    title: 'Networking & Access Issues',
+    copy: 'Private connectivity, DNS, VPN/IPSec, service mesh, mTLS, load balancing, and secure cross-cloud access.',
   },
 ];
 

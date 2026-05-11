@@ -79,6 +79,10 @@ See **`EMAIL-SETUP-GUIDE.md`** for step-by-step instructions.
 - **EmailJS** - Email service
 - **Cloudflare Pages** - Hosting
 
+## Cloudflare TODO
+
+- Consider enabling Cloudflare AI Labyrinth / AI crawler controls from the Cloudflare dashboard if unwanted AI crawler traffic becomes significant.
+
 ## 📧 Contact
 
 - **Email:** info@gax-global.com

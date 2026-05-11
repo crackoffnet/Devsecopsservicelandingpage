@@ -1,4 +1,6 @@
 import { Linkedin, Mail, Shield, Globe2 } from 'lucide-react';
+import { CAL_BOOKING_URL } from '../config/booking';
+import { createBookReviewClickHandler } from '../lib/analytics';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,17 +14,33 @@ export function Footer() {
               GAX Global
             </h3>
             <p className="text-gray-400 mb-4 max-w-md">
-              Specialist DevSecOps, AI infrastructure, and cloud consultancy for SaaS startups and small software companies.
+              Specialist AI infrastructure, DevSecOps, Kubernetes, cloud, CI/CD, and platform reliability consultancy for SaaS and AI teams.
             </p>
             <div className="flex items-center gap-2 text-sm text-gray-400">
               <Shield className="w-4 h-4 text-blue-400" />
               <span>Secure cloud delivery, practical automation, reliable operations</span>
             </div>
+            <a
+              href={CAL_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta="book-infrastructure-review"
+              data-location="bottom"
+              onClick={createBookReviewClickHandler('bottom')}
+              className="mt-5 inline-flex rounded-lg bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-cyan-300"
+            >
+              Book Infrastructure Review
+            </a>
           </div>
 
           <div>
             <h4 className="font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
+              <li>
+                <a href="/#how-we-help" className="hover:text-blue-400 transition-colors">
+                  How We Help
+                </a>
+              </li>
               <li>
                 <a href="/#problems" className="hover:text-blue-400 transition-colors">
                   Problems
@@ -34,13 +52,13 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/#why" className="hover:text-blue-400 transition-colors">
-                  Why GAX
+                <a href="/#case-studies" className="hover:text-blue-400 transition-colors">
+                  Case Studies
                 </a>
               </li>
               <li>
-                <a href="/#who-we-help" className="hover:text-blue-400 transition-colors">
-                  Who We Help
+                <a href="/#why" className="hover:text-blue-400 transition-colors">
+                  Why GAX
                 </a>
               </li>
             </ul>
@@ -67,9 +85,9 @@ export function Footer() {
               </a>
               <div className="flex items-center gap-2 text-gray-400">
                 <Globe2 className="w-5 h-5" />
-                <span>Remote-first consulting</span>
+                <span>Remote / US-based consulting</span>
               </div>
-              <div className="text-gray-400 text-sm">Serving SaaS startups and engineering teams</div>
+              <div className="text-gray-400 text-sm">Typical response within 24 hours</div>
               <div className="text-gray-400 text-sm">Available for cloud, DevSecOps, platform, and AI infrastructure engagements</div>
             </div>
           </div>

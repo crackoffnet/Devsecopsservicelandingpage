@@ -1,13 +1,6 @@
-import { ArrowRight, CheckCircle2, Network, Shield } from 'lucide-react';
-import { CAL_BOOKING_URL, trackBookAppointmentConversion } from '../config/booking';
-
-const trustBullets = [
-  '15+ years production infrastructure experience',
-  'Multi-cloud: AWS, Azure, GCP, Oracle',
-  'Kubernetes platforms with 200+ services',
-  'Azure OpenAI, APIM, private networking',
-  'SOC 2 / ISO 27001 experience',
-];
+import { ArrowRight, Network, Shield } from 'lucide-react';
+import { CAL_BOOKING_URL } from '../config/booking';
+import { createBookReviewClickHandler } from '../lib/analytics';
 
 export function Hero() {
   return (
@@ -25,15 +18,15 @@ export function Hero() {
         <div className="max-w-3xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-400/10 px-4 py-2">
             <Shield className="h-4 w-4 text-cyan-300" />
-            <span className="text-sm text-cyan-100">Senior AI infrastructure, DevSecOps, and platform consulting</span>
+            <span className="text-sm text-cyan-100">AI infrastructure, DevSecOps, and platform reliability consulting</span>
           </div>
 
           <h1 className="mb-6 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-            AI or SaaS infrastructure breaking under real production load?
+            AI or SaaS infrastructure breaking under production load?
           </h1>
 
           <p className="mb-8 text-lg leading-relaxed text-slate-200 sm:text-xl">
-            GAX Global helps startups stabilize Azure/OpenAI, Kubernetes, APIM, and cloud platforms before outages, cost spikes, and security gaps become expensive.
+            GAX Global helps startups stabilize AI/LLM platforms, Kubernetes, CI/CD, and cloud infrastructure before outages, security gaps, and cost spikes become expensive.
           </p>
 
           <div className="mb-8 flex flex-col gap-4 sm:flex-row">
@@ -43,7 +36,8 @@ export function Hero() {
               rel="noopener noreferrer"
               aria-label="Book Infrastructure Review on Cal.com"
               data-cta="book-infrastructure-review"
-              onClick={trackBookAppointmentConversion}
+              data-location="hero"
+              onClick={createBookReviewClickHandler('hero')}
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-400 px-7 py-4 font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition-colors hover:bg-cyan-300"
             >
               <span>Book Infrastructure Review</span>
@@ -58,29 +52,29 @@ export function Hero() {
             </a>
           </div>
 
-          <ul className="grid max-w-2xl grid-cols-1 gap-3 text-sm text-slate-200 sm:grid-cols-2">
-            {trustBullets.map((bullet) => (
-              <li key={bullet} className="flex items-start gap-2">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-cyan-300" />
-                <span>{bullet}</span>
-              </li>
-            ))}
-          </ul>
+          <p className="max-w-2xl text-sm leading-relaxed text-slate-300">
+            Remote / US-based consulting for engineering teams that need stable platforms, clearer operational risk, and practical implementation support.
+          </p>
         </div>
 
         <div className="relative hidden lg:block" aria-hidden="true">
           <div className="rounded-2xl border border-white/10 bg-white/10 p-6 shadow-2xl shadow-cyan-950/40 backdrop-blur">
             <div className="mb-6 flex items-center justify-between">
               <div>
-                <p className="text-sm text-cyan-100">Production risk map</p>
-                <p className="text-2xl font-semibold">AI gateway to platform</p>
+                <p className="text-sm text-cyan-100">Production infrastructure review</p>
+                <p className="text-2xl font-semibold">AI/LLM platform risk</p>
               </div>
               <div className="rounded-lg bg-cyan-400/15 p-3 text-cyan-200">
                 <Network className="h-6 w-6" />
               </div>
             </div>
             <div className="space-y-4">
-              {['OpenAI / Azure OpenAI', 'APIM + private endpoints', 'Kubernetes services', 'CI/CD + GitOps controls'].map((label, index) => (
+              {[
+                'LLM gateways & AI services',
+                'AI gateways, networking & security',
+                'Platform & orchestration layers',
+                'Delivery pipelines & operational controls',
+              ].map((label, index) => (
                 <div key={label} className="relative rounded-xl border border-white/10 bg-slate-950/55 p-4">
                   <div className="flex items-center justify-between gap-4">
                     <span className="font-medium text-slate-100">{label}</span>
@@ -95,10 +89,14 @@ export function Hero() {
               ))}
             </div>
             <div className="mt-6 grid grid-cols-3 gap-3 text-center">
-              {['routing', 'cost', 'security'].map((label) => (
-                <div key={label} className="rounded-lg border border-cyan-300/20 bg-cyan-300/10 px-3 py-4">
-                  <p className="text-xs uppercase tracking-wide text-cyan-100">{label}</p>
-                  <p className="mt-1 text-sm font-semibold text-white">reviewed</p>
+              {[
+                { label: 'reliability', status: 'validated' },
+                { label: 'scalability', status: 'reviewed' },
+                { label: 'security', status: 'assessed' },
+              ].map((item) => (
+                <div key={item.label} className="rounded-lg border border-cyan-300/20 bg-cyan-300/10 px-3 py-4">
+                  <p className="text-xs uppercase tracking-wide text-cyan-100">{item.label}</p>
+                  <p className="mt-1 text-sm font-semibold text-white">{item.status}</p>
                 </div>
               ))}
             </div>

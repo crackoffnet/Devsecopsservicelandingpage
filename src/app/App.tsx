@@ -1,11 +1,15 @@
 import { useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { TrustStrip } from './components/TrustStrip';
+import { HowWeHelp } from './components/HowWeHelp';
 import { WhoWeHelp } from './components/WhoWeHelp';
 import { ProblemsWeSolve } from './components/ProblemsWeSolve';
 import { ProductionAiInfrastructureReview } from './components/ProductionAiInfrastructureReview';
+import { CaseStudies } from './components/CaseStudies';
 import { WhyGaxGlobal } from './components/WhyGaxGlobal';
 import { FinalCta } from './components/FinalCta';
+import { MobileStickyCta } from './components/MobileStickyCta';
 import { Footer } from './components/Footer';
 import { Toaster } from 'sonner';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
@@ -21,6 +25,7 @@ import { AiInfrastructureReadinessChecklistPage } from './pages/AiInfrastructure
 import { CicdSecurityChecklistPage } from './pages/CicdSecurityChecklistPage';
 import { KubernetesHardeningChecklistPage } from './pages/KubernetesHardeningChecklistPage';
 import { applySeo, seoBase } from './lib/seo';
+import { initEngagementTracking, initMicrosoftClarity, initScrollDepthTracking } from './lib/analytics';
 
 export default function App() {
   const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
@@ -53,12 +58,12 @@ export default function App() {
   useEffect(() => {
     if (!isLegalPage && !isServicePage && !isSupportPage) {
       applySeo({
-        title: 'GAX Global | AI Infrastructure, DevSecOps & Kubernetes Consulting',
+        title: 'GAX Global | AI Infrastructure, DevSecOps & Platform Reliability',
         description:
-          'GAX Global helps SaaS and AI startups stabilize Azure/OpenAI, Kubernetes, APIM, cloud security, CI/CD, and production infrastructure before outages and cost spikes become expensive.',
-        ogTitle: 'GAX Global | Fix AI & SaaS Infrastructure Before It Breaks',
+          'GAX Global helps SaaS and AI teams stabilize AI/LLM platforms, Kubernetes, CI/CD, cloud infrastructure, and production systems before outages and cost spikes become expensive.',
+        ogTitle: 'GAX Global | AI Infrastructure & Platform Reliability Consulting',
         ogDescription:
-          'DevSecOps, Kubernetes, Azure/OpenAI, APIM, cloud security, CI/CD, and platform reliability consulting for SaaS and AI teams.',
+          'DevSecOps, Kubernetes, AI/LLM infrastructure, CI/CD, cloud security, compliance, and production reliability consulting for SaaS and AI teams.',
         path: '/',
         imagePath: seoBase.imagePath,
         structuredData: [
@@ -86,6 +91,7 @@ export default function App() {
             serviceType: [
               'DevSecOps consulting',
               'AI infrastructure consulting',
+              'LLM platform consulting',
               'Azure OpenAI consulting',
               'APIM consulting',
               'CI/CD automation services',
@@ -98,6 +104,17 @@ export default function App() {
       });
     }
   }, [isLegalPage, isServicePage, isSupportPage]);
+
+  useEffect(() => {
+    initMicrosoftClarity();
+    const cleanupScrollDepth = initScrollDepthTracking();
+    const cleanupEngagement = initEngagementTracking();
+
+    return () => {
+      cleanupScrollDepth();
+      cleanupEngagement();
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -130,11 +147,15 @@ export default function App() {
       ) : (
         <main>
           <Hero />
+          <TrustStrip />
+          <HowWeHelp />
           <ProblemsWeSolve />
           <ProductionAiInfrastructureReview />
+          <CaseStudies />
           <WhyGaxGlobal />
           <WhoWeHelp />
           <FinalCta />
+          <MobileStickyCta />
         </main>
       )}
       <Footer />

@@ -1,4 +1,5 @@
-import { CAL_BOOKING_URL, trackBookAppointmentConversion } from '../config/booking';
+import { CAL_BOOKING_URL } from '../config/booking';
+import { createBookReviewClickHandler } from '../lib/analytics';
 
 type ServiceLandingPageProps = {
   title: string;
@@ -34,7 +35,8 @@ export function ServiceLandingPage({
             rel="noopener noreferrer"
             aria-label="Book Infrastructure Review on Cal.com"
             data-cta="book-infrastructure-review"
-            onClick={trackBookAppointmentConversion}
+            data-location="middle"
+            onClick={createBookReviewClickHandler('middle')}
             className="text-center px-6 py-4 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium"
           >
             Book Infrastructure Review

@@ -3,19 +3,19 @@ import { Users, Rocket, GitBranch, ShieldAlert } from 'lucide-react';
 const audience = [
   {
     icon: Rocket,
-    title: 'AI startups running OpenAI or Azure OpenAI in production',
+    title: 'Teams building or operating AI/LLM-powered platforms',
   },
   {
     icon: Users,
-    title: 'SaaS teams scaling Kubernetes and cloud platforms',
+    title: 'Engineering teams managing growing cloud and platform complexity',
   },
   {
     icon: GitBranch,
-    title: 'Engineering teams preparing for SOC 2 / ISO 27001',
+    title: 'Organizations improving security, operational maturity, and compliance readiness',
   },
   {
     icon: ShieldAlert,
-    title: 'Companies with cloud cost, reliability, or security pressure',
+    title: 'Teams experiencing reliability, scaling, or infrastructure efficiency pressure',
   },
 ];
 
@@ -31,7 +31,7 @@ export function WhoWeHelp() {
             Who We Help
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Best fit for founders and engineering leaders who already have production infrastructure and need it to hold up under growth, audits, and customer pressure.
+            Built for founders and engineering leaders who need a trusted infrastructure partner as systems become more important to revenue, customer trust, and delivery speed.
           </p>
         </div>
 
