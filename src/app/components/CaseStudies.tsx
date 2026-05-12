@@ -5,18 +5,18 @@ import { createBookReviewClickHandler } from '../lib/analytics';
 const caseStudies = [
   {
     title: 'Stabilizing Multi-Region AI Infrastructure',
-    copy: 'Resolved routing instability and production failures across distributed AI/LLM infrastructure by redesigning gateway and platform reliability patterns.',
-    metrics: ['Improved reliability', 'Reduced production failures', 'Strengthened operational visibility'],
+    copy: 'Reviewed a production AI platform under customer-facing load, isolated reliability risks in gateway and routing patterns, and supported targeted fixes.',
+    metrics: ['More stable AI request flow', 'Fewer failure points in critical paths', 'Clearer production visibility'],
   },
   {
     title: 'Reducing Kubernetes Platform Risk',
-    copy: 'Reviewed Kubernetes access controls, deployment processes, and operational guardrails to reduce hidden platform and security risks.',
-    metrics: ['Reduced operational exposure', 'Improved deployment consistency', 'Strengthened platform governance'],
+    copy: 'Assessed Kubernetes access, deployment controls, and operational guardrails for a scaling SaaS environment preparing for higher reliability expectations.',
+    metrics: ['Reduced platform exposure', 'Improved release confidence', 'Stronger operational guardrails'],
   },
   {
     title: 'Cloud Cost & Platform Optimization',
-    copy: 'Identified inefficient scaling, duplicated traffic flows, and weak observability patterns that increased infrastructure cost.',
-    metrics: ['Improved efficiency', 'Reduced unnecessary resource usage', 'Improved infrastructure visibility'],
+    copy: 'Identified inefficient scaling, duplicated traffic paths, and observability gaps that made cloud spend harder to control during growth.',
+    metrics: ['Lower avoidable infrastructure waste', 'Better cost signals', 'Improved capacity visibility'],
   },
 ];
 
@@ -30,7 +30,7 @@ export function CaseStudies() {
           </div>
           <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Anonymized Production Outcomes</h2>
           <p className="text-lg leading-relaxed text-slate-200">
-            Representative infrastructure improvements from complex AI, platform, Kubernetes, and cloud environments.
+            Representative, anonymized engagements focused on infrastructure outcomes rather than resumes, headcount, or broad program claims.
           </p>
         </div>
 

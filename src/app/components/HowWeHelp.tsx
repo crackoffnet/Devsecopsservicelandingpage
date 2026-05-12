@@ -1,15 +1,15 @@
 const steps = [
   {
-    title: 'Review',
-    copy: 'We assess infrastructure reliability, security, delivery pipelines, and operational risk.',
+    title: 'Review production risk',
+    copy: 'We examine AI/LLM infrastructure, Kubernetes, CI/CD, cloud architecture, security controls, and operational weak points under real production pressure.',
   },
   {
-    title: 'Identify',
-    copy: 'We identify the highest-risk issues affecting scalability, stability, cost, or security.',
+    title: 'Prioritize practical fixes',
+    copy: 'We separate urgent production risks from nice-to-have improvements so teams know what to fix first, why it matters, and what tradeoffs are involved.',
   },
   {
-    title: 'Improve',
-    copy: 'We provide practical next-step recommendations and implementation support.',
+    title: 'Support implementation',
+    copy: 'We work hands-on with your team to improve reliability, delivery, security readiness, observability, cost control, and platform operations.',
   },
 ];
 
@@ -23,7 +23,7 @@ export function HowWeHelp() {
           </div>
           <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">How We Help</h2>
           <p className="text-lg leading-relaxed text-gray-600">
-            A practical path from vague infrastructure concern to prioritized action.
+            A focused path from unclear platform risk to senior technical action, without layers of account management or generic transformation programs.
           </p>
         </div>
 

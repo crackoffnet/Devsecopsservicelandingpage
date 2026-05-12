@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { HowWeHelp } from './components/HowWeHelp';
 import { WhoWeHelp } from './components/WhoWeHelp';
+import { CapabilityPillars } from './components/CapabilityPillars';
 import { ProblemsWeSolve } from './components/ProblemsWeSolve';
 import { ProductionAiInfrastructureReview } from './components/ProductionAiInfrastructureReview';
 import { CaseStudies } from './components/CaseStudies';
@@ -59,10 +60,10 @@ export default function App() {
       applySeo({
         title: 'GAX Global | AI Infrastructure, DevSecOps & Platform Reliability',
         description:
-          'GAX Global helps SaaS and AI teams stabilize AI/LLM platforms, Kubernetes, CI/CD, cloud infrastructure, and production systems before outages and cost spikes become expensive.',
+          'GAX Global provides senior, hands-on AI infrastructure, DevSecOps, and platform reliability consulting for AI startups and SaaS teams without large-firm overhead.',
         ogTitle: 'GAX Global | AI Infrastructure & Platform Reliability Consulting',
         ogDescription:
-          'DevSecOps, Kubernetes, AI/LLM infrastructure, CI/CD, cloud security, compliance, and production reliability consulting for SaaS and AI teams.',
+          'Boutique AI infrastructure, Kubernetes, CI/CD, DevSecOps, cloud architecture, compliance readiness, and production reliability consulting for SaaS and AI teams.',
         path: '/',
         imagePath: seoBase.imagePath,
         structuredData: [
@@ -148,6 +149,7 @@ export default function App() {
         <main>
           <Hero />
           <HowWeHelp />
+          <CapabilityPillars />
           <ProblemsWeSolve />
           <ProductionAiInfrastructureReview />
           <CaseStudies />

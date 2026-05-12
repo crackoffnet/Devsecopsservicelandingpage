@@ -1,47 +1,47 @@
-import { Cloud, GitBranch, Settings, Shield, Activity, BrainCircuit } from 'lucide-react';
+import { Activity, BrainCircuit, Cloud, GitBranch, Network, Shield } from 'lucide-react';
 
 const pillars = [
   {
-    icon: Cloud,
-    title: 'Cloud Infrastructure',
-    href: '/cloud-security-consulting',
+    icon: BrainCircuit,
+    title: 'AI/LLM infrastructure reliability',
+    href: '/ai-infrastructure-llmops',
     description:
-      'Design, improve, and stabilize cloud foundations across AWS, Azure, GCP, hybrid, and multicloud environments.',
-  },
-  {
-    icon: GitBranch,
-    title: 'DevSecOps & CI/CD',
-    href: '/devsecops-services',
-    description:
-      'Build secure delivery workflows with stronger automation, controls, and release confidence.',
-  },
-  {
-    icon: Settings,
-    title: 'Infrastructure as Code & Automation',
-    href: '/terraform-iac',
-    description:
-      'Standardize infrastructure with Terraform, reusable patterns, and consistent environments.',
+      'Model gateways, API integrations, scaling patterns, latency, observability, and operational failure modes for production AI systems.',
   },
   {
     icon: Shield,
-    title: 'Kubernetes & Platform Security',
+    title: 'Kubernetes and platform operations',
     href: '/kubernetes-hardening',
     description:
-      'Reduce cluster risk and improve platform resilience with practical hardening and operational guardrails.',
+      'Cluster reliability, workload isolation, access control, deployment safety, platform governance, and operational guardrails.',
   },
   {
-    icon: BrainCircuit,
-    title: 'AI Infrastructure & LLMOps',
-    href: '/ai-infrastructure-llmops',
+    icon: GitBranch,
+    title: 'CI/CD and GitOps delivery',
+    href: '/cicd-automation',
     description:
-      'Build secure, scalable foundations for AI applications, model delivery, API integration, observability, and governance.',
+      'Release pipelines, GitOps controls, rollback readiness, environment promotion, policy checks, and deployment consistency.',
+  },
+  {
+    icon: Network,
+    title: 'Cloud architecture and networking',
+    href: '/cloud-security-consulting',
+    description:
+      'Cloud foundations, private connectivity, DNS, traffic flow, access patterns, service boundaries, and cross-cloud networking.',
+  },
+  {
+    icon: Cloud,
+    title: 'DevSecOps and compliance readiness',
+    href: '/devsecops-services',
+    description:
+      'Least privilege, secrets handling, platform hardening, policy-as-code, audit preparation, and evidence-ready delivery controls.',
   },
   {
     icon: Activity,
-    title: 'Reliability & Operational Readiness',
+    title: 'Cost and observability improvements',
     href: '/cicd-automation',
     description:
-      'Improve monitoring, alerting, logging, and production stability for real-world engineering teams.',
+      'Logging, metrics, tracing, alert quality, scaling efficiency, wasted spend, capacity signals, and production visibility.',
   },
 ];
 
@@ -51,11 +51,14 @@ export function CapabilityPillars() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 rounded-full mb-4">
-            <span className="text-sm text-blue-700">Capability Pillars</span>
+            <span className="text-sm text-blue-700">Technical Focus Areas</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Core Delivery Capabilities
+            Technical Focus Areas
           </h2>
+          <p className="mx-auto max-w-3xl text-lg text-gray-600">
+            Narrow, production-oriented infrastructure expertise for teams that need senior platform judgment and hands-on delivery.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">

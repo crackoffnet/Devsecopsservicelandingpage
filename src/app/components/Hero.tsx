@@ -54,7 +54,7 @@ export function Hero() {
           </h1>
 
           <p className="mb-8 text-lg leading-relaxed text-slate-200 sm:text-xl">
-            GAX Global helps startups stabilize AI/LLM platforms, Kubernetes, CI/CD, and cloud infrastructure before outages, security gaps, and cost spikes become expensive.
+            GAX Global provides senior, hands-on infrastructure support for AI and SaaS teams that need production systems stabilized without the overhead of a large consulting firm.
           </p>
 
           <div className="mb-8 flex flex-col gap-4 sm:flex-row">
@@ -81,7 +81,7 @@ export function Hero() {
           </div>
 
           <p className="max-w-2xl text-sm leading-relaxed text-slate-300">
-            Remote US-focused consulting for engineering teams that need stable platforms, clearer risk, and practical implementation support.
+            Focused boutique consulting for engineering leaders who need clear risk review, practical fixes, and implementation support across AI infrastructure, DevSecOps, and platform reliability.
           </p>
         </div>
 

@@ -1,12 +1,12 @@
 import { CheckCircle2 } from 'lucide-react';
 
 const whyItems = [
-  'Experience supporting complex production infrastructure environments',
-  'Production reliability and operational resilience focus',
-  'Kubernetes platform operations across complex environments',
-  'Large-scale microservice platform operations',
-  'Security and compliance-focused platform delivery',
-  'Multi-cloud infrastructure and platform operations',
+  'Senior hands-on infrastructure support without large-firm overhead',
+  'Focused AI infrastructure, DevSecOps, and platform reliability expertise',
+  'Practical production risk review before outages, audits, or scaling events',
+  'Implementation support from the same senior technical partner who reviews the risk',
+  'Clear prioritization instead of generic roadmaps or layered delivery models',
+  'Boutique engagement model for teams that need depth, speed, and accountability',
 ];
 
 export function WhyGaxGlobal() {
@@ -20,10 +20,10 @@ export function WhyGaxGlobal() {
             </div>
             <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">Why GAX Global</h2>
             <p className="text-lg leading-relaxed text-gray-600">
-              GAX Global supports engineering teams operating production infrastructure where reliability, security, and operational stability directly affect the business.
+              Senior hands-on infrastructure support without the overhead of a large consulting firm.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-gray-600">
-              We work with companies running AI/LLM systems, Kubernetes platforms, cloud infrastructure, and CI/CD pipelines under real customer and scaling pressure.
+              GAX Global is built for teams that need direct technical help with AI/LLM infrastructure, Kubernetes, CI/CD, cloud architecture, DevSecOps, and platform reliability, not a broad bench of generalized consultants.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

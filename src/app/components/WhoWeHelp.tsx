@@ -3,19 +3,19 @@ import { Users, Rocket, GitBranch, ShieldAlert } from 'lucide-react';
 const audience = [
   {
     icon: Rocket,
-    title: 'Teams building or operating AI/LLM-powered platforms',
+    title: 'AI startups moving from prototype to production',
   },
   {
     icon: Users,
-    title: 'Engineering teams managing growing cloud and platform complexity',
+    title: 'SaaS teams experiencing scaling pressure',
   },
   {
     icon: GitBranch,
-    title: 'Organizations improving security, operational maturity, and compliance readiness',
+    title: 'Engineering leaders needing senior platform guidance',
   },
   {
     icon: ShieldAlert,
-    title: 'Teams experiencing reliability, scaling, or infrastructure efficiency pressure',
+    title: 'Teams preparing for audits or reliability improvements',
   },
 ];
 
@@ -25,13 +25,13 @@ export function WhoWeHelp() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 rounded-full mb-4">
-            <span className="text-sm text-blue-700">Who We Help</span>
+            <span className="text-sm text-blue-700">Best Fit For</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Who We Help
+            Best Fit For
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Built for founders and engineering leaders who need a trusted infrastructure partner as systems become more important to revenue, customer trust, and delivery speed.
+            Best for focused engineering organizations that need senior platform guidance, production judgment, and hands-on support without hiring a large consulting team.
           </p>
         </div>
 
