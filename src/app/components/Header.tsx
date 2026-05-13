@@ -4,10 +4,9 @@ import { CAL_BOOKING_URL } from '../config/booking';
 import { createBookReviewClickHandler } from '../lib/analytics';
 
 const navLinks = [
-  { href: '/#how-we-help', label: 'How We Help' },
-  { href: '/#problems', label: 'Problems' },
-  { href: '/#review', label: 'Review' },
-  { href: '/#case-studies', label: 'Case Studies' },
+  { href: '/services', label: 'Services' },
+  { href: '/infrastructure-review', label: 'Review' },
+  { href: '/insights', label: 'Insights' },
   { href: '/#why', label: 'Why GAX' },
 ];
 

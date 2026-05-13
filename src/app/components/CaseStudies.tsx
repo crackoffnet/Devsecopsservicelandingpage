@@ -30,7 +30,7 @@ export function CaseStudies() {
           </div>
           <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Anonymized Production Outcomes</h2>
           <p className="text-lg leading-relaxed text-slate-200">
-            Representative, anonymized engagements focused on infrastructure outcomes rather than resumes, headcount, or broad program claims.
+            Representative, anonymized engagements focused on infrastructure outcomes rather than headcount, credentials, or broad program claims.
           </p>
         </div>
 

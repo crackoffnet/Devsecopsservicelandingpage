@@ -15,6 +15,11 @@ import { Toaster } from 'sonner';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { TermsOfServicePage } from './pages/TermsOfServicePage';
 import { DevsecopsServicesPage } from './pages/DevsecopsServicesPage';
+import { ServicesPage } from './pages/ServicesPage';
+import { InfrastructureReviewPage } from './pages/InfrastructureReviewPage';
+import { InsightsPage } from './pages/InsightsPage';
+import { InsightArticlePage } from './pages/InsightArticlePage';
+import { BookingSuccessPage } from './pages/BookingSuccessPage';
 import { AiInfrastructureLlmopsPage } from './pages/AiInfrastructureLlmopsPage';
 import { CicdAutomationPage } from './pages/CicdAutomationPage';
 import { KubernetesHardeningPage } from './pages/KubernetesHardeningPage';
@@ -32,6 +37,12 @@ export default function App() {
   const isPrivacyPage = pathname === '/privacy-policy';
   const isTermsPage = pathname === '/terms-of-service';
   const isDevsecopsServicesPage = pathname === '/devsecops-services';
+  const isServicesPage = pathname === '/services';
+  const isInfrastructureReviewPage = pathname === '/infrastructure-review';
+  const isInsightsPage = pathname === '/insights';
+  const insightSlug = pathname.startsWith('/insights/') ? pathname.replace('/insights/', '') : '';
+  const isInsightArticlePage = Boolean(insightSlug);
+  const isBookingSuccessPage = pathname === '/booking-success';
   const isAiInfrastructurePage = pathname === '/ai-infrastructure-llmops';
   const isCicdAutomationPage = pathname === '/cicd-automation';
   const isKubernetesHardeningPage = pathname === '/kubernetes-hardening';
@@ -43,6 +54,11 @@ export default function App() {
   const isKubernetesChecklistPage = pathname === '/kubernetes-hardening-checklist';
   const isLegalPage = isPrivacyPage || isTermsPage;
   const isServicePage =
+    isServicesPage ||
+    isInfrastructureReviewPage ||
+    isInsightsPage ||
+    isInsightArticlePage ||
+    isBookingSuccessPage ||
     isDevsecopsServicesPage ||
     isAiInfrastructurePage ||
     isCicdAutomationPage ||
@@ -127,6 +143,16 @@ export default function App() {
         <TermsOfServicePage />
       ) : isDevsecopsServicesPage ? (
         <DevsecopsServicesPage />
+      ) : isServicesPage ? (
+        <ServicesPage />
+      ) : isInfrastructureReviewPage ? (
+        <InfrastructureReviewPage />
+      ) : isInsightsPage ? (
+        <InsightsPage />
+      ) : isInsightArticlePage ? (
+        <InsightArticlePage slug={insightSlug} />
+      ) : isBookingSuccessPage ? (
+        <BookingSuccessPage />
       ) : isAiInfrastructurePage ? (
         <AiInfrastructureLlmopsPage />
       ) : isCicdAutomationPage ? (
