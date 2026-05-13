@@ -1,0 +1,21 @@
+# GAX Global
+
+GAX Global is a US-focused AI infrastructure, DevSecOps, Kubernetes, CI/CD, cloud security, and platform reliability consultancy for SaaS and AI teams.
+
+## Key Pages
+
+- Website: https://gax-global.com/
+- Infrastructure review booking: https://cal.com/gaxglobal/infrastructure-review
+
+## Services
+
+- AI infrastructure and LLM platform reliability
+- DevSecOps and compliance readiness
+- Kubernetes and platform operations
+- CI/CD and GitOps delivery
+- Cloud security, architecture, and networking
+- Cost, observability, and production reliability improvements
+
+## Contact
+
+- Email: info@gax-global.com
