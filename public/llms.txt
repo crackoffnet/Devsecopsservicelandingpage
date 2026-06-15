@@ -4,10 +4,10 @@ GAX Global is a US-focused AI infrastructure, DevSecOps, Kubernetes, CI/CD, clou
 
 ## Key Pages
 
-- Website: https://gax-global.com/
-- Services: https://gax-global.com/services
-- Infrastructure review: https://gax-global.com/infrastructure-review
-- Insights: https://gax-global.com/insights
+- Website: https://www.gax-global.com/
+- Services: https://www.gax-global.com/services
+- Infrastructure review: https://www.gax-global.com/infrastructure-review
+- Insights: https://www.gax-global.com/insights
 - Infrastructure review booking: https://cal.com/gaxglobal/infrastructure-review
 
 ## Services

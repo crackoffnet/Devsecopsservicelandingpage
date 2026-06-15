@@ -1,23 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://gax-global.com/</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://www.gax-global.com/</loc>
+    <lastmod>2026-06-15</lastmod>
   </url>
   <url>
-    <loc>https://gax-global.com/services</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://www.gax-global.com/services</loc>
+    <lastmod>2026-06-15</lastmod>
   </url>
   <url>
-    <loc>https://gax-global.com/infrastructure-review</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://www.gax-global.com/devsecops-services</loc>
+    <lastmod>2026-06-15</lastmod>
   </url>
   <url>
-    <loc>https://gax-global.com/insights</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://www.gax-global.com/infrastructure-review</loc>
+    <lastmod>2026-06-15</lastmod>
   </url>
   <url>
-    <loc>https://gax-global.com/booking-success</loc>
-    <lastmod>2026-05-13</lastmod>
+    <loc>https://www.gax-global.com/insights</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.gax-global.com/ai-infrastructure-llmops</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.gax-global.com/cicd-automation</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.gax-global.com/kubernetes-hardening</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.gax-global.com/terraform-iac</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.gax-global.com/cloud-security-consulting</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.gax-global.com/devsecops-assessment-checklist</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.gax-global.com/ai-infrastructure-readiness-checklist</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.gax-global.com/cicd-security-checklist</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.gax-global.com/kubernetes-hardening-checklist</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.gax-global.com/privacy-policy</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.gax-global.com/terms-of-service</loc>
+    <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://www.gax-global.com/booking-success</loc>
+    <lastmod>2026-06-15</lastmod>
   </url>
 </urlset>

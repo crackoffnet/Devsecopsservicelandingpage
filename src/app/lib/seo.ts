@@ -1,3 +1,5 @@
+import { PUBLIC_SITE_URL } from './site';
+
 type SeoConfig = {
   title: string;
   description: string;
@@ -10,7 +12,7 @@ type SeoConfig = {
   structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
 };
 
-const SITE_URL = 'https://gax-global.com';
+const SITE_URL = PUBLIC_SITE_URL;
 const DEFAULT_IMAGE_PATH = '/og-image.svg';
 
 function upsertMetaByName(name: string, content: string) {

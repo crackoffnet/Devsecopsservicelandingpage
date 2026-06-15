@@ -5,6 +5,7 @@ interface ImportMetaEnv {
   readonly VITE_CONTACT_EMAIL?: string;
   readonly VITE_GA_MEASUREMENT_ID?: string;
   readonly VITE_CLARITY_PROJECT_ID?: string;
+  readonly VITE_PUBLIC_SITE_URL?: string;
 }
 
 interface ImportMeta {
