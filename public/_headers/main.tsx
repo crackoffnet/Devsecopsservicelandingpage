@@ -14,3 +14,6 @@
 
 /*.js
   Cache-Control: public, max-age=31536000, immutable
+
+/booking-success
+  X-Robots-Tag: noindex, nofollow

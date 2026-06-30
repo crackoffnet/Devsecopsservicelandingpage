@@ -1,4 +1,6 @@
-const DEFAULT_PUBLIC_SITE_URL = 'https://www.gax-global.com';
+const CANONICAL_PROTOCOL = 'https:';
+const CANONICAL_HOSTNAME = 'gax-global.com';
+const DEFAULT_PUBLIC_SITE_URL = 'https://gax-global.com';
 const LOCAL_HOSTNAMES = new Set(['localhost', '127.0.0.1', '[::1]']);
 
 function normalizePathname(pathname: string) {
@@ -11,6 +13,8 @@ function normalizePathname(pathname: string) {
 
 export function normalizePublicSiteUrl(url: string) {
   const parsedUrl = new URL(url);
+  parsedUrl.protocol = CANONICAL_PROTOCOL;
+  parsedUrl.hostname = CANONICAL_HOSTNAME;
   parsedUrl.port = '';
   parsedUrl.pathname = normalizePathname(parsedUrl.pathname);
   parsedUrl.hash = '';
@@ -32,11 +36,11 @@ export function getPortlessCanonicalRedirectUrl(location: LocationLike) {
     return null;
   }
 
-  if (location.protocol !== 'https:') {
-    return null;
-  }
+  const isCanonicalProtocol = location.protocol === CANONICAL_PROTOCOL;
+  const isCanonicalHostname = location.hostname === PUBLIC_SITE_HOSTNAME;
+  const hasUnexpectedPort = location.port !== '';
 
-  if (location.hostname !== PUBLIC_SITE_HOSTNAME || location.port !== '8443') {
+  if (isCanonicalProtocol && isCanonicalHostname && !hasUnexpectedPort) {
     return null;
   }
 

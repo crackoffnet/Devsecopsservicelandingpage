@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.gax-global.com/sitemap.xml
+Sitemap: https://gax-global.com/sitemap.xml
