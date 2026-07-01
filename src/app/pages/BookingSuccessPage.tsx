@@ -10,7 +10,7 @@ export function BookingSuccessPage() {
         'Your GAX Global infrastructure review booking was received. Prepare to discuss AI infrastructure, Kubernetes, CI/CD, cloud, security, and platform reliability risks.',
       path: '/booking-success',
       imagePath: seoBase.imagePath,
-      robots: 'noindex,nofollow',
+      robots: 'noindex, nofollow',
     });
   }, []);
 
