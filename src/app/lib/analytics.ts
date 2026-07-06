@@ -1,4 +1,9 @@
-import { CAL_BOOKING_URL, GOOGLE_ADS_BOOK_APPOINTMENT_CONVERSION_ID } from '../config/booking';
+import {
+  CAL_BOOKING_URL,
+  GOOGLE_ADS_BOOK_APPOINTMENT_SEND_TO,
+  GOOGLE_ADS_CONVERSION_ID,
+  INFRASTRUCTURE_REVIEW_CTA_PATH,
+} from '../config/booking';
 
 type GtagCommand = 'event' | 'js' | 'config';
 export type CtaLocation =
@@ -14,6 +19,7 @@ export type CtaLocation =
   | 'footer'
   | 'mobile-sticky';
 type OutboundLabel = 'linkedin' | 'email' | 'calcom' | 'other';
+const CAL_BOOKING_SUCCESS_STORAGE_KEY = 'gax_cal_booking_success';
 
 function debugLog(message: string, data?: Record<string, unknown>) {
   if (!import.meta.env.DEV) return;
@@ -33,9 +39,12 @@ declare global {
       q?: unknown[];
     };
     __gaxGaInitialized?: boolean;
+    __gaxGoogleAdsConfigured?: boolean;
     __gaxClarityInitialized?: boolean;
     __gaxScrollDepthThresholds?: Set<number>;
     __gaxEngagementListenersInitialized?: boolean;
+    __gaxBookAppointmentConversionFired?: boolean;
+    __gaxHtmlCtaClickTrackingActive?: boolean;
   }
 }
 
@@ -53,9 +62,14 @@ export function trackEvent(name: string, params?: Record<string, unknown>) {
 }
 
 export function trackCTA(location: CtaLocation) {
-  trackEvent('book_review_click', { location });
-  trackEvent('conversion', {
-    send_to: GOOGLE_ADS_BOOK_APPOINTMENT_CONVERSION_ID,
+  if (typeof window !== 'undefined' && window.__gaxHtmlCtaClickTrackingActive) {
+    return;
+  }
+
+  trackEvent('book_free_infrastructure_review_click', {
+    event_category: 'lead',
+    event_label: 'Book Free Infrastructure Review',
+    location,
   });
 }
 
@@ -75,8 +89,8 @@ export function initGoogleAnalytics() {
   if (typeof window === 'undefined' || typeof document === 'undefined') return;
 
   const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
-  if (!measurementId) {
-    debugLog('GA4 skipped: missing VITE_GA_MEASUREMENT_ID');
+  if (!measurementId && !GOOGLE_ADS_CONVERSION_ID) {
+    debugLog('Google tag skipped: missing VITE_GA_MEASUREMENT_ID and GOOGLE_ADS_CONVERSION_ID');
     return;
   }
 
@@ -87,16 +101,21 @@ export function initGoogleAnalytics() {
       window.dataLayer!.push(args);
     };
 
-  const ga4ScriptUrl = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-  const existingGa4Tag = document.querySelector(`script[src="${ga4ScriptUrl}"]`);
-  if (!existingGa4Tag) {
+  const existingGoogleTag = document.querySelector('script[src*="https://www.googletagmanager.com/gtag/js"]');
+  if (!existingGoogleTag) {
     const script = document.createElement('script');
     script.async = true;
-    script.src = ga4ScriptUrl;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId || GOOGLE_ADS_CONVERSION_ID}`;
     document.head.appendChild(script);
   }
 
-  if (!window.__gaxGaInitialized) {
+  if (GOOGLE_ADS_CONVERSION_ID && !window.__gaxGoogleAdsConfigured) {
+    window.__gaxGoogleAdsConfigured = true;
+    window.gtag('config', GOOGLE_ADS_CONVERSION_ID);
+    debugLog('google ads configured', { conversionId: GOOGLE_ADS_CONVERSION_ID });
+  }
+
+  if (measurementId && !window.__gaxGaInitialized) {
     window.__gaxGaInitialized = true;
     if (import.meta.env.DEV) {
       window.gtag('config', measurementId, {
@@ -107,6 +126,22 @@ export function initGoogleAnalytics() {
     }
     debugLog('analytics initialized', { measurementId });
   }
+}
+
+export function trackBookAppointmentConversion() {
+  if (typeof window === 'undefined') return;
+  if (!window.gtag) return;
+  if (!GOOGLE_ADS_BOOK_APPOINTMENT_SEND_TO) return;
+  if (window.__gaxBookAppointmentConversionFired) return;
+  if (window.sessionStorage.getItem(CAL_BOOKING_SUCCESS_STORAGE_KEY) !== 'true') return;
+
+  window.__gaxBookAppointmentConversionFired = true;
+  trackEvent('conversion', {
+    send_to: GOOGLE_ADS_BOOK_APPOINTMENT_SEND_TO,
+    value: 1.0,
+    currency: 'USD',
+  });
+  window.sessionStorage.removeItem(CAL_BOOKING_SUCCESS_STORAGE_KEY);
 }
 
 export function initMicrosoftClarity() {
@@ -187,8 +222,12 @@ export function initEngagementTracking() {
     if (!href) return;
 
     if (href.startsWith(CAL_BOOKING_URL)) {
-      trackEvent('calcom_open', { source: 'book-infrastructure-review' });
+      trackEvent('calcom_open', { source: 'embedded-infrastructure-review' });
       trackOutboundLink('calcom', href);
+      return;
+    }
+
+    if (href.includes(INFRASTRUCTURE_REVIEW_CTA_PATH) || href.endsWith('/infrastructure-review')) {
       return;
     }
 

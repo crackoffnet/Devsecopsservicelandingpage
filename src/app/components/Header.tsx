@@ -1,5 +1,6 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { INFRASTRUCTURE_REVIEW_CTA_PATH } from '../config/booking';
 import { createBookReviewClickHandler } from '../lib/analytics';
 
 const navLinks = [
@@ -34,7 +35,7 @@ export function Header() {
               </a>
             ))}
             <a
-              href="/infrastructure-review"
+              href={INFRASTRUCTURE_REVIEW_CTA_PATH}
               data-cta="book-free-infrastructure-review"
               data-location="header"
               onClick={createBookReviewClickHandler('header')}
@@ -69,7 +70,7 @@ export function Header() {
               </a>
             ))}
             <a
-              href="/infrastructure-review"
+              href={INFRASTRUCTURE_REVIEW_CTA_PATH}
               data-cta="book-free-infrastructure-review"
               data-location="header"
               onClick={createBookReviewClickHandler('header')}

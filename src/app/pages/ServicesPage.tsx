@@ -1,6 +1,6 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useEffect } from 'react';
-import { CAL_BOOKING_URL } from '../config/booking';
+import { INFRASTRUCTURE_REVIEW_CTA_PATH } from '../config/booking';
 import { InfrastructureReviewCta } from '../components/InfrastructureReviewCta';
 import { createBookReviewClickHandler } from '../lib/analytics';
 import { applySeo, seoBase } from '../lib/seo';
@@ -73,9 +73,7 @@ export function ServicesPage() {
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
-                href={CAL_BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={INFRASTRUCTURE_REVIEW_CTA_PATH}
                 data-cta="book-free-infrastructure-review"
                 data-location="services-hero"
                 onClick={createBookReviewClickHandler('services')}

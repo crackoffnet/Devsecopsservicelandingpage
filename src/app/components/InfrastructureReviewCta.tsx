@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import { INFRASTRUCTURE_REVIEW_CTA_PATH } from '../config/booking';
 import { createBookReviewClickHandler, type CtaLocation } from '../lib/analytics';
 
 type InfrastructureReviewCtaProps = {
@@ -21,7 +22,7 @@ export function InfrastructureReviewCta({
   title = defaultTitle,
   body = defaultBody,
   buttonText = defaultButtonText,
-  href = '/infrastructure-review',
+  href = INFRASTRUCTURE_REVIEW_CTA_PATH,
   location,
   dataLocation,
   sectionClassName = 'bg-gradient-to-r from-gray-900 to-blue-900 py-20 text-white',

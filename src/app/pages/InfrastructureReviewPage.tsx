@@ -1,7 +1,7 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useEffect } from 'react';
 import { InfrastructureReviewCta } from '../components/InfrastructureReviewCta';
-import { CAL_BOOKING_URL } from '../config/booking';
+import { INFRASTRUCTURE_REVIEW_CTA_PATH } from '../config/booking';
 import { createBookReviewClickHandler } from '../lib/analytics';
 import { applySeo, seoBase } from '../lib/seo';
 
@@ -55,9 +55,7 @@ export function InfrastructureReviewPage() {
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
-                href={CAL_BOOKING_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={INFRASTRUCTURE_REVIEW_CTA_PATH}
                 data-cta="book-free-infrastructure-review"
                 data-location="infrastructure-review-hero"
                 onClick={createBookReviewClickHandler('infrastructure-review')}
@@ -150,8 +148,24 @@ export function InfrastructureReviewPage() {
         </div>
       </section>
 
+      <section id="book-review" className="border-t border-gray-200 bg-white py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-5xl">
+            <div className="mb-8 text-center">
+              <h2 className="mb-3 text-3xl font-bold text-gray-900 sm:text-4xl">Book your free infrastructure review</h2>
+              <p className="text-lg text-gray-600">
+                Complete your booking directly on this page to review CI/CD, Kubernetes, Terraform/IaC, cloud security, SOC 2 readiness, and platform reliability priorities.
+              </p>
+            </div>
+            <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+              <div id="gax-cal-embed" className="min-h-[860px] w-full bg-white" />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <InfrastructureReviewCta
-        href={CAL_BOOKING_URL}
+        href={INFRASTRUCTURE_REVIEW_CTA_PATH}
         title="Not sure where your infrastructure risks are?"
         body="Book a free 20-minute review and get practical next steps for CI/CD, Kubernetes, cloud security, Terraform/IaC, and platform reliability."
         buttonText="Schedule Free Review"

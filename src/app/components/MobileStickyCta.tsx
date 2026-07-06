@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { CAL_BOOKING_URL } from '../config/booking';
+import { INFRASTRUCTURE_REVIEW_CTA_PATH } from '../config/booking';
 import { createBookReviewClickHandler } from '../lib/analytics';
 
 export function MobileStickyCta() {
@@ -25,10 +25,8 @@ export function MobileStickyCta() {
       }`}
     >
       <a
-        href={CAL_BOOKING_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Book Free Infrastructure Review on Cal.com"
+        href={INFRASTRUCTURE_REVIEW_CTA_PATH}
+        aria-label="Book Free Infrastructure Review on the GAX Global site"
         data-cta="book-free-infrastructure-review"
         data-location="mobile-sticky"
         onClick={createBookReviewClickHandler('mobile-sticky')}

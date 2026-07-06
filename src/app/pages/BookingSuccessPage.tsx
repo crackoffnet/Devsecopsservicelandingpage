@@ -1,5 +1,6 @@
 import { CheckCircle2 } from 'lucide-react';
 import { useEffect } from 'react';
+import { trackBookAppointmentConversion } from '../lib/analytics';
 import { applySeo, seoBase } from '../lib/seo';
 
 export function BookingSuccessPage() {
@@ -12,6 +13,7 @@ export function BookingSuccessPage() {
       imagePath: seoBase.imagePath,
       robots: 'noindex, nofollow',
     });
+    trackBookAppointmentConversion();
   }, []);
 
   return (

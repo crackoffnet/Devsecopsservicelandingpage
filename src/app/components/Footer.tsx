@@ -1,5 +1,5 @@
 import { Linkedin, Mail, Shield, Globe2 } from 'lucide-react';
-import { CAL_BOOKING_URL } from '../config/booking';
+import { INFRASTRUCTURE_REVIEW_CTA_PATH } from '../config/booking';
 import { createBookReviewClickHandler } from '../lib/analytics';
 
 export function Footer() {
@@ -21,15 +21,13 @@ export function Footer() {
               <span>Secure cloud delivery, practical automation, reliable operations</span>
             </div>
             <a
-              href={CAL_BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cta="book-infrastructure-review"
+              href={INFRASTRUCTURE_REVIEW_CTA_PATH}
+              data-cta="book-free-infrastructure-review"
               data-location="footer"
               onClick={createBookReviewClickHandler('footer')}
               className="mt-5 inline-flex rounded-lg bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-cyan-300"
             >
-              Book Infrastructure Review
+              Book Free Infrastructure Review
             </a>
           </div>
 

@@ -8,6 +8,19 @@ const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, '..');
 const distDir = path.join(projectRoot, 'dist');
 const canonicalOrigin = 'https://gax-global.com';
+const calBookingSuccessStorageKey = 'gax_cal_booking_success';
+const defaultGoogleAdsBookAppointmentLabel = 'sqoFCOW96aQcEMb3j79D';
+const googleAdsConversionId =
+  process.env.GOOGLE_ADS_CONVERSION_ID ||
+  process.env.VITE_GOOGLE_ADS_CONVERSION_ID ||
+  'AW-18117557190';
+const googleAdsBookAppointmentLabel =
+  process.env.GOOGLE_ADS_BOOK_APPOINTMENT_LABEL ||
+  process.env.VITE_GOOGLE_ADS_BOOK_APPOINTMENT_LABEL ||
+  defaultGoogleAdsBookAppointmentLabel;
+const googleAdsBookAppointmentSendTo = googleAdsBookAppointmentLabel
+  ? `${googleAdsConversionId}/${googleAdsBookAppointmentLabel}`
+  : '';
 
 const staticFiles = [
   {
@@ -42,6 +55,16 @@ function upsertMetaTag(html, matcher, tag) {
   }
 
   return html.replace('</head>', `    ${tag}\n  </head>`);
+}
+
+function upsertBodyScript(html, scriptId, scriptContent) {
+  const scriptTag = `    <script id="${scriptId}">\n${scriptContent}\n    </script>`;
+  const matcher = new RegExp(`<script id="${scriptId}">[\\s\\S]*?<\\/script>`);
+  if (matcher.test(html)) {
+    return html.replace(matcher, scriptTag.trimStart());
+  }
+
+  return html.replace('</body>', `${scriptTag}\n  </body>`);
 }
 
 function applyRouteSeo(template, route) {
@@ -113,6 +136,106 @@ function applyRouteSeo(template, route) {
     );
   } else {
     html = html.replace('</head>', `    <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />\n  </head>`);
+  }
+
+  const clickTrackingScript = [
+    '      window.__gaxHtmlCtaClickTrackingActive = true;',
+    '      window.__gaxLeadClickEventName = "book_free_infrastructure_review_click";',
+    '      document.addEventListener("click", function (event) {',
+    '        var target = event.target instanceof Element ? event.target.closest(\'[data-cta="book-free-infrastructure-review"]\') : null;',
+    '        if (!target || typeof window.gtag !== "function") return;',
+    '        window.gtag("event", "book_free_infrastructure_review_click", {',
+    '          event_category: "lead",',
+    '          event_label: "Book Free Infrastructure Review",',
+    '          location: target.getAttribute("data-location") || "unknown"',
+    '        });',
+    '      }, { passive: true });',
+  ].join('\n');
+  html = upsertBodyScript(html, 'gax-cta-click-tracking', clickTrackingScript);
+
+  if (normalizedPath === '/infrastructure-review') {
+    const calEmbedScript = [
+      '      (function () {',
+      '        var bookingHandled = false;',
+      '        function mountCalEmbed() {',
+      '          var container = document.getElementById("gax-cal-embed");',
+      '          if (!container) return false;',
+      '          if (container.querySelector("iframe")) return true;',
+      '          var iframe = document.createElement("iframe");',
+      '          iframe.src = "https://cal.com/gaxglobal/infrastructure-review?embed=true";',
+      '          iframe.title = "Cal.com Infrastructure Review Booking";',
+      '          iframe.loading = "lazy";',
+      '          iframe.setAttribute("frameborder", "0");',
+      '          iframe.style.width = "100%";',
+      '          iframe.style.minHeight = "860px";',
+      '          iframe.style.border = "0";',
+      '          container.appendChild(iframe);',
+      '          return true;',
+      '        }',
+      '        function handleBookingSuccess() {',
+      '          if (bookingHandled) return;',
+      '          bookingHandled = true;',
+      '          if (typeof window.gtag === "function") {',
+      '            window.gtag("event", "cal_booking_successful", {',
+      '              event_category: "lead",',
+      '              event_label: "Infrastructure Review Booking Successful"',
+      '            });',
+      '          }',
+      `          window.sessionStorage.setItem("${calBookingSuccessStorageKey}", "true");`,
+      '          window.location.assign("/booking-success");',
+      '        }',
+      '        function extractEventName(payload) {',
+      '          if (!payload) return "";',
+      '          if (typeof payload === "string") {',
+      '            if (payload.indexOf("bookingSuccessfulV2") >= 0) return "bookingSuccessfulV2";',
+      '            try { payload = JSON.parse(payload); } catch (error) { return ""; }',
+      '          }',
+      '          var candidates = [',
+      '            payload.event,',
+      '            payload.type,',
+      '            payload.name,',
+      '            payload.detail && payload.detail.event,',
+      '            payload.detail && payload.detail.type,',
+      '            payload.data && payload.data.event,',
+      '            payload.data && payload.data.type,',
+      '            payload.data && payload.data.name',
+      '          ];',
+      '          for (var i = 0; i < candidates.length; i += 1) {',
+      '            if (typeof candidates[i] === "string" && candidates[i].length > 0) return candidates[i];',
+      '          }',
+      '          return "";',
+      '        }',
+      '        window.addEventListener("message", function (event) {',
+      '          if (!event.origin || event.origin.indexOf("cal.com") === -1) return;',
+      '          if (extractEventName(event.data) !== "bookingSuccessfulV2") return;',
+      '          handleBookingSuccess();',
+      '        });',
+      '        window.addEventListener("bookingSuccessfulV2", handleBookingSuccess);',
+      '        if (!mountCalEmbed()) {',
+      '          var observer = new MutationObserver(function () {',
+      '            if (mountCalEmbed()) observer.disconnect();',
+      '          });',
+      '          observer.observe(document.body, { childList: true, subtree: true });',
+      '          window.setTimeout(function () { observer.disconnect(); }, 10000);',
+      '        }',
+      '      }());',
+    ].join('\n');
+    html = upsertBodyScript(html, 'gax-cal-embed', calEmbedScript);
+  }
+
+  if (normalizedPath === '/booking-success' && googleAdsBookAppointmentSendTo) {
+    const bookingConversionScript = [
+      `      if (window.sessionStorage.getItem("${calBookingSuccessStorageKey}") === "true" && !window.__gaxBookAppointmentConversionFired && typeof window.gtag === "function") {`,
+      '        window.__gaxBookAppointmentConversionFired = true;',
+      '        window.gtag("event", "conversion", {',
+      `          send_to: "${escapeHtml(googleAdsBookAppointmentSendTo)}",`,
+      '          value: 1.0,',
+      '          currency: "USD"',
+      '        });',
+      `        window.sessionStorage.removeItem("${calBookingSuccessStorageKey}");`,
+      '      }',
+    ].join('\n');
+    html = upsertBodyScript(html, 'gax-booking-success-conversion', bookingConversionScript);
   }
 
   return html;

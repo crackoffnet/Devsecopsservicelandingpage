@@ -1,4 +1,4 @@
-import { CAL_BOOKING_URL } from '../config/booking';
+import { INFRASTRUCTURE_REVIEW_CTA_PATH } from '../config/booking';
 import { createBookReviewClickHandler } from '../lib/analytics';
 
 type ChecklistSection = {
@@ -61,16 +61,14 @@ export function SupportChecklistPage({
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <a
-              href={CAL_BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Book Infrastructure Review on Cal.com"
-              data-cta="book-infrastructure-review"
+              href={INFRASTRUCTURE_REVIEW_CTA_PATH}
+              aria-label="Book Free Infrastructure Review on the GAX Global site"
+              data-cta="book-free-infrastructure-review"
               data-location="review"
               onClick={createBookReviewClickHandler('review')}
               className="text-center px-6 py-4 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium"
             >
-              Book Infrastructure Review
+              Book Free Infrastructure Review
             </a>
             <a
               href="mailto:info@gax-global.com"

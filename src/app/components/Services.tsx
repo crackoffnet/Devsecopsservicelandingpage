@@ -1,5 +1,5 @@
 import { ClipboardCheck, Workflow, ShieldCheck, BrainCircuit } from 'lucide-react';
-import { CAL_BOOKING_URL } from '../config/booking';
+import { INFRASTRUCTURE_REVIEW_CTA_PATH } from '../config/booking';
 import { createBookReviewClickHandler } from '../lib/analytics';
 
 const services = [
@@ -141,16 +141,14 @@ export function Services() {
           <p className="text-gray-600 mb-4">Need help deciding the right starting point?</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href={CAL_BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Book Infrastructure Review on Cal.com"
-              data-cta="book-infrastructure-review"
+              href={INFRASTRUCTURE_REVIEW_CTA_PATH}
+              aria-label="Book Free Infrastructure Review on the GAX Global site"
+              data-cta="book-free-infrastructure-review"
               data-location="review"
               onClick={createBookReviewClickHandler('review')}
               className="px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium"
             >
-              Book Infrastructure Review
+              Book Free Infrastructure Review
             </a>
             <a
               href="mailto:info@gax-global.com"

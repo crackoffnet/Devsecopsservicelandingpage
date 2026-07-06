@@ -1,5 +1,5 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
-import { CAL_BOOKING_URL } from '../config/booking';
+import { INFRASTRUCTURE_REVIEW_CTA_PATH } from '../config/booking';
 import { createBookReviewClickHandler } from '../lib/analytics';
 
 const reviewItems = [
@@ -24,16 +24,14 @@ export function ProductionAiInfrastructureReview() {
             In 30-45 minutes, we review your AI/LLM, Kubernetes, cloud, security, and delivery setup to identify the highest-risk issues and show what to fix first.
           </p>
           <a
-            href={CAL_BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Book Infrastructure Review on Cal.com"
-            data-cta="book-infrastructure-review"
+            href={INFRASTRUCTURE_REVIEW_CTA_PATH}
+            aria-label="Book Free Infrastructure Review on the GAX Global site"
+            data-cta="book-free-infrastructure-review"
             data-location="review"
             onClick={createBookReviewClickHandler('review')}
             className="inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-400 px-7 py-4 font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition-colors hover:bg-cyan-300"
           >
-            Book Infrastructure Review
+            Book Free Infrastructure Review
             <ArrowRight className="h-5 w-5" />
           </a>
         </div>

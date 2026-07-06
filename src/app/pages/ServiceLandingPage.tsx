@@ -1,4 +1,4 @@
-import { CAL_BOOKING_URL } from '../config/booking';
+import { INFRASTRUCTURE_REVIEW_CTA_PATH } from '../config/booking';
 import { createBookReviewClickHandler } from '../lib/analytics';
 import { InfrastructureReviewCta } from '../components/InfrastructureReviewCta';
 
@@ -31,10 +31,8 @@ export function ServiceLandingPage({
 
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           <a
-            href={CAL_BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Book Free Infrastructure Review on Cal.com"
+            href={INFRASTRUCTURE_REVIEW_CTA_PATH}
+            aria-label="Book Free Infrastructure Review on the GAX Global site"
             data-cta="book-free-infrastructure-review"
             data-location="service-page"
             onClick={createBookReviewClickHandler('service-page')}
