@@ -1,5 +1,5 @@
 import { ArrowRight, Cloud, GitBranch, LockKeyhole, Network, Server, Shield } from 'lucide-react';
-import { INFRASTRUCTURE_REVIEW_CTA_PATH } from '../config/booking';
+import { getInfrastructureReviewCtaHref } from '../config/booking';
 import { createBookReviewClickHandler } from '../lib/analytics';
 
 const reviewAreas = [
@@ -31,6 +31,8 @@ const reviewAreas = [
 ];
 
 export function Hero() {
+  const reviewCtaHref = getInfrastructureReviewCtaHref();
+
   return (
     <section id="home" className="relative overflow-hidden bg-slate-950 pt-16 text-white">
       <div
@@ -59,7 +61,7 @@ export function Hero() {
 
           <div className="mb-8 flex flex-col gap-4 sm:flex-row">
             <a
-              href={INFRASTRUCTURE_REVIEW_CTA_PATH}
+              href={reviewCtaHref}
               aria-label="Book Free Infrastructure Review on the GAX Global site"
               data-cta="book-free-infrastructure-review"
               data-location="hero"

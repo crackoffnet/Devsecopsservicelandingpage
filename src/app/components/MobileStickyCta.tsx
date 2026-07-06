@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { INFRASTRUCTURE_REVIEW_CTA_PATH } from '../config/booking';
+import { getInfrastructureReviewCtaHref } from '../config/booking';
 import { createBookReviewClickHandler } from '../lib/analytics';
 
 export function MobileStickyCta() {
   const [visible, setVisible] = useState(true);
+  const reviewCtaHref = getInfrastructureReviewCtaHref();
 
   useEffect(() => {
     let previousScrollY = window.scrollY;
@@ -25,7 +26,7 @@ export function MobileStickyCta() {
       }`}
     >
       <a
-        href={INFRASTRUCTURE_REVIEW_CTA_PATH}
+        href={reviewCtaHref}
         aria-label="Book Free Infrastructure Review on the GAX Global site"
         data-cta="book-free-infrastructure-review"
         data-location="mobile-sticky"

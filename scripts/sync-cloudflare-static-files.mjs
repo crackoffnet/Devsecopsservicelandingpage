@@ -67,6 +67,14 @@ function upsertBodyScript(html, scriptId, scriptContent) {
   return html.replace('</body>', `${scriptTag}\n  </body>`);
 }
 
+function upsertBodyFragment(html, marker, fragment) {
+  if (html.includes(marker)) {
+    return html;
+  }
+
+  return html.replace('</body>', `${fragment}\n  </body>`);
+}
+
 function applyRouteSeo(template, route) {
   const normalizedPath = normalizeRoutePath(route.path);
   const canonicalUrl = buildCanonicalUrl(normalizedPath);
@@ -154,6 +162,15 @@ function applyRouteSeo(template, route) {
   html = upsertBodyScript(html, 'gax-cta-click-tracking', clickTrackingScript);
 
   if (normalizedPath === '/infrastructure-review') {
+    const bookingSectionTemplate = [
+      '    <template id="gax-book-review-template">',
+      '      <section id="book-review">',
+      '        <iframe src="https://cal.com/gaxglobal/infrastructure-review?embed=true" title="Cal.com Infrastructure Review Booking"></iframe>',
+      '      </section>',
+      '    </template>',
+    ].join('\n');
+    html = upsertBodyFragment(html, 'gax-book-review-template', bookingSectionTemplate);
+
     const calEmbedScript = [
       '      (function () {',
       '        var bookingHandled = false;',
@@ -167,7 +184,7 @@ function applyRouteSeo(template, route) {
       '          iframe.loading = "lazy";',
       '          iframe.setAttribute("frameborder", "0");',
       '          iframe.style.width = "100%";',
-      '          iframe.style.minHeight = "860px";',
+      '          iframe.style.minHeight = window.innerWidth < 768 ? "850px" : "700px";',
       '          iframe.style.border = "0";',
       '          container.appendChild(iframe);',
       '          return true;',

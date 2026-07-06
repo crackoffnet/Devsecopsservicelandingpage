@@ -1,6 +1,6 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import { INFRASTRUCTURE_REVIEW_CTA_PATH } from '../config/booking';
+import { getInfrastructureReviewCtaHref } from '../config/booking';
 import { createBookReviewClickHandler } from '../lib/analytics';
 
 const navLinks = [
@@ -12,6 +12,7 @@ const navLinks = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const reviewCtaHref = getInfrastructureReviewCtaHref();
 
   return (
     <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-200">
@@ -35,7 +36,7 @@ export function Header() {
               </a>
             ))}
             <a
-              href={INFRASTRUCTURE_REVIEW_CTA_PATH}
+              href={reviewCtaHref}
               data-cta="book-free-infrastructure-review"
               data-location="header"
               onClick={createBookReviewClickHandler('header')}
@@ -70,7 +71,7 @@ export function Header() {
               </a>
             ))}
             <a
-              href={INFRASTRUCTURE_REVIEW_CTA_PATH}
+              href={reviewCtaHref}
               data-cta="book-free-infrastructure-review"
               data-location="header"
               onClick={createBookReviewClickHandler('header')}

@@ -1,9 +1,14 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useEffect } from 'react';
 import { InfrastructureReviewCta } from '../components/InfrastructureReviewCta';
-import { INFRASTRUCTURE_REVIEW_CTA_PATH } from '../config/booking';
-import { createBookReviewClickHandler } from '../lib/analytics';
+import {
+  CAL_BOOKING_URL,
+  INFRASTRUCTURE_REVIEW_LOCAL_CTA_PATH,
+} from '../config/booking';
+import { createBookReviewClickHandler, trackEvent } from '../lib/analytics';
 import { applySeo, seoBase } from '../lib/seo';
+
+const CAL_BOOKING_SUCCESS_STORAGE_KEY = 'gax_cal_booking_success';
 
 const reviewedAreas = [
   'Review CI/CD pipeline risks, release bottlenecks, GitOps gaps, and deployment failure patterns',
@@ -39,6 +44,84 @@ export function InfrastructureReviewPage() {
     });
   }, []);
 
+  useEffect(() => {
+    const scopedWindow = window as Window & { __gaxCalBookingHandled?: boolean };
+
+    const extractEventName = (payload: unknown) => {
+      if (!payload) return '';
+
+      if (typeof payload === 'string') {
+        if (payload.includes('bookingSuccessfulV2')) return 'bookingSuccessfulV2';
+
+        try {
+          return extractEventName(JSON.parse(payload));
+        } catch {
+          return '';
+        }
+      }
+
+      if (typeof payload !== 'object') return '';
+
+      const candidatePayload = payload as {
+        event?: unknown;
+        type?: unknown;
+        name?: unknown;
+        detail?: { event?: unknown; type?: unknown; name?: unknown };
+        data?: { event?: unknown; type?: unknown; name?: unknown };
+      };
+
+      const candidates = [
+        candidatePayload.event,
+        candidatePayload.type,
+        candidatePayload.name,
+        candidatePayload.detail?.event,
+        candidatePayload.detail?.type,
+        candidatePayload.detail?.name,
+        candidatePayload.data?.event,
+        candidatePayload.data?.type,
+        candidatePayload.data?.name,
+      ];
+
+      for (const candidate of candidates) {
+        if (typeof candidate === 'string' && candidate.length > 0) {
+          return candidate;
+        }
+      }
+
+      return '';
+    };
+
+    const handleBookingSuccess = () => {
+      if (scopedWindow.__gaxCalBookingHandled) return;
+
+      scopedWindow.__gaxCalBookingHandled = true;
+      trackEvent('cal_booking_successful', {
+        event_category: 'lead',
+        event_label: 'Infrastructure Review Booking Successful',
+      });
+      window.sessionStorage.setItem(CAL_BOOKING_SUCCESS_STORAGE_KEY, 'true');
+      window.location.assign('/booking-success');
+    };
+
+    const handleMessage = (event: MessageEvent) => {
+      if (!event.origin || !event.origin.includes('cal.com')) return;
+      if (extractEventName(event.data) !== 'bookingSuccessfulV2') return;
+      handleBookingSuccess();
+    };
+
+    const handleCustomBookingSuccess = () => {
+      handleBookingSuccess();
+    };
+
+    window.addEventListener('message', handleMessage);
+    window.addEventListener('bookingSuccessfulV2', handleCustomBookingSuccess as EventListener);
+
+    return () => {
+      window.removeEventListener('message', handleMessage);
+      window.removeEventListener('bookingSuccessfulV2', handleCustomBookingSuccess as EventListener);
+    };
+  }, []);
+
   return (
     <main className="bg-white pt-24">
       <section className="bg-slate-950 py-20 text-white">
@@ -48,14 +131,14 @@ export function InfrastructureReviewPage() {
               Free Infrastructure Review
             </p>
             <h1 className="mb-6 text-4xl font-bold leading-tight sm:text-5xl">
-              Book a free 20-minute infrastructure review for your AI or SaaS stack
+              Book a free 30-minute infrastructure review for your AI or SaaS stack
             </h1>
             <p className="max-w-3xl text-lg leading-relaxed text-slate-200">
               Get senior guidance on CI/CD, Kubernetes, Terraform, cloud security, AI infrastructure, and deployment reliability without the overhead of a large consulting engagement.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
-                href={INFRASTRUCTURE_REVIEW_CTA_PATH}
+                href={INFRASTRUCTURE_REVIEW_LOCAL_CTA_PATH}
                 data-cta="book-free-infrastructure-review"
                 data-location="infrastructure-review-hero"
                 onClick={createBookReviewClickHandler('infrastructure-review')}
@@ -148,26 +231,41 @@ export function InfrastructureReviewPage() {
         </div>
       </section>
 
-      <section id="book-review" className="border-t border-gray-200 bg-white py-16">
+      <section id="book-review" className="scroll-mt-24 border-t border-gray-200 bg-white py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-5xl">
             <div className="mb-8 text-center">
-              <h2 className="mb-3 text-3xl font-bold text-gray-900 sm:text-4xl">Book your free infrastructure review</h2>
+              <h2 className="mb-3 text-3xl font-bold text-gray-900 sm:text-4xl">Book your free 30-minute infrastructure review</h2>
               <p className="text-lg text-gray-600">
-                Complete your booking directly on this page to review CI/CD, Kubernetes, Terraform/IaC, cloud security, SOC 2 readiness, and platform reliability priorities.
+                Choose a time that works for you. The review is focused on CI/CD, Kubernetes, Terraform/IaC, cloud security, DevSecOps, and platform reliability risks.
               </p>
             </div>
             <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
-              <div id="gax-cal-embed" className="min-h-[860px] w-full bg-white" />
+              <iframe
+                src={`${CAL_BOOKING_URL}?embed=true`}
+                title="Cal.com Infrastructure Review Booking"
+                loading="lazy"
+                className="min-h-[850px] w-full max-w-full border-0 md:min-h-[700px]"
+              />
+            </div>
+            <div className="mt-4 text-center">
+              <a
+                href={CAL_BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-blue-700 transition-colors hover:text-blue-800"
+              >
+                Having trouble with the calendar? Open booking page in a new tab.
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       <InfrastructureReviewCta
-        href={INFRASTRUCTURE_REVIEW_CTA_PATH}
+        href={INFRASTRUCTURE_REVIEW_LOCAL_CTA_PATH}
         title="Not sure where your infrastructure risks are?"
-        body="Book a free 20-minute review and get practical next steps for CI/CD, Kubernetes, cloud security, Terraform/IaC, and platform reliability."
+        body="Book a free 30-minute review and get practical next steps for CI/CD, Kubernetes, cloud security, Terraform/IaC, and platform reliability."
         buttonText="Schedule Free Review"
         location="infrastructure-review"
         dataLocation="infrastructure-review-footer"

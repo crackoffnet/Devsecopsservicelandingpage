@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react';
-import { INFRASTRUCTURE_REVIEW_CTA_PATH } from '../config/booking';
+import { getInfrastructureReviewCtaHref, INFRASTRUCTURE_REVIEW_CTA_PATH } from '../config/booking';
 import { createBookReviewClickHandler, type CtaLocation } from '../lib/analytics';
 
 type InfrastructureReviewCtaProps = {
@@ -15,7 +15,7 @@ type InfrastructureReviewCtaProps = {
 
 const defaultTitle = 'Not sure where your infrastructure risks are?';
 const defaultBody =
-  'Book a free 20-minute review and get practical next steps for CI/CD, Kubernetes, cloud security, Terraform/IaC, and platform reliability.';
+  'Book a free 30-minute review and get practical next steps for CI/CD, Kubernetes, cloud security, Terraform/IaC, and platform reliability.';
 const defaultButtonText = 'Book Free Infrastructure Review';
 
 export function InfrastructureReviewCta({
@@ -28,7 +28,8 @@ export function InfrastructureReviewCta({
   sectionClassName = 'bg-gradient-to-r from-gray-900 to-blue-900 py-20 text-white',
   containerClassName = 'mx-auto max-w-4xl text-center',
 }: InfrastructureReviewCtaProps) {
-  const isExternal = href.startsWith('http');
+  const resolvedHref = href === INFRASTRUCTURE_REVIEW_CTA_PATH ? getInfrastructureReviewCtaHref() : href;
+  const isExternal = resolvedHref.startsWith('http');
 
   return (
     <section className={sectionClassName}>
@@ -37,7 +38,7 @@ export function InfrastructureReviewCta({
           <h2 className="mb-4 text-3xl font-bold sm:text-4xl">{title}</h2>
           <p className="mb-8 text-lg text-blue-100">{body}</p>
           <a
-            href={href}
+            href={resolvedHref}
             target={isExternal ? '_blank' : undefined}
             rel={isExternal ? 'noopener noreferrer' : undefined}
             data-cta="book-free-infrastructure-review"
