@@ -1,5 +1,6 @@
 import { CAL_BOOKING_URL } from '../config/booking';
 import { createBookReviewClickHandler } from '../lib/analytics';
+import { InfrastructureReviewCta } from '../components/InfrastructureReviewCta';
 
 type ServiceLandingPageProps = {
   title: string;
@@ -33,13 +34,13 @@ export function ServiceLandingPage({
             href={CAL_BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Book Infrastructure Review on Cal.com"
-            data-cta="book-infrastructure-review"
-            data-location="review"
-            onClick={createBookReviewClickHandler('review')}
+            aria-label="Book Free Infrastructure Review on Cal.com"
+            data-cta="book-free-infrastructure-review"
+            data-location="service-page"
+            onClick={createBookReviewClickHandler('service-page')}
             className="text-center px-6 py-4 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium"
           >
-            Book Infrastructure Review
+            Book Free Infrastructure Review
           </a>
           <a
             href="mailto:info@gax-global.com"
@@ -101,6 +102,11 @@ export function ServiceLandingPage({
           </a>
         </section>
       </article>
+      <InfrastructureReviewCta
+        location="service-page"
+        dataLocation="service-page-footer"
+        sectionClassName="border-t border-gray-200 bg-gray-50 py-16"
+      />
     </main>
   );
 }

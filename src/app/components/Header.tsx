@@ -1,6 +1,5 @@
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import { CAL_BOOKING_URL } from '../config/booking';
 import { createBookReviewClickHandler } from '../lib/analytics';
 
 const navLinks = [
@@ -35,15 +34,13 @@ export function Header() {
               </a>
             ))}
             <a
-              href={CAL_BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cta="book-infrastructure-review"
-              data-location="navbar"
-              onClick={createBookReviewClickHandler('navbar')}
+              href="/infrastructure-review"
+              data-cta="book-free-infrastructure-review"
+              data-location="header"
+              onClick={createBookReviewClickHandler('header')}
               className="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm shadow-blue-600/20 transition-colors hover:bg-blue-700"
             >
-              Book Infrastructure Review
+              Book Free Infrastructure Review
             </a>
           </div>
 
@@ -72,15 +69,13 @@ export function Header() {
               </a>
             ))}
             <a
-              href={CAL_BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cta="book-infrastructure-review"
-              data-location="navbar"
-              onClick={createBookReviewClickHandler('navbar')}
+              href="/infrastructure-review"
+              data-cta="book-free-infrastructure-review"
+              data-location="header"
+              onClick={createBookReviewClickHandler('header')}
               className="block w-full rounded-lg bg-blue-600 px-4 py-3 text-center font-semibold text-white"
             >
-              Book Infrastructure Review
+              Free Review
             </a>
           </div>
         )}

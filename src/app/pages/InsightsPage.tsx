@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { useEffect } from 'react';
+import { InfrastructureReviewCta } from '../components/InfrastructureReviewCta';
 import { applySeo, seoBase } from '../lib/seo';
 import { insights } from './insightsData';
 
@@ -56,6 +57,11 @@ export function InsightsPage() {
           ))}
         </div>
       </section>
+      <InfrastructureReviewCta
+        location="insights"
+        dataLocation="insights-footer"
+        sectionClassName="border-t border-gray-200 bg-gray-50 py-16"
+      />
     </main>
   );
 }

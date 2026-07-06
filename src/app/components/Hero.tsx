@@ -58,19 +58,19 @@ export function Hero() {
           </p>
 
           <div className="mb-8 flex flex-col gap-4 sm:flex-row">
-            <a
-              href={CAL_BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Book Infrastructure Review on Cal.com"
-              data-cta="book-infrastructure-review"
-              data-location="hero"
-              onClick={createBookReviewClickHandler('hero')}
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-400 px-7 py-4 font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition-colors hover:bg-cyan-300"
-            >
-              <span>Book Infrastructure Review</span>
-              <ArrowRight className="h-5 w-5" />
-            </a>
+              <a
+                href={CAL_BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Book Free Infrastructure Review on Cal.com"
+                data-cta="book-free-infrastructure-review"
+                data-location="hero"
+                onClick={createBookReviewClickHandler('hero')}
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-400 px-7 py-4 font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition-colors hover:bg-cyan-300"
+              >
+                <span>Book Free Infrastructure Review</span>
+                <ArrowRight className="h-5 w-5" />
+              </a>
             <a
               href="/#problems"
               aria-label="See what infrastructure problems GAX Global fixes"

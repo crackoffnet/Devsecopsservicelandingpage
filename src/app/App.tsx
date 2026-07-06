@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { HomepageReviewIntro } from './components/HomepageReviewIntro';
 import { HowWeHelp } from './components/HowWeHelp';
 import { WhoWeHelp } from './components/WhoWeHelp';
 import { CapabilityPillars } from './components/CapabilityPillars';
@@ -174,6 +175,7 @@ export default function App() {
       ) : (
         <main>
           <Hero />
+          <HomepageReviewIntro />
           <HowWeHelp />
           <CapabilityPillars />
           <ProblemsWeSolve />

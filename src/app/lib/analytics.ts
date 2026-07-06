@@ -1,7 +1,18 @@
 import { CAL_BOOKING_URL, GOOGLE_ADS_BOOK_APPOINTMENT_CONVERSION_ID } from '../config/booking';
 
 type GtagCommand = 'event' | 'js' | 'config';
-export type CtaLocation = 'hero' | 'navbar' | 'review' | 'case-studies' | 'footer' | 'mobile-sticky';
+export type CtaLocation =
+  | 'hero'
+  | 'header'
+  | 'homepage'
+  | 'review'
+  | 'service-page'
+  | 'services'
+  | 'insights'
+  | 'infrastructure-review'
+  | 'case-studies'
+  | 'footer'
+  | 'mobile-sticky';
 type OutboundLabel = 'linkedin' | 'email' | 'calcom' | 'other';
 
 function debugLog(message: string, data?: Record<string, unknown>) {

@@ -28,13 +28,13 @@ export function MobileStickyCta() {
         href={CAL_BOOKING_URL}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Book Infrastructure Review on Cal.com"
-        data-cta="book-infrastructure-review"
+        aria-label="Book Free Infrastructure Review on Cal.com"
+        data-cta="book-free-infrastructure-review"
         data-location="mobile-sticky"
         onClick={createBookReviewClickHandler('mobile-sticky')}
         className="mx-auto flex max-w-sm items-center justify-center rounded-lg bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950"
       >
-        Book Review
+        Free Review
       </a>
     </div>
   );

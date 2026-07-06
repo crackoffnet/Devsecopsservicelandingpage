@@ -1,6 +1,7 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useEffect } from 'react';
 import { CAL_BOOKING_URL } from '../config/booking';
+import { InfrastructureReviewCta } from '../components/InfrastructureReviewCta';
 import { createBookReviewClickHandler } from '../lib/analytics';
 import { applySeo, seoBase } from '../lib/seo';
 
@@ -75,12 +76,12 @@ export function ServicesPage() {
                 href={CAL_BOOKING_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                data-cta="book-infrastructure-review"
-                data-location="review"
-                onClick={createBookReviewClickHandler('review')}
+                data-cta="book-free-infrastructure-review"
+                data-location="services-hero"
+                onClick={createBookReviewClickHandler('services')}
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-400 px-7 py-4 font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition-colors hover:bg-cyan-300"
               >
-                Book Infrastructure Review
+                Book Free Infrastructure Review
                 <ArrowRight className="h-5 w-5" />
               </a>
               <a
@@ -129,6 +130,11 @@ export function ServicesPage() {
           </div>
         </div>
       </section>
+      <InfrastructureReviewCta
+        location="services"
+        dataLocation="services-footer"
+        sectionClassName="border-t border-gray-200 bg-white py-16"
+      />
     </main>
   );
 }
