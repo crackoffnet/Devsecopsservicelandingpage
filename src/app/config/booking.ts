@@ -1,6 +1,7 @@
 export const CAL_BOOKING_URL = 'https://cal.com/gaxglobal/infrastructure-review';
 export const INFRASTRUCTURE_REVIEW_PAGE_PATH = '/infrastructure-review';
-export const INFRASTRUCTURE_REVIEW_CTA_PATH = '/infrastructure-review#book-review';
+export const INFRASTRUCTURE_REVIEW_PAGE_URL = '/infrastructure-review/';
+export const INFRASTRUCTURE_REVIEW_CTA_PATH = '/infrastructure-review/#book-review';
 export const INFRASTRUCTURE_REVIEW_LOCAL_CTA_PATH = '#book-review';
 
 export function getInfrastructureReviewCtaHref() {

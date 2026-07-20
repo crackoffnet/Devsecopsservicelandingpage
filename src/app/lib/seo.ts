@@ -15,6 +15,14 @@ type SeoConfig = {
 const SITE_URL = PUBLIC_SITE_URL;
 const DEFAULT_IMAGE_PATH = '/og-image.svg';
 
+function normalizeCanonicalPath(path: string) {
+  if (!path || path === '/') {
+    return '/';
+  }
+
+  return `${path.replace(/\/+$/, '')}/`;
+}
+
 function upsertMetaByName(name: string, content: string) {
   let meta = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement | null;
   if (!meta) {
@@ -58,7 +66,7 @@ function upsertStructuredData(data: SeoConfig['structuredData']) {
 }
 
 export function applySeo(config: SeoConfig) {
-  const path = config.path === '/' ? '/' : config.path.replace(/\/+$/, '');
+  const path = normalizeCanonicalPath(config.path);
   const pageUrl = `${SITE_URL}${path}`;
   const imageUrl = `${SITE_URL}${config.imagePath || DEFAULT_IMAGE_PATH}`;
 

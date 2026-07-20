@@ -4,9 +4,9 @@ import { getInfrastructureReviewCtaHref } from '../config/booking';
 import { createBookReviewClickHandler } from '../lib/analytics';
 
 const navLinks = [
-  { href: '/services', label: 'Services' },
-  { href: '/infrastructure-review', label: 'Review' },
-  { href: '/insights', label: 'Insights' },
+  { href: '/services/', label: 'Services' },
+  { href: '/infrastructure-review/', label: 'Review' },
+  { href: '/insights/', label: 'Insights' },
   { href: '/#why', label: 'Why GAX' },
 ];
 

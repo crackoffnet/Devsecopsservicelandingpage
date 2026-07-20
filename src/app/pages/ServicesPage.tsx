@@ -44,14 +44,14 @@ export function ServicesPage() {
       title: 'AI Infrastructure, DevSecOps & Platform Reliability Services | GAX Global',
       description:
         'Explore GAX Global services for AI/LLM infrastructure reliability, Kubernetes operations, CI/CD, DevSecOps, cloud architecture, observability, and platform reliability.',
-      path: '/services',
+      path: '/services/',
       imagePath: seoBase.imagePath,
       structuredData: {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${seoBase.siteUrl}/` },
-          { '@type': 'ListItem', position: 2, name: 'Services', item: `${seoBase.siteUrl}/services` },
+          { '@type': 'ListItem', position: 2, name: 'Services', item: `${seoBase.siteUrl}/services/` },
         ],
       },
     });
@@ -83,7 +83,7 @@ export function ServicesPage() {
                 <ArrowRight className="h-5 w-5" />
               </a>
               <a
-                href="/infrastructure-review"
+                href="/infrastructure-review/"
                 className="inline-flex items-center justify-center rounded-lg border border-white/25 bg-white/10 px-7 py-4 font-semibold text-white transition-colors hover:bg-white/15"
               >
                 View Review Offer

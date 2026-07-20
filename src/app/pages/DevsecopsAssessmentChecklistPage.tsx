@@ -8,7 +8,7 @@ export function DevsecopsAssessmentChecklistPage() {
       title: 'DevSecOps Assessment Checklist | GAX Global',
       description:
         'Practical DevSecOps assessment checklist for SaaS teams covering CI/CD, secrets, automation, security controls, and release reliability.',
-      path: '/devsecops-assessment-checklist',
+      path: '/devsecops-assessment-checklist/',
       imagePath: seoBase.imagePath,
       structuredData: {
         '@context': 'https://schema.org',
@@ -19,7 +19,7 @@ export function DevsecopsAssessmentChecklistPage() {
             '@type': 'ListItem',
             position: 2,
             name: 'DevSecOps Assessment Checklist',
-            item: `${seoBase.siteUrl}/devsecops-assessment-checklist`,
+            item: `${seoBase.siteUrl}/devsecops-assessment-checklist/`,
           },
         ],
       },
@@ -65,9 +65,9 @@ export function DevsecopsAssessmentChecklistPage() {
         },
       ]}
       relatedServices={[
-        { href: '/devsecops-services', label: 'DevSecOps services' },
-        { href: '/cicd-automation', label: 'CI/CD automation' },
-        { href: '/cloud-security-consulting', label: 'cloud security consulting' },
+        { href: '/devsecops-services/', label: 'DevSecOps services' },
+        { href: '/cicd-automation/', label: 'CI/CD automation' },
+        { href: '/cloud-security-consulting/', label: 'cloud security consulting' },
       ]}
     />
   );

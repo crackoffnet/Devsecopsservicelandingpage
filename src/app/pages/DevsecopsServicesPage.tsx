@@ -8,14 +8,14 @@ export function DevsecopsServicesPage() {
       title: 'DevSecOps Services for SaaS Teams | GAX Global',
       description:
         'DevSecOps consulting for SaaS startups and small teams. Improve security, CI/CD automation, infrastructure maturity, and release confidence.',
-      path: '/devsecops-services',
+      path: '/devsecops-services/',
       imagePath: seoBase.imagePath,
       structuredData: {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${seoBase.siteUrl}/` },
-          { '@type': 'ListItem', position: 2, name: 'DevSecOps Services', item: `${seoBase.siteUrl}/devsecops-services` },
+          { '@type': 'ListItem', position: 2, name: 'DevSecOps Services', item: `${seoBase.siteUrl}/devsecops-services/` },
         ],
       },
     });
@@ -45,11 +45,11 @@ export function DevsecopsServicesPage() {
       ]}
       outcome="A prioritized DevSecOps plan with practical delivery improvements, implementation guidance, and clear next steps for secure, repeatable releases."
       relatedLinks={[
-        { href: '/cicd-automation', label: 'CI/CD automation' },
-        { href: '/kubernetes-hardening', label: 'Kubernetes hardening' },
-        { href: '/cloud-security-consulting', label: 'cloud security consulting' },
-        { href: '/terraform-iac', label: 'Terraform and IaC' },
-        { href: '/devsecops-assessment-checklist', label: 'DevSecOps assessment checklist' },
+        { href: '/cicd-automation/', label: 'CI/CD automation' },
+        { href: '/kubernetes-hardening/', label: 'Kubernetes hardening' },
+        { href: '/cloud-security-consulting/', label: 'cloud security consulting' },
+        { href: '/terraform-iac/', label: 'Terraform and IaC' },
+        { href: '/devsecops-assessment-checklist/', label: 'DevSecOps assessment checklist' },
       ]}
     />
   );

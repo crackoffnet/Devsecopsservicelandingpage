@@ -3,6 +3,7 @@ import {
   GOOGLE_ADS_BOOK_APPOINTMENT_SEND_TO,
   GOOGLE_ADS_CONVERSION_ID,
   INFRASTRUCTURE_REVIEW_CTA_PATH,
+  INFRASTRUCTURE_REVIEW_PAGE_URL,
 } from '../config/booking';
 
 type GtagCommand = 'event' | 'js' | 'config';
@@ -227,7 +228,11 @@ export function initEngagementTracking() {
       return;
     }
 
-    if (href.includes(INFRASTRUCTURE_REVIEW_CTA_PATH) || href.endsWith('/infrastructure-review')) {
+    if (
+      href.includes(INFRASTRUCTURE_REVIEW_CTA_PATH) ||
+      href.endsWith(INFRASTRUCTURE_REVIEW_PAGE_URL) ||
+      href.endsWith('/infrastructure-review')
+    ) {
       return;
     }
 

@@ -8,14 +8,14 @@ export function AiInfrastructureLlmopsPage() {
       title: 'AI Infrastructure & LLMOps Consulting | GAX Global',
       description:
         'AI infrastructure consulting and LLMOps support for SaaS teams building secure, scalable, observable AI platforms and model-backed products.',
-      path: '/ai-infrastructure-llmops',
+      path: '/ai-infrastructure-llmops/',
       imagePath: seoBase.imagePath,
       structuredData: {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${seoBase.siteUrl}/` },
-          { '@type': 'ListItem', position: 2, name: 'AI Infrastructure and LLMOps', item: `${seoBase.siteUrl}/ai-infrastructure-llmops` },
+          { '@type': 'ListItem', position: 2, name: 'AI Infrastructure and LLMOps', item: `${seoBase.siteUrl}/ai-infrastructure-llmops/` },
         ],
       },
     });
@@ -45,11 +45,11 @@ export function AiInfrastructureLlmopsPage() {
       ]}
       outcome="A safer and more scalable AI infrastructure baseline with clear implementation direction for LLMOps, deployment, and long-term platform maintainability."
       relatedLinks={[
-        { href: '/devsecops-services', label: 'DevSecOps services' },
-        { href: '/cicd-automation', label: 'CI/CD automation' },
-        { href: '/cloud-security-consulting', label: 'cloud security consulting' },
-        { href: '/kubernetes-hardening', label: 'Kubernetes hardening' },
-        { href: '/ai-infrastructure-readiness-checklist', label: 'AI infrastructure readiness checklist' },
+        { href: '/devsecops-services/', label: 'DevSecOps services' },
+        { href: '/cicd-automation/', label: 'CI/CD automation' },
+        { href: '/cloud-security-consulting/', label: 'cloud security consulting' },
+        { href: '/kubernetes-hardening/', label: 'Kubernetes hardening' },
+        { href: '/ai-infrastructure-readiness-checklist/', label: 'AI infrastructure readiness checklist' },
       ]}
     />
   );

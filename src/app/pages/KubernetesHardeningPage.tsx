@@ -8,14 +8,14 @@ export function KubernetesHardeningPage() {
       title: 'Kubernetes Hardening Services | GAX Global',
       description:
         'Kubernetes hardening services for SaaS teams to reduce cluster risk, strengthen platform security, and improve production readiness.',
-      path: '/kubernetes-hardening',
+      path: '/kubernetes-hardening/',
       imagePath: seoBase.imagePath,
       structuredData: {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${seoBase.siteUrl}/` },
-          { '@type': 'ListItem', position: 2, name: 'Kubernetes Hardening', item: `${seoBase.siteUrl}/kubernetes-hardening` },
+          { '@type': 'ListItem', position: 2, name: 'Kubernetes Hardening', item: `${seoBase.siteUrl}/kubernetes-hardening/` },
         ],
       },
     });
@@ -45,11 +45,11 @@ export function KubernetesHardeningPage() {
       ]}
       outcome="A more secure and resilient Kubernetes platform with practical improvements that lower risk and improve production readiness."
       relatedLinks={[
-        { href: '/cloud-security-consulting', label: 'cloud security consulting' },
-        { href: '/devsecops-services', label: 'DevSecOps services' },
-        { href: '/terraform-iac', label: 'Terraform and IaC' },
-        { href: '/cicd-automation', label: 'CI/CD automation' },
-        { href: '/kubernetes-hardening-checklist', label: 'Kubernetes hardening checklist' },
+        { href: '/cloud-security-consulting/', label: 'cloud security consulting' },
+        { href: '/devsecops-services/', label: 'DevSecOps services' },
+        { href: '/terraform-iac/', label: 'Terraform and IaC' },
+        { href: '/cicd-automation/', label: 'CI/CD automation' },
+        { href: '/kubernetes-hardening-checklist/', label: 'Kubernetes hardening checklist' },
       ]}
     />
   );

@@ -8,14 +8,14 @@ export function CicdAutomationPage() {
       title: 'CI/CD Automation Services | GAX Global',
       description:
         'CI/CD automation services to improve secure software delivery, release automation, secrets management, and deployment reliability for SaaS teams.',
-      path: '/cicd-automation',
+      path: '/cicd-automation/',
       imagePath: seoBase.imagePath,
       structuredData: {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${seoBase.siteUrl}/` },
-          { '@type': 'ListItem', position: 2, name: 'CI/CD Automation', item: `${seoBase.siteUrl}/cicd-automation` },
+          { '@type': 'ListItem', position: 2, name: 'CI/CD Automation', item: `${seoBase.siteUrl}/cicd-automation/` },
         ],
       },
     });
@@ -45,11 +45,11 @@ export function CicdAutomationPage() {
       ]}
       outcome="A cleaner, more secure CI/CD workflow with practical improvements that reduce delivery risk and improve release consistency."
       relatedLinks={[
-        { href: '/devsecops-services', label: 'DevSecOps services' },
-        { href: '/terraform-iac', label: 'Terraform and IaC' },
-        { href: '/kubernetes-hardening', label: 'Kubernetes hardening' },
-        { href: '/cloud-security-consulting', label: 'cloud security consulting' },
-        { href: '/cicd-security-checklist', label: 'CI/CD security checklist' },
+        { href: '/devsecops-services/', label: 'DevSecOps services' },
+        { href: '/terraform-iac/', label: 'Terraform and IaC' },
+        { href: '/kubernetes-hardening/', label: 'Kubernetes hardening' },
+        { href: '/cloud-security-consulting/', label: 'cloud security consulting' },
+        { href: '/cicd-security-checklist/', label: 'CI/CD security checklist' },
       ]}
     />
   );

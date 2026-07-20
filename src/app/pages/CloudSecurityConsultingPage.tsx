@@ -8,14 +8,14 @@ export function CloudSecurityConsultingPage() {
       title: 'Cloud Security Consulting | GAX Global',
       description:
         'Cloud security consulting for SaaS teams to improve infrastructure hardening, IAM controls, policy enforcement, and cloud compliance automation support.',
-      path: '/cloud-security-consulting',
+      path: '/cloud-security-consulting/',
       imagePath: seoBase.imagePath,
       structuredData: {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${seoBase.siteUrl}/` },
-          { '@type': 'ListItem', position: 2, name: 'Cloud Security Consulting', item: `${seoBase.siteUrl}/cloud-security-consulting` },
+          { '@type': 'ListItem', position: 2, name: 'Cloud Security Consulting', item: `${seoBase.siteUrl}/cloud-security-consulting/` },
         ],
       },
     });
@@ -45,10 +45,10 @@ export function CloudSecurityConsultingPage() {
       ]}
       outcome="A stronger cloud security baseline with prioritized improvements that reduce risk and support secure scaling across cloud and multicloud environments."
       relatedLinks={[
-        { href: '/devsecops-services', label: 'DevSecOps services' },
-        { href: '/kubernetes-hardening', label: 'Kubernetes hardening' },
-        { href: '/terraform-iac', label: 'Terraform and IaC' },
-        { href: '/ai-infrastructure-llmops', label: 'AI infrastructure and LLMOps' },
+        { href: '/devsecops-services/', label: 'DevSecOps services' },
+        { href: '/kubernetes-hardening/', label: 'Kubernetes hardening' },
+        { href: '/terraform-iac/', label: 'Terraform and IaC' },
+        { href: '/ai-infrastructure-llmops/', label: 'AI infrastructure and LLMOps' },
       ]}
     />
   );

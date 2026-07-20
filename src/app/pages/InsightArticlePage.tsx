@@ -17,7 +17,7 @@ export function InsightArticlePage({ slug }: InsightArticlePageProps) {
     applySeo({
       title: `${insight.title} | GAX Global`,
       description: insight.description,
-      path: `/insights/${slug}`,
+      path: `/insights/${slug}/`,
       type: 'article',
       imagePath: seoBase.imagePath,
       structuredData: {
@@ -27,7 +27,7 @@ export function InsightArticlePage({ slug }: InsightArticlePageProps) {
         description: insight.description,
         author: { '@type': 'Organization', name: 'GAX Global' },
         publisher: { '@type': 'Organization', name: 'GAX Global', logo: { '@type': 'ImageObject', url: `${seoBase.siteUrl}/favicon.svg` } },
-        mainEntityOfPage: `${seoBase.siteUrl}/insights/${slug}`,
+        mainEntityOfPage: `${seoBase.siteUrl}/insights/${slug}/`,
       },
     });
   }, [insight, slug]);
@@ -38,7 +38,7 @@ export function InsightArticlePage({ slug }: InsightArticlePageProps) {
         <section className="mx-auto max-w-4xl px-4 py-20 sm:px-6 lg:px-8">
           <h1 className="mb-4 text-4xl font-bold text-gray-900">Insight not found</h1>
           <p className="mb-6 text-gray-600">The requested insight is not available.</p>
-          <a href="/insights" className="font-semibold text-blue-700 hover:text-blue-800">Back to insights</a>
+          <a href="/insights/" className="font-semibold text-blue-700 hover:text-blue-800">Back to insights</a>
         </section>
       </main>
     );
@@ -47,7 +47,7 @@ export function InsightArticlePage({ slug }: InsightArticlePageProps) {
   return (
     <main className="bg-white pt-24">
       <article className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-        <a href="/insights" className="mb-8 inline-block font-semibold text-blue-700 hover:text-blue-800">
+        <a href="/insights/" className="mb-8 inline-block font-semibold text-blue-700 hover:text-blue-800">
           Back to insights
         </a>
         <header className="mb-10">
@@ -90,7 +90,7 @@ export function InsightArticlePage({ slug }: InsightArticlePageProps) {
               Book Free Infrastructure Review
               <ArrowRight className="h-4 w-4" />
             </a>
-            <a href="/services" className="inline-flex items-center justify-center rounded-lg border border-blue-300 px-5 py-3 font-semibold text-blue-700 transition-colors hover:bg-white">
+            <a href="/services/" className="inline-flex items-center justify-center rounded-lg border border-blue-300 px-5 py-3 font-semibold text-blue-700 transition-colors hover:bg-white">
               View services
             </a>
           </div>

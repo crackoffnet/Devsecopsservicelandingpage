@@ -4,42 +4,42 @@ const pillars = [
   {
     icon: BrainCircuit,
     title: 'AI/LLM infrastructure reliability',
-    href: '/ai-infrastructure-llmops',
+    href: '/ai-infrastructure-llmops/',
     description:
       'Model gateways, API integrations, scaling patterns, latency, observability, and operational failure modes for production AI systems.',
   },
   {
     icon: Shield,
     title: 'Kubernetes and platform operations',
-    href: '/kubernetes-hardening',
+    href: '/kubernetes-hardening/',
     description:
       'Cluster reliability, workload isolation, access control, deployment safety, platform governance, and operational guardrails.',
   },
   {
     icon: GitBranch,
     title: 'CI/CD and GitOps delivery',
-    href: '/cicd-automation',
+    href: '/cicd-automation/',
     description:
       'Release pipelines, GitOps controls, rollback readiness, environment promotion, policy checks, and deployment consistency.',
   },
   {
     icon: Network,
     title: 'Cloud architecture and networking',
-    href: '/cloud-security-consulting',
+    href: '/cloud-security-consulting/',
     description:
       'Cloud foundations, private connectivity, DNS, traffic flow, access patterns, service boundaries, and cross-cloud networking.',
   },
   {
     icon: Cloud,
     title: 'DevSecOps and compliance readiness',
-    href: '/devsecops-services',
+    href: '/devsecops-services/',
     description:
       'Least privilege, secrets handling, platform hardening, policy-as-code, audit preparation, and evidence-ready delivery controls.',
   },
   {
     icon: Activity,
     title: 'Cost and observability improvements',
-    href: '/cicd-automation',
+    href: '/cicd-automation/',
     description:
       'Logging, metrics, tracing, alert quality, scaling efficiency, wasted spend, capacity signals, and production visibility.',
   },

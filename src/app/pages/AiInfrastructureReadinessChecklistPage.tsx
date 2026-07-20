@@ -8,7 +8,7 @@ export function AiInfrastructureReadinessChecklistPage() {
       title: 'AI Infrastructure Readiness Checklist | GAX Global',
       description:
         'AI infrastructure and LLMOps readiness checklist for teams shipping model-backed products with secure deployment and observability requirements.',
-      path: '/ai-infrastructure-readiness-checklist',
+      path: '/ai-infrastructure-readiness-checklist/',
       imagePath: seoBase.imagePath,
       structuredData: {
         '@context': 'https://schema.org',
@@ -19,7 +19,7 @@ export function AiInfrastructureReadinessChecklistPage() {
             '@type': 'ListItem',
             position: 2,
             name: 'AI Infrastructure Readiness Checklist',
-            item: `${seoBase.siteUrl}/ai-infrastructure-readiness-checklist`,
+            item: `${seoBase.siteUrl}/ai-infrastructure-readiness-checklist/`,
           },
         ],
       },
@@ -65,9 +65,9 @@ export function AiInfrastructureReadinessChecklistPage() {
         },
       ]}
       relatedServices={[
-        { href: '/ai-infrastructure-llmops', label: 'AI infrastructure and LLMOps' },
-        { href: '/cloud-security-consulting', label: 'cloud security consulting' },
-        { href: '/cicd-automation', label: 'CI/CD automation' },
+        { href: '/ai-infrastructure-llmops/', label: 'AI infrastructure and LLMOps' },
+        { href: '/cloud-security-consulting/', label: 'cloud security consulting' },
+        { href: '/cicd-automation/', label: 'CI/CD automation' },
       ]}
     />
   );

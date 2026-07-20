@@ -7,7 +7,7 @@ export function TermsOfServicePage() {
       title: 'Terms of Service | GAX Global',
       description:
         'Terms of Service for GAX Global governing use of the website, related communications, and service interactions.',
-      path: '/terms-of-service',
+      path: '/terms-of-service/',
       imagePath: seoBase.imagePath,
       structuredData: {
         '@context': 'https://schema.org',
@@ -23,7 +23,7 @@ export function TermsOfServicePage() {
             '@type': 'ListItem',
             position: 2,
             name: 'Terms of Service',
-            item: `${seoBase.siteUrl}/terms-of-service`,
+            item: `${seoBase.siteUrl}/terms-of-service/`,
           },
         ],
       },

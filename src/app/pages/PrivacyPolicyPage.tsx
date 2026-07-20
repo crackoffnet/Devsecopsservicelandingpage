@@ -7,7 +7,7 @@ export function PrivacyPolicyPage() {
       title: 'Privacy Policy | GAX Global',
       description:
         'Privacy Policy for GAX Global covering how information is collected, used, disclosed, and protected through this website and related communications.',
-      path: '/privacy-policy',
+      path: '/privacy-policy/',
       imagePath: seoBase.imagePath,
       structuredData: {
         '@context': 'https://schema.org',
@@ -23,7 +23,7 @@ export function PrivacyPolicyPage() {
             '@type': 'ListItem',
             position: 2,
             name: 'Privacy Policy',
-            item: `${seoBase.siteUrl}/privacy-policy`,
+            item: `${seoBase.siteUrl}/privacy-policy/`,
           },
         ],
       },

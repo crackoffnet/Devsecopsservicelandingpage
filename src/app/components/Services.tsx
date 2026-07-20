@@ -5,7 +5,7 @@ import { createBookReviewClickHandler } from '../lib/analytics';
 const services = [
   {
     icon: ClipboardCheck,
-    slug: '/devsecops-services',
+    slug: '/devsecops-services/',
     title: 'DevSecOps & Infrastructure Health Check',
     description: 'A focused review of your cloud setup, CI/CD pipelines, Kubernetes posture, infrastructure as code practices, security gaps, and operational risks.',
     features: [
@@ -20,7 +20,7 @@ const services = [
   },
   {
     icon: Workflow,
-    slug: '/cicd-automation',
+    slug: '/cicd-automation/',
     title: 'Secure CI/CD & Automation Sprint',
     description: 'Build or fix secure delivery pipelines, secrets handling, deployment controls, and automation workflows that reduce release risk.',
     features: [
@@ -35,7 +35,7 @@ const services = [
   },
   {
     icon: ShieldCheck,
-    slug: '/kubernetes-hardening',
+    slug: '/kubernetes-hardening/',
     title: 'Cloud & Kubernetes Hardening Sprint',
     description: 'Strengthen infrastructure, access controls, Kubernetes security, and production readiness for teams running real workloads.',
     features: [
@@ -50,7 +50,7 @@ const services = [
   },
   {
     icon: BrainCircuit,
-    slug: '/ai-infrastructure-llmops',
+    slug: '/ai-infrastructure-llmops/',
     title: 'AI Infrastructure & LLMOps Enablement',
     description: 'Help teams build secure, scalable foundations for AI products and internal AI workloads.',
     features: [
@@ -122,16 +122,16 @@ export function Services() {
             Use these practical checklists to assess readiness before starting a consulting engagement.
           </p>
           <div className="flex flex-wrap gap-3">
-            <a href="/devsecops-assessment-checklist" className="text-sm text-blue-700 hover:text-blue-800">
+            <a href="/devsecops-assessment-checklist/" className="text-sm text-blue-700 hover:text-blue-800">
               DevSecOps assessment checklist
             </a>
-            <a href="/ai-infrastructure-readiness-checklist" className="text-sm text-blue-700 hover:text-blue-800">
+            <a href="/ai-infrastructure-readiness-checklist/" className="text-sm text-blue-700 hover:text-blue-800">
               AI infrastructure readiness checklist
             </a>
-            <a href="/cicd-security-checklist" className="text-sm text-blue-700 hover:text-blue-800">
+            <a href="/cicd-security-checklist/" className="text-sm text-blue-700 hover:text-blue-800">
               CI/CD security checklist
             </a>
-            <a href="/kubernetes-hardening-checklist" className="text-sm text-blue-700 hover:text-blue-800">
+            <a href="/kubernetes-hardening-checklist/" className="text-sm text-blue-700 hover:text-blue-800">
               Kubernetes hardening checklist
             </a>
           </div>

@@ -31,14 +31,14 @@ export function InfrastructureReviewPage() {
       title: 'Production Infrastructure Review for AI and SaaS Teams | GAX Global',
       description:
         'Book a 30-45 minute production infrastructure review covering AI infrastructure assessment, Kubernetes assessment, DevOps audit, cloud risk, and platform reliability.',
-      path: '/infrastructure-review',
+      path: '/infrastructure-review/',
       imagePath: seoBase.imagePath,
       structuredData: {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${seoBase.siteUrl}/` },
-          { '@type': 'ListItem', position: 2, name: 'Infrastructure Review', item: `${seoBase.siteUrl}/infrastructure-review` },
+          { '@type': 'ListItem', position: 2, name: 'Infrastructure Review', item: `${seoBase.siteUrl}/infrastructure-review/` },
         ],
       },
     });
@@ -100,7 +100,7 @@ export function InfrastructureReviewPage() {
         event_label: 'Infrastructure Review Booking Successful',
       });
       window.sessionStorage.setItem(CAL_BOOKING_SUCCESS_STORAGE_KEY, 'true');
-      window.location.assign('/booking-success');
+      window.location.assign('/booking-success/');
     };
 
     const handleMessage = (event: MessageEvent) => {

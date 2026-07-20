@@ -9,7 +9,7 @@ export function BookingSuccessPage() {
       title: 'Infrastructure Review Booked | GAX Global',
       description:
         'Your GAX Global infrastructure review booking was received. Prepare to discuss AI infrastructure, Kubernetes, CI/CD, cloud, security, and platform reliability risks.',
-      path: '/booking-success',
+      path: '/booking-success/',
       imagePath: seoBase.imagePath,
       robots: 'noindex, nofollow',
     });
@@ -27,10 +27,10 @@ export function BookingSuccessPage() {
           Thanks for scheduling with GAX Global. Bring the production risks, recent incidents, scaling concerns, audit pressure, or delivery bottlenecks you want to review first.
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <a href="/services" className="rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700">
+          <a href="/services/" className="rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-700">
             Review services
           </a>
-          <a href="/insights" className="rounded-lg border border-blue-300 px-6 py-3 font-semibold text-blue-700 transition-colors hover:bg-blue-50">
+          <a href="/insights/" className="rounded-lg border border-blue-300 px-6 py-3 font-semibold text-blue-700 transition-colors hover:bg-blue-50">
             Read insights
           </a>
         </div>

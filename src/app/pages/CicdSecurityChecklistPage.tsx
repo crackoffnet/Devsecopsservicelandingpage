@@ -8,7 +8,7 @@ export function CicdSecurityChecklistPage() {
       title: 'CI/CD Security Checklist | GAX Global',
       description:
         'CI/CD security checklist for engineering teams improving release automation, secrets management, and secure software delivery controls.',
-      path: '/cicd-security-checklist',
+      path: '/cicd-security-checklist/',
       imagePath: seoBase.imagePath,
       structuredData: {
         '@context': 'https://schema.org',
@@ -19,7 +19,7 @@ export function CicdSecurityChecklistPage() {
             '@type': 'ListItem',
             position: 2,
             name: 'CI/CD Security Checklist',
-            item: `${seoBase.siteUrl}/cicd-security-checklist`,
+            item: `${seoBase.siteUrl}/cicd-security-checklist/`,
           },
         ],
       },
@@ -65,9 +65,9 @@ export function CicdSecurityChecklistPage() {
         },
       ]}
       relatedServices={[
-        { href: '/cicd-automation', label: 'CI/CD automation' },
-        { href: '/devsecops-services', label: 'DevSecOps services' },
-        { href: '/terraform-iac', label: 'Terraform and IaC' },
+        { href: '/cicd-automation/', label: 'CI/CD automation' },
+        { href: '/devsecops-services/', label: 'DevSecOps services' },
+        { href: '/terraform-iac/', label: 'Terraform and IaC' },
       ]}
     />
   );

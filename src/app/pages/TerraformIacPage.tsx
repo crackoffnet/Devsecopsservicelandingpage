@@ -8,14 +8,14 @@ export function TerraformIacPage() {
       title: 'Terraform & IaC Consulting | GAX Global',
       description:
         'Terraform consulting and infrastructure as code services to standardize environments, reduce drift, and improve cloud maintainability.',
-      path: '/terraform-iac',
+      path: '/terraform-iac/',
       imagePath: seoBase.imagePath,
       structuredData: {
         '@context': 'https://schema.org',
         '@type': 'BreadcrumbList',
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${seoBase.siteUrl}/` },
-          { '@type': 'ListItem', position: 2, name: 'Terraform and IaC', item: `${seoBase.siteUrl}/terraform-iac` },
+          { '@type': 'ListItem', position: 2, name: 'Terraform and IaC', item: `${seoBase.siteUrl}/terraform-iac/` },
         ],
       },
     });
@@ -45,10 +45,10 @@ export function TerraformIacPage() {
       ]}
       outcome="A cleaner Terraform foundation with practical standards that reduce drift, improve consistency, and support long-term infrastructure reliability."
       relatedLinks={[
-        { href: '/cloud-security-consulting', label: 'cloud security consulting' },
-        { href: '/cicd-automation', label: 'CI/CD automation' },
-        { href: '/devsecops-services', label: 'DevSecOps services' },
-        { href: '/kubernetes-hardening', label: 'Kubernetes hardening' },
+        { href: '/cloud-security-consulting/', label: 'cloud security consulting' },
+        { href: '/cicd-automation/', label: 'CI/CD automation' },
+        { href: '/devsecops-services/', label: 'DevSecOps services' },
+        { href: '/kubernetes-hardening/', label: 'Kubernetes hardening' },
       ]}
     />
   );

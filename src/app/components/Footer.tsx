@@ -35,17 +35,17 @@ export function Footer() {
             <h4 className="font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="/services" className="hover:text-blue-400 transition-colors">
+                <a href="/services/" className="hover:text-blue-400 transition-colors">
                   Services
                 </a>
               </li>
               <li>
-                <a href="/infrastructure-review" className="hover:text-blue-400 transition-colors">
+                <a href="/infrastructure-review/" className="hover:text-blue-400 transition-colors">
                   Infrastructure Review
                 </a>
               </li>
               <li>
-                <a href="/insights" className="hover:text-blue-400 transition-colors">
+                <a href="/insights/" className="hover:text-blue-400 transition-colors">
                   Insights
                 </a>
               </li>
@@ -95,8 +95,8 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-400">{'\u00A9'} {currentYear} GAX Global. All rights reserved.</p>
             <div className="flex gap-6 text-sm text-gray-400">
-              <a href="/privacy-policy" className="hover:text-blue-400 transition-colors">Privacy Policy</a>
-              <a href="/terms-of-service" className="hover:text-blue-400 transition-colors">Terms of Service</a>
+              <a href="/privacy-policy/" className="hover:text-blue-400 transition-colors">Privacy Policy</a>
+              <a href="/terms-of-service/" className="hover:text-blue-400 transition-colors">Terms of Service</a>
             </div>
           </div>
         </div>

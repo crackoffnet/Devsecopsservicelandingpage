@@ -35,3 +35,6 @@
 
 /booking-success
   X-Robots-Tag: noindex, nofollow
+
+/booking-success/
+  X-Robots-Tag: noindex, nofollow

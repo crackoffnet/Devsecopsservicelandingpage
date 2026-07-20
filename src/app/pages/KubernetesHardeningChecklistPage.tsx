@@ -8,7 +8,7 @@ export function KubernetesHardeningChecklistPage() {
       title: 'Kubernetes Hardening Checklist | GAX Global',
       description:
         'Kubernetes hardening checklist for teams improving cluster security, workload controls, and production platform reliability.',
-      path: '/kubernetes-hardening-checklist',
+      path: '/kubernetes-hardening-checklist/',
       imagePath: seoBase.imagePath,
       structuredData: {
         '@context': 'https://schema.org',
@@ -19,7 +19,7 @@ export function KubernetesHardeningChecklistPage() {
             '@type': 'ListItem',
             position: 2,
             name: 'Kubernetes Hardening Checklist',
-            item: `${seoBase.siteUrl}/kubernetes-hardening-checklist`,
+            item: `${seoBase.siteUrl}/kubernetes-hardening-checklist/`,
           },
         ],
       },
@@ -65,9 +65,9 @@ export function KubernetesHardeningChecklistPage() {
         },
       ]}
       relatedServices={[
-        { href: '/kubernetes-hardening', label: 'Kubernetes hardening' },
-        { href: '/cloud-security-consulting', label: 'cloud security consulting' },
-        { href: '/devsecops-services', label: 'DevSecOps services' },
+        { href: '/kubernetes-hardening/', label: 'Kubernetes hardening' },
+        { href: '/cloud-security-consulting/', label: 'cloud security consulting' },
+        { href: '/devsecops-services/', label: 'DevSecOps services' },
       ]}
     />
   );

@@ -8,7 +8,7 @@ function normalizePathname(pathname: string) {
     return '/';
   }
 
-  return pathname.replace(/\/+$/, '') || '/';
+  return `${pathname.replace(/\/+$/, '')}/`;
 }
 
 export function normalizePublicSiteUrl(url: string) {
@@ -16,11 +16,11 @@ export function normalizePublicSiteUrl(url: string) {
   parsedUrl.protocol = CANONICAL_PROTOCOL;
   parsedUrl.hostname = CANONICAL_HOSTNAME;
   parsedUrl.port = '';
-  parsedUrl.pathname = normalizePathname(parsedUrl.pathname);
+  parsedUrl.pathname = '/';
   parsedUrl.hash = '';
   parsedUrl.search = '';
 
-  return `${parsedUrl.origin}${parsedUrl.pathname === '/' ? '' : parsedUrl.pathname}`;
+  return parsedUrl.origin;
 }
 
 const configuredPublicSiteUrl = import.meta.env.VITE_PUBLIC_SITE_URL || DEFAULT_PUBLIC_SITE_URL;

@@ -42,7 +42,7 @@ function escapeHtml(value) {
 }
 
 function normalizeRoutePath(routePath) {
-  return routePath === '/' ? '/' : routePath.replace(/\/+$/, '');
+  return routePath === '/' ? '/' : `${routePath.replace(/\/+$/, '')}/`;
 }
 
 function buildCanonicalUrl(routePath) {
@@ -161,7 +161,7 @@ function applyRouteSeo(template, route) {
   ].join('\n');
   html = upsertBodyScript(html, 'gax-cta-click-tracking', clickTrackingScript);
 
-  if (normalizedPath === '/infrastructure-review') {
+  if (normalizedPath === '/infrastructure-review/') {
     const bookingSectionTemplate = [
       '    <template id="gax-book-review-template">',
       '      <section id="book-review">',
@@ -199,7 +199,7 @@ function applyRouteSeo(template, route) {
       '            });',
       '          }',
       `          window.sessionStorage.setItem("${calBookingSuccessStorageKey}", "true");`,
-      '          window.location.assign("/booking-success");',
+      '          window.location.assign("/booking-success/");',
       '        }',
       '        function extractEventName(payload) {',
       '          if (!payload) return "";',
@@ -240,7 +240,7 @@ function applyRouteSeo(template, route) {
     html = upsertBodyScript(html, 'gax-cal-embed', calEmbedScript);
   }
 
-  if (normalizedPath === '/booking-success' && googleAdsBookAppointmentSendTo) {
+  if (normalizedPath === '/booking-success/' && googleAdsBookAppointmentSendTo) {
     const bookingConversionScript = [
       `      if (window.sessionStorage.getItem("${calBookingSuccessStorageKey}") === "true" && !window.__gaxBookAppointmentConversionFired && typeof window.gtag === "function") {`,
       '        window.__gaxBookAppointmentConversionFired = true;',
