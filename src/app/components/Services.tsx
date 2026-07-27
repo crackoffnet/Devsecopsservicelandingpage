@@ -144,7 +144,7 @@ export function Services() {
               href={INFRASTRUCTURE_REVIEW_CTA_PATH}
               aria-label="Book Free Infrastructure Review on the GAX Global site"
               data-cta="book-free-infrastructure-review"
-              data-location="review"
+              data-location="services"
               onClick={createBookReviewClickHandler('review')}
               className="px-6 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium"
             >

@@ -59,7 +59,7 @@ export function InsightsPage() {
       </section>
       <InfrastructureReviewCta
         location="insights"
-        dataLocation="insights-footer"
+        dataLocation="footer"
         sectionClassName="border-t border-gray-200 bg-gray-50 py-16"
       />
     </main>

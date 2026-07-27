@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "vite build && node scripts/sync-cloudflare-static-files.mjs",
-    "dev": "vite"
+    "dev": "vite",
+    "test:site-contract": "node --test tests/site-contract.test.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

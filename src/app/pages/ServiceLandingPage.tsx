@@ -34,7 +34,7 @@ export function ServiceLandingPage({
             href={INFRASTRUCTURE_REVIEW_CTA_PATH}
             aria-label="Book Free Infrastructure Review on the GAX Global site"
             data-cta="book-free-infrastructure-review"
-            data-location="service-page"
+            data-location="services"
             onClick={createBookReviewClickHandler('service-page')}
             className="text-center px-6 py-4 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors font-medium"
           >
@@ -102,7 +102,7 @@ export function ServiceLandingPage({
       </article>
       <InfrastructureReviewCta
         location="service-page"
-        dataLocation="service-page-footer"
+        dataLocation="footer"
         sectionClassName="border-t border-gray-200 bg-gray-50 py-16"
       />
     </main>

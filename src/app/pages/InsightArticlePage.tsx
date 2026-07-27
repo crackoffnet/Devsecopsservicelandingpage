@@ -83,7 +83,7 @@ export function InsightArticlePage({ slug }: InsightArticlePageProps) {
             <a
               href={INFRASTRUCTURE_REVIEW_CTA_PATH}
               data-cta="book-free-infrastructure-review"
-              data-location="review"
+              data-location="services"
               onClick={createBookReviewClickHandler('review')}
               className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-blue-700"
             >

@@ -75,7 +75,7 @@ export function ServicesPage() {
               <a
                 href={INFRASTRUCTURE_REVIEW_CTA_PATH}
                 data-cta="book-free-infrastructure-review"
-                data-location="services-hero"
+                data-location="services"
                 onClick={createBookReviewClickHandler('services')}
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-400 px-7 py-4 font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition-colors hover:bg-cyan-300"
               >
@@ -130,7 +130,7 @@ export function ServicesPage() {
       </section>
       <InfrastructureReviewCta
         location="services"
-        dataLocation="services-footer"
+        dataLocation="services"
         sectionClassName="border-t border-gray-200 bg-white py-16"
       />
     </main>

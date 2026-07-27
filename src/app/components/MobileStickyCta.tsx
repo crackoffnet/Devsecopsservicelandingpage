@@ -29,7 +29,7 @@ export function MobileStickyCta() {
         href={reviewCtaHref}
         aria-label="Book Free Infrastructure Review on the GAX Global site"
         data-cta="book-free-infrastructure-review"
-        data-location="mobile-sticky"
+        data-location="hero"
         onClick={createBookReviewClickHandler('mobile-sticky')}
         className="mx-auto flex max-w-sm items-center justify-center rounded-lg bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950"
       >

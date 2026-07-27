@@ -21,13 +21,13 @@ export function ProductionAiInfrastructureReview() {
           </div>
           <h2 className="mb-5 text-3xl font-bold sm:text-4xl">Production Infrastructure Review</h2>
           <p className="mb-8 text-lg leading-relaxed text-slate-200">
-            In 30-45 minutes, we review your AI/LLM, Kubernetes, cloud, security, and delivery setup to identify the highest-risk issues and show what to fix first.
+            In 30 minutes, we review your AI/LLM, Kubernetes, cloud, security, and delivery setup to identify the highest-risk issues and show what to fix first.
           </p>
           <a
             href={INFRASTRUCTURE_REVIEW_CTA_PATH}
             aria-label="Book Free Infrastructure Review on the GAX Global site"
             data-cta="book-free-infrastructure-review"
-            data-location="review"
+            data-location="hero"
             onClick={createBookReviewClickHandler('review')}
             className="inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-400 px-7 py-4 font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition-colors hover:bg-cyan-300"
           >

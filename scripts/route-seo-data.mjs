@@ -27,7 +27,7 @@ export const routeSeoData = [
     path: '/infrastructure-review/',
     title: 'Production Infrastructure Review for AI and SaaS Teams | GAX Global',
     description:
-      'Book a 30-45 minute production infrastructure review covering AI infrastructure assessment, Kubernetes assessment, DevOps audit, cloud risk, and platform reliability.',
+      'Book a 30-minute production infrastructure review covering AI infrastructure assessment, Kubernetes assessment, DevOps audit, cloud risk, and platform reliability.',
   },
   {
     path: '/insights/',

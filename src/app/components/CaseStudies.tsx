@@ -56,7 +56,7 @@ export function CaseStudies() {
             href={INFRASTRUCTURE_REVIEW_CTA_PATH}
             aria-label="Book Free Infrastructure Review on the GAX Global site"
             data-cta="book-free-infrastructure-review"
-            data-location="case-studies"
+            data-location="hero"
             onClick={createBookReviewClickHandler('case-studies')}
             className="inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-400 px-7 py-4 font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition-colors hover:bg-cyan-300"
           >

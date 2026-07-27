@@ -30,7 +30,7 @@ export function InfrastructureReviewPage() {
     applySeo({
       title: 'Production Infrastructure Review for AI and SaaS Teams | GAX Global',
       description:
-        'Book a 30-45 minute production infrastructure review covering AI infrastructure assessment, Kubernetes assessment, DevOps audit, cloud risk, and platform reliability.',
+        'Book a 30-minute production infrastructure review covering AI infrastructure assessment, Kubernetes assessment, DevOps audit, cloud risk, and platform reliability.',
       path: '/infrastructure-review/',
       imagePath: seoBase.imagePath,
       structuredData: {
@@ -140,7 +140,7 @@ export function InfrastructureReviewPage() {
               <a
                 href={INFRASTRUCTURE_REVIEW_LOCAL_CTA_PATH}
                 data-cta="book-free-infrastructure-review"
-                data-location="infrastructure-review-hero"
+                data-location="infrastructure-review"
                 onClick={createBookReviewClickHandler('infrastructure-review')}
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-400 px-7 py-4 font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition-colors hover:bg-cyan-300"
               >
@@ -150,7 +150,7 @@ export function InfrastructureReviewPage() {
               <a
                 href="mailto:info@gax-global.com?subject=Request%20Infrastructure%20Review"
                 data-cta="request-infrastructure-review"
-                data-location="infrastructure-review-hero"
+                data-location="infrastructure-review"
                 className="inline-flex items-center justify-center rounded-lg border border-white/25 bg-white/10 px-7 py-4 font-semibold text-white transition-colors hover:bg-white/15"
               >
                 Request Infrastructure Review
@@ -255,7 +255,7 @@ export function InfrastructureReviewPage() {
                 rel="noopener noreferrer"
                 className="text-sm text-blue-700 transition-colors hover:text-blue-800"
               >
-                Having trouble with the calendar? Open booking page in a new tab.
+                Having trouble with the calendar? Open the booking page in a new tab.
               </a>
             </div>
           </div>
@@ -266,9 +266,9 @@ export function InfrastructureReviewPage() {
         href={INFRASTRUCTURE_REVIEW_LOCAL_CTA_PATH}
         title="Not sure where your infrastructure risks are?"
         body="Book a free 30-minute review and get practical next steps for CI/CD, Kubernetes, cloud security, Terraform/IaC, and platform reliability."
-        buttonText="Schedule Free Review"
+        buttonText="Book Free Infrastructure Review"
         location="infrastructure-review"
-        dataLocation="infrastructure-review-footer"
+        dataLocation="infrastructure-review"
         sectionClassName="border-t border-gray-200 bg-white py-16"
       />
     </main>

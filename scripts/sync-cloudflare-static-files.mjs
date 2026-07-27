@@ -164,80 +164,13 @@ function applyRouteSeo(template, route) {
   if (normalizedPath === '/infrastructure-review/') {
     const bookingSectionTemplate = [
       '    <template id="gax-book-review-template">',
-      '      <section id="book-review">',
-      '        <iframe src="https://cal.com/gaxglobal/infrastructure-review?embed=true" title="Cal.com Infrastructure Review Booking"></iframe>',
+      '      <section id="book-review" data-cal-success-event="bookingSuccessfulV2">',
+      '        <iframe src="https://cal.com/gaxglobal/infrastructure-review?embed=true" title="Cal.com Infrastructure Review Booking" loading="lazy"></iframe>',
+      '        <a href="https://cal.com/gaxglobal/infrastructure-review" target="_blank" rel="noopener noreferrer">Having trouble with the calendar? Open the booking page in a new tab.</a>',
       '      </section>',
       '    </template>',
     ].join('\n');
     html = upsertBodyFragment(html, 'gax-book-review-template', bookingSectionTemplate);
-
-    const calEmbedScript = [
-      '      (function () {',
-      '        var bookingHandled = false;',
-      '        function mountCalEmbed() {',
-      '          var container = document.getElementById("gax-cal-embed");',
-      '          if (!container) return false;',
-      '          if (container.querySelector("iframe")) return true;',
-      '          var iframe = document.createElement("iframe");',
-      '          iframe.src = "https://cal.com/gaxglobal/infrastructure-review?embed=true";',
-      '          iframe.title = "Cal.com Infrastructure Review Booking";',
-      '          iframe.loading = "lazy";',
-      '          iframe.setAttribute("frameborder", "0");',
-      '          iframe.style.width = "100%";',
-      '          iframe.style.minHeight = window.innerWidth < 768 ? "850px" : "700px";',
-      '          iframe.style.border = "0";',
-      '          container.appendChild(iframe);',
-      '          return true;',
-      '        }',
-      '        function handleBookingSuccess() {',
-      '          if (bookingHandled) return;',
-      '          bookingHandled = true;',
-      '          if (typeof window.gtag === "function") {',
-      '            window.gtag("event", "cal_booking_successful", {',
-      '              event_category: "lead",',
-      '              event_label: "Infrastructure Review Booking Successful"',
-      '            });',
-      '          }',
-      `          window.sessionStorage.setItem("${calBookingSuccessStorageKey}", "true");`,
-      '          window.location.assign("/booking-success/");',
-      '        }',
-      '        function extractEventName(payload) {',
-      '          if (!payload) return "";',
-      '          if (typeof payload === "string") {',
-      '            if (payload.indexOf("bookingSuccessfulV2") >= 0) return "bookingSuccessfulV2";',
-      '            try { payload = JSON.parse(payload); } catch (error) { return ""; }',
-      '          }',
-      '          var candidates = [',
-      '            payload.event,',
-      '            payload.type,',
-      '            payload.name,',
-      '            payload.detail && payload.detail.event,',
-      '            payload.detail && payload.detail.type,',
-      '            payload.data && payload.data.event,',
-      '            payload.data && payload.data.type,',
-      '            payload.data && payload.data.name',
-      '          ];',
-      '          for (var i = 0; i < candidates.length; i += 1) {',
-      '            if (typeof candidates[i] === "string" && candidates[i].length > 0) return candidates[i];',
-      '          }',
-      '          return "";',
-      '        }',
-      '        window.addEventListener("message", function (event) {',
-      '          if (!event.origin || event.origin.indexOf("cal.com") === -1) return;',
-      '          if (extractEventName(event.data) !== "bookingSuccessfulV2") return;',
-      '          handleBookingSuccess();',
-      '        });',
-      '        window.addEventListener("bookingSuccessfulV2", handleBookingSuccess);',
-      '        if (!mountCalEmbed()) {',
-      '          var observer = new MutationObserver(function () {',
-      '            if (mountCalEmbed()) observer.disconnect();',
-      '          });',
-      '          observer.observe(document.body, { childList: true, subtree: true });',
-      '          window.setTimeout(function () { observer.disconnect(); }, 10000);',
-      '        }',
-      '      }());',
-    ].join('\n');
-    html = upsertBodyScript(html, 'gax-cal-embed', calEmbedScript);
   }
 
   if (normalizedPath === '/booking-success/' && googleAdsBookAppointmentSendTo) {
@@ -282,3 +215,13 @@ for (const route of routeSeoData) {
   await mkdir(path.dirname(destination), { recursive: true });
   await writeFile(destination, html, 'utf8');
 }
+
+const sitemapUrls = routeSeoData
+  .filter((route) => route.robots !== 'noindex, nofollow')
+  .map((route) => `  <url>\n    <loc>${buildCanonicalUrl(normalizeRoutePath(route.path))}</loc>\n  </url>`)
+  .join('\n');
+await writeFile(
+  path.join(distDir, 'sitemap.xml'),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls}\n</urlset>\n`,
+  'utf8',
+);
