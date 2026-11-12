@@ -48,40 +48,38 @@ export function Hero() {
         <div className="max-w-3xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-400/10 px-4 py-2">
             <Shield className="h-4 w-4 text-cyan-300" />
-            <span className="text-sm text-cyan-100">AI infrastructure, DevSecOps, and platform reliability consulting</span>
+            <span className="text-sm text-cyan-100">GAX Global / Senior production engineering</span>
           </div>
 
-          <h1 className="mb-6 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-            AI or SaaS infrastructure breaking under production load?
+          <h1 className="mb-6 text-4xl font-bold leading-tight sm:text-5xl">
+            Cloud Infrastructure, DevSecOps & Platform Engineering Consulting
           </h1>
 
           <p className="mb-8 text-lg leading-relaxed text-slate-200 sm:text-xl">
-            GAX Global provides senior, hands-on infrastructure support for AI and SaaS teams that need production systems stabilized without the overhead of a large consulting firm.
+            Helping organizations build, secure, automate, and operate production-ready infrastructure across AWS, Azure, GCP, and Kubernetes.
           </p>
 
-          <div className="mb-8 flex flex-col gap-4 sm:flex-row">
+          <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+            <a href="/services/" data-cta="explore-engineering-services" data-location="hero" className="inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-400 px-6 py-4 font-semibold text-slate-950 hover:bg-cyan-300">Explore Engineering Services <ArrowRight aria-hidden="true" className="h-5 w-5 shrink-0" /></a>
+            <a href="/staffing-partners/" data-cta="partner-with-gax" data-location="hero" className="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-4 font-semibold text-white hover:bg-white/10">Partner With GAX Global</a>
+          </div>
+          <div className="mb-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <a href="/contact/" data-cta="contact-us" data-location="hero" className="font-semibold text-white underline underline-offset-4">Contact Us</a>
             <a
               href={reviewCtaHref}
               aria-label="Book Free Infrastructure Review on the GAX Global site"
               data-cta="book-free-infrastructure-review"
               data-location="hero"
               onClick={createBookReviewClickHandler('hero')}
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-cyan-400 px-7 py-4 font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition-colors hover:bg-cyan-300"
+              className="inline-flex items-center gap-2 font-semibold text-cyan-200 underline underline-offset-4 hover:text-cyan-100"
             >
               <span>Book Free Infrastructure Review</span>
               <ArrowRight className="h-5 w-5" />
             </a>
-            <a
-              href="/#problems"
-              aria-label="See what infrastructure problems GAX Global fixes"
-              className="inline-flex items-center justify-center rounded-lg border border-white/25 bg-white/10 px-7 py-4 font-semibold text-white transition-colors hover:bg-white/15"
-            >
-              See What We Fix
-            </a>
           </div>
 
           <p className="max-w-2xl text-sm leading-relaxed text-slate-300">
-            Focused boutique consulting for engineering leaders who need clear risk review, practical fixes, and implementation support across AI infrastructure, DevSecOps, and platform reliability.
+            Hands-on engineering for SaaS and AI teams. Direct consulting, C2C contracts, subcontracting partnerships, and fixed-scope infrastructure projects for remote U.S. engagements.
           </p>
         </div>
 

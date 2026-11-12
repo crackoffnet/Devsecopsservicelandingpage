@@ -3,13 +3,28 @@ export const defaultImagePath = '/og-image.svg';
 export const routeSeoData = [
   {
     path: '/',
-    title: 'GAX Global | AI Infrastructure, DevSecOps & Platform Reliability',
+    title: 'Cloud Infrastructure, DevSecOps & C2C Consulting | GAX Global',
     description:
-      'GAX Global provides senior, hands-on AI infrastructure, DevSecOps, and platform reliability consulting for AI startups and SaaS teams without large-firm overhead.',
-    ogTitle: 'GAX Global | AI Infrastructure & Platform Reliability Consulting',
+      'Hands-on cloud infrastructure, DevSecOps, Kubernetes, platform engineering, and SRE consulting. Direct projects, C2C contracts, and subcontracting partnerships.',
+    ogTitle: 'GAX Global | Cloud Infrastructure & Platform Engineering',
     ogDescription:
-      'Boutique AI infrastructure, Kubernetes, CI/CD, DevSecOps, cloud architecture, compliance readiness, and production reliability consulting for SaaS and AI teams.',
+      'Senior engineering support for production infrastructure. Work with GAX Global through direct consulting, C2C contracts, and subcontracting partnerships.',
     type: 'website',
+  },
+  {
+    path: '/staffing-partners/',
+    title: 'C2C DevOps & DevSecOps Consulting | GAX Global',
+    description: 'Partner with GAX Global for C2C DevOps, DevSecOps, Kubernetes, cloud infrastructure, platform engineering, and SRE consulting for remote U.S. engagements.',
+  },
+  {
+    path: '/contact/',
+    title: 'Contact GAX Global | Infrastructure & C2C Consulting',
+    description: 'Discuss a cloud infrastructure, DevSecOps, Kubernetes, platform engineering, or C2C consulting requirement with GAX Global.',
+  },
+  {
+    path: '/capability-statement/',
+    title: 'GAX Global Capability Statement | Cloud, DevSecOps & Platform Engineering',
+    description: 'GAX Global capability statement covering technical specializations, C2C and project engagement models, and business contact information.',
   },
   {
     path: '/services/',

@@ -11,6 +11,7 @@ type InfrastructureReviewCtaProps = {
   dataLocation: string;
   sectionClassName?: string;
   containerClassName?: string;
+  bodyClassName?: string;
 };
 
 const defaultTitle = 'Not sure where your infrastructure risks are?';
@@ -27,6 +28,7 @@ export function InfrastructureReviewCta({
   dataLocation,
   sectionClassName = 'bg-gradient-to-r from-gray-900 to-blue-900 py-20 text-white',
   containerClassName = 'mx-auto max-w-4xl text-center',
+  bodyClassName = 'text-blue-100',
 }: InfrastructureReviewCtaProps) {
   const resolvedHref = href === INFRASTRUCTURE_REVIEW_CTA_PATH ? getInfrastructureReviewCtaHref() : href;
   const isExternal = resolvedHref.startsWith('http');
@@ -36,7 +38,7 @@ export function InfrastructureReviewCta({
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className={containerClassName}>
           <h2 className="mb-4 text-3xl font-bold sm:text-4xl">{title}</h2>
-          <p className="mb-8 text-lg text-blue-100">{body}</p>
+          <p className={`mb-8 text-lg ${bodyClassName}`}>{body}</p>
           <a
             href={resolvedHref}
             target={isExternal ? '_blank' : undefined}

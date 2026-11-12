@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { PartnerCallout } from './components/PartnerCallout';
 import { HomepageReviewIntro } from './components/HomepageReviewIntro';
 import { HowWeHelp } from './components/HowWeHelp';
 import { WhoWeHelp } from './components/WhoWeHelp';
@@ -21,6 +22,9 @@ import { InfrastructureReviewPage } from './pages/InfrastructureReviewPage';
 import { InsightsPage } from './pages/InsightsPage';
 import { InsightArticlePage } from './pages/InsightArticlePage';
 import { BookingSuccessPage } from './pages/BookingSuccessPage';
+import { StaffingPartnersPage } from './pages/StaffingPartnersPage';
+import { CapabilityStatementPage } from './pages/CapabilityStatementPage';
+import { ContactPage } from './pages/ContactPage';
 import { AiInfrastructureLlmopsPage } from './pages/AiInfrastructureLlmopsPage';
 import { CicdAutomationPage } from './pages/CicdAutomationPage';
 import { KubernetesHardeningPage } from './pages/KubernetesHardeningPage';
@@ -39,6 +43,9 @@ export default function App() {
   const isTermsPage = pathname === '/terms-of-service';
   const isDevsecopsServicesPage = pathname === '/devsecops-services';
   const isServicesPage = pathname === '/services';
+  const isStaffingPartnersPage = pathname === '/staffing-partners';
+  const isCapabilityStatementPage = pathname === '/capability-statement';
+  const isContactPage = pathname === '/contact';
   const isInfrastructureReviewPage = pathname === '/infrastructure-review';
   const isInsightsPage = pathname === '/insights';
   const insightSlug = pathname.startsWith('/insights/') ? pathname.replace('/insights/', '') : '';
@@ -55,6 +62,9 @@ export default function App() {
   const isKubernetesChecklistPage = pathname === '/kubernetes-hardening-checklist';
   const isLegalPage = isPrivacyPage || isTermsPage;
   const isServicePage =
+    isStaffingPartnersPage ||
+    isCapabilityStatementPage ||
+    isContactPage ||
     isServicesPage ||
     isInfrastructureReviewPage ||
     isInsightsPage ||
@@ -75,12 +85,12 @@ export default function App() {
   useEffect(() => {
     if (!isLegalPage && !isServicePage && !isSupportPage) {
       applySeo({
-        title: 'GAX Global | AI Infrastructure, DevSecOps & Platform Reliability',
+        title: 'Cloud Infrastructure, DevSecOps & C2C Consulting | GAX Global',
         description:
-          'GAX Global provides senior, hands-on AI infrastructure, DevSecOps, and platform reliability consulting for AI startups and SaaS teams without large-firm overhead.',
-        ogTitle: 'GAX Global | AI Infrastructure & Platform Reliability Consulting',
+          'Hands-on cloud infrastructure, DevSecOps, Kubernetes, platform engineering, and SRE consulting. Direct projects, C2C contracts, and subcontracting partnerships.',
+        ogTitle: 'GAX Global | Cloud Infrastructure & Platform Engineering',
         ogDescription:
-          'Boutique AI infrastructure, Kubernetes, CI/CD, DevSecOps, cloud architecture, compliance readiness, and production reliability consulting for SaaS and AI teams.',
+          'Senior engineering support for production infrastructure. Work with GAX Global through direct consulting, C2C contracts, and subcontracting partnerships.',
         path: '/',
         imagePath: seoBase.imagePath,
         structuredData: [
@@ -136,9 +146,17 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white">
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <Toaster position="top-right" richColors />
       <Header />
-      {isPrivacyPage ? (
+      <div id="main-content" tabIndex={-1}>
+      {isStaffingPartnersPage ? (
+        <StaffingPartnersPage />
+      ) : isCapabilityStatementPage ? (
+        <CapabilityStatementPage />
+      ) : isContactPage ? (
+        <ContactPage />
+      ) : isPrivacyPage ? (
         <PrivacyPolicyPage />
       ) : isTermsPage ? (
         <TermsOfServicePage />
@@ -182,11 +200,13 @@ export default function App() {
           <ProductionAiInfrastructureReview />
           <CaseStudies />
           <WhyGaxGlobal />
+          <PartnerCallout />
           <WhoWeHelp />
           <FinalCta />
           <MobileStickyCta />
         </main>
       )}
+      </div>
       <Footer />
     </div>
   );

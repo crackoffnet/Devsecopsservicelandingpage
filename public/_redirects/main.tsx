@@ -4,6 +4,9 @@ https://www.gax-global.com/* https://gax-global.com/:splat 301!
 https://www.gax-global.com:8443/* https://gax-global.com/:splat 301!
 https://gax-global.com:8443/* https://gax-global.com/:splat 301!
 /services /services/ 308!
+/staffing-partners /staffing-partners/ 308!
+/contact /contact/ 308!
+/capability-statement /capability-statement/ 308!
 /devsecops-services /devsecops-services/ 308!
 /infrastructure-review /infrastructure-review/ 308!
 /insights /insights/ 308!

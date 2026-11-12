@@ -35,6 +35,9 @@ export function Footer() {
             <h4 className="font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
+                <a href="/" className="hover:text-blue-400 transition-colors">Home</a>
+              </li>
+              <li>
                 <a href="/services/" className="hover:text-blue-400 transition-colors">
                   Services
                 </a>
@@ -56,9 +59,10 @@ export function Footer() {
               </li>
               <li>
                 <a href="/#why" className="hover:text-blue-400 transition-colors">
-                  Why GAX
+                  About
                 </a>
               </li>
+              <li><a href="/contact/" className="hover:text-blue-400 transition-colors">Contact</a></li>
             </ul>
           </div>
 
@@ -90,6 +94,11 @@ export function Footer() {
             </div>
           </div>
         </div>
+
+        <section aria-labelledby="footer-partners" className="mb-8 grid gap-5 border-t border-gray-700 pt-8 md:grid-cols-[1.3fr_0.7fr]">
+          <div><h2 id="footer-partners" className="mb-2 text-lg font-semibold text-white">Recruiters & consulting partners</h2><p className="max-w-2xl text-sm text-gray-300">Discuss C2C engineering contracts, subcontracting, long-term technical consulting, and fixed-scope infrastructure projects.</p></div>
+          <div className="flex flex-wrap items-start gap-5 md:justify-end"><a href="/staffing-partners/" data-cta="partner-with-gax" data-location="footer" className="font-semibold text-cyan-300 underline underline-offset-4">Staffing Partners</a><a href="/capability-statement/" className="text-sm text-gray-200 underline underline-offset-4">Capability statement</a></div>
+        </section>
 
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">

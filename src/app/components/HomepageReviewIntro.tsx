@@ -8,6 +8,7 @@ export function HomepageReviewIntro() {
       location="homepage"
       dataLocation="hero"
       sectionClassName="border-b border-gray-200 bg-white py-16"
+      bodyClassName="text-gray-700"
       containerClassName="mx-auto max-w-5xl rounded-2xl border border-cyan-100 bg-cyan-50 px-6 py-10 text-center shadow-sm sm:px-10"
     />
   );

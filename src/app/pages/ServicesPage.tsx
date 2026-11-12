@@ -83,10 +83,12 @@ export function ServicesPage() {
                 <ArrowRight className="h-5 w-5" />
               </a>
               <a
-                href="/infrastructure-review/"
+                href="/staffing-partners/"
+                data-cta="partner-with-gax"
+                data-location="services"
                 className="inline-flex items-center justify-center rounded-lg border border-white/25 bg-white/10 px-7 py-4 font-semibold text-white transition-colors hover:bg-white/15"
               >
-                View Review Offer
+                Discuss C2C & Partner Engagements
               </a>
             </div>
           </div>
@@ -132,6 +134,7 @@ export function ServicesPage() {
         location="services"
         dataLocation="services"
         sectionClassName="border-t border-gray-200 bg-white py-16"
+        bodyClassName="text-gray-700"
       />
     </main>
   );

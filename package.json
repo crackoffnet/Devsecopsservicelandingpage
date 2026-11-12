@@ -6,7 +6,8 @@
   "scripts": {
     "build": "vite build && node scripts/sync-cloudflare-static-files.mjs",
     "dev": "vite",
-    "test:site-contract": "node --test tests/site-contract.test.mjs"
+    "test:site-contract": "node --test tests/site-contract.test.mjs",
+    "test:inquiry": "node --test tests/inquiry.test.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

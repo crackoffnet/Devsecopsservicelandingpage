@@ -16,14 +16,14 @@ export function WhyGaxGlobal() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div>
             <div className="mb-4 inline-flex rounded-full bg-blue-100 px-4 py-2 text-sm text-blue-700">
-              Why GAX Global
+              About GAX Global
             </div>
             <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">Why GAX Global</h2>
             <p className="text-lg leading-relaxed text-gray-600">
               Senior hands-on infrastructure support without the overhead of a large consulting firm.
             </p>
             <p className="mt-4 text-lg leading-relaxed text-gray-600">
-              GAX Global is built for teams that need direct technical help with AI/LLM infrastructure, Kubernetes, CI/CD, cloud architecture, DevSecOps, and platform reliability, not a broad bench of generalized consultants.
+              GAX Global is a focused technical consultancy helping SaaS and AI teams with AI/LLM infrastructure, Kubernetes, CI/CD, cloud architecture, DevSecOps, and platform reliability. Work directly with us on a project or through a C2C or subcontracting engagement with your consulting partner.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

@@ -13,6 +13,9 @@ test('public routes, sitemap, and redirects use trailing slashes', async () => {
   for (const path of [
     '/',
     '/services/',
+    '/staffing-partners/',
+    '/capability-statement/',
+    '/contact/',
     '/devsecops-services/',
     '/infrastructure-review/',
     '/insights/',
